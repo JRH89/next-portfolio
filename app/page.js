@@ -148,7 +148,7 @@ const Page = () => {
         {!activeGroup &&
           <section className="bg-black border-2 mt-5 border-slate-700 min-h-screen rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
-              <div className="w-1/3 flex justify-center place-content-center items-center">
+              <div className="w-1/2 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
