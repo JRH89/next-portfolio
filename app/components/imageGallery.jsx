@@ -27,9 +27,7 @@ const MyImageGallery = (showCerts) => {
 
 	return (
 		<>
-
 			<div className="text-center justify-center items-center flex flex-col gap-3 p-5">
-
 				{imagePaths.map((imagePath) => (
 					<Image
 						key={imagePath}
@@ -39,7 +37,7 @@ const MyImageGallery = (showCerts) => {
 						height={500}
 						alt="Image"
 						lazy={true}
-						className=" object-cover cursor-pointer border-2 bg-slate-600 p-4 border-yellow-400 rounded-xl"
+						className=" object-cover cursor-pointer border-2 bg-slate-700 p-4 border-yellow-400 rounded-xl"
 						onClick={() => handleClick(imagePath)}
 					/>
 				))}

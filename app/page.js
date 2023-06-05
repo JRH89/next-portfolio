@@ -218,7 +218,7 @@ const Page = () => {
               }
             </div>
 
-            <div className={`grid mb-5 h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-4"}`}>
+            <div className={`grid  h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -258,14 +258,21 @@ const Page = () => {
             </div>
           </div>}
         {!activeGroup && <div className="w-full mb-6 rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-          <div ref={buttonRowRef} className="flex my-2 justify-center ">
-            <button
-              className={`border-2 sm:text-3xl text-xl border-blue-400 w-auto text-center shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
-              onClick={showCerts}
-            >
-              CERTIFICATES
-            </button>
+          <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
+            {!certs &&
+              <button
+                className={`border-2 sm:text-3xl text-xl border-blue-400 w-auto text-center shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
+                onClick={showCerts}
+              >
+                CERTIFICATES
+              </button>}
+            {certs &&
 
+              <button className=" border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center px-4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={showCerts}>
+                X
+              </button>
+
+            }
           </div>
           {certs && <MyImageGallery />}
         </div>}
