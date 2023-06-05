@@ -28,9 +28,9 @@ const MyImageGallery = () => {
 	return (
 		<>
 			<div className='flex bg-black pt-5 w-auto justify-center'>
-				<Link className='hover:scale-90 place-items-center items-center align-middle flex rounded-lg border-2 border-blue-400 shadow-lg shadow-blue-400/50 text-blue-400 font-bold p-2 bg-slate-800 justify-center max-w-[800px] duration-300 hover:opacity-60' href={('/')}>Back to Portfolio</Link>
+				<Link className='hover:scale-90 place-items-center items-center align-middle flex rounded-lg border-2 border-blue-400 shadow-lg shadow-blue-400/50 text-blue-400 font-bold p-2 bg-black justify-center max-w-[800px] duration-300 hover:opacity-60' href={('/')}>Back to Portfolio</Link>
 			</div>
-			<div className="text-center justify-center items-center flex flex-col bg-slate-800  gap-3 p-5">
+			<div className="text-center justify-center items-center flex flex-col bg-black  gap-3 p-5">
 
 				{imagePaths.map((imagePath) => (
 					<Image
