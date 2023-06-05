@@ -166,7 +166,7 @@ const Page = () => {
         }
         <div className="w-full rounded-lg items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-8">
 
-          <div ref={buttonRowRef} className={`flex justify-center gap-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-lg z-10 p-4" : ""
+          <div ref={buttonRowRef} className={`flex justify-center gap-2 mb-4 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-lg z-10 p-4" : ""
             }`}>
             <button
               className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
