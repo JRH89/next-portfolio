@@ -27,8 +27,8 @@ const MyImageGallery = () => {
 
 	return (
 		<>
-			<div className='flex bg-slate-800 pt-5 w-auto justify-center'>
-				<Link className='hover:scale-90 place-items-center items-center align-middle flex rounded-lg text-slate-900 font-bold p-2 bg-yellow-300 justify-center max-w-[800px] duration-300 hover:opacity-60' href={('/')}>Back to Portfolio</Link>
+			<div className='flex bg-black pt-5 w-auto justify-center'>
+				<Link className='hover:scale-90 place-items-center items-center align-middle flex rounded-lg border-2 border-blue-400 shadow-lg shadow-blue-400/50 text-blue-400 font-bold p-2 bg-slate-800 justify-center max-w-[800px] duration-300 hover:opacity-60' href={('/')}>Back to Portfolio</Link>
 			</div>
 			<div className="text-center justify-center items-center flex flex-col bg-slate-800  gap-3 p-5">
 
@@ -41,7 +41,7 @@ const MyImageGallery = () => {
 						height={500}
 						alt="Image"
 						lazy={true}
-						className=" object-cover cursor-pointer border-2 bg-slate-900 p-4 border-yellow-300 rounded-md"
+						className=" object-cover cursor-pointer border-2 bg-slate-900 p-4 border-yellow-400 rounded-md"
 						onClick={() => handleClick(imagePath)}
 					/>
 				))}
