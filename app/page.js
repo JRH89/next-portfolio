@@ -93,7 +93,7 @@ const Page = () => {
   return (
     <>
       <div className="flex select-none flex-col items-center justify-center min-h-screen bg-black rounded-lg">
-        <nav className="w-full max-w-[800px] top-0 rounded-b-lg fixed bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-500 font-bold py-2">
+        <nav className="w-full max-w-[800px] top-0 rounded-b-lg fixed bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold py-2">
           <ul className="flex justify-evenly mx-5">
             <li className="hover:scale-90 hover:opacity-50 duration-300">
               <a href="/">Home</a>
@@ -277,7 +277,7 @@ const Page = () => {
           </div>
         )}
         <div className="rounded-top-lg fixed bottom-0 w-full  flex justify-center">
-          <footer className="w-full font-bold max-w-[800px] text-center bg-gradient-to-r rounded-t-lg from-blue-500 via-green-500 to-red-500 text-slate-500">Hooker Hill Studios ⓒ 2023</footer>
+          <footer className="w-full font-bold max-w-[800px] text-center bg-gradient-to-r rounded-t-lg from-blue-500 via-green-500 to-red-500 text-slate-900">Hooker Hill Studios ⓒ 2023</footer>
         </div>
       </div></>
   );
