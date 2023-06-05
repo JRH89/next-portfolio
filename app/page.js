@@ -124,7 +124,7 @@ const Page = () => {
           </ul>
         </nav>
         {!activeGroup &&
-          <section className="bg-slate-900 border-2 mt-5 border-slate-700 rounded-lg py-4">
+          <section className="bg-slate-900 border-2 mt-4 border-slate-700 rounded-lg py-4">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-8">
               <div className="w-1/3 flex justify-center place-content-center items-center">
                 <Image
@@ -133,11 +133,11 @@ const Page = () => {
                   height={400}
                   cover
                   eager={true}
-                  className="w-full justify-center items-center h-auto object-cover mb-8 rounded-lg border-2 border-slate-700"
+                  className="w-full justify-center items-center h-auto object-cover mb-4 rounded-lg border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl font-bold text-center text-slate-300 mb-8">Jared R Hooker</h1>
+              <h1 className="text-4xl font-bold text-center text-slate-300 mb-4">Jared R Hooker</h1>
               <p className="text-slate-300 text-2xl text-center border-b mx-2 sm:mx-0 pb-2">
                 I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
