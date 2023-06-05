@@ -123,11 +123,11 @@ const Page = () => {
                 <Image
                   width={400}
                   height={400}
+                  eager={true}
                   className="w-full justify-center items-center h-auto object-cover mb-8 rounded-full border-2 border-slate-700"
-
                   src={"/ProjectImgs/profile_pic.png"}
-
-                ></Image></div>
+                ></Image>
+              </div>
               <h1 className="text-4xl font-bold text-center text-slate-400 mb-8">Jared R Hooker</h1>
               <p className="text-slate-400 text-center mx-5 sm:mx-0 mb-4">
                 I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
