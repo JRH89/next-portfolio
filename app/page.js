@@ -150,7 +150,7 @@ const Page = () => {
                 ></Image>
               </div>
               <h1 className="text-4xl font-bold text-center text-slate-500 mb-4">Jared R Hooker</h1>
-<a title="skills" className="flex justify-center" href="https://skillicons.dev">
+<a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind&perline=4" />
               </a>
               <p className="text-slate-500 text-2xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
