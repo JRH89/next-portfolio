@@ -35,6 +35,7 @@ export default function Settings() {
 			if (response.ok) {
 				setShowMessage(true);
 				event.target.reset();
+				console.log(data)
 			} else {
 				setShowMessage(false);
 				console.log(data);
