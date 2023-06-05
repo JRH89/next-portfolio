@@ -158,7 +158,7 @@ const Page = () => {
               </p>
 
               <a title="skills" className="flex mt-8 justify-center" href="https://skillicons.dev">
-                <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=js,react,nextjs,nodejs,tailwind,firebase,unity,unrealengine&perline=8" />
+                <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind&perline=4" />
               </a>
             </div>
           </section>
