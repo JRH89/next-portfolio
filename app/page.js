@@ -53,7 +53,7 @@ const Page = () => {
     {
       id: 5,
       title: "STARRUNNER",
-      description: "Endless runner in which the player helps a shooting star navigate space junk. Developed with html, css, JavaScript, and Android Studio. Displays banner ads at the bottom using Google AdMob.",
+      description: "Endless runner in which the player helps a shooting star navigate space junk. Developed with html, css, JavaScript, and Android Studio. Displays banner ads at the bottom using Google AdMob. Published to Google Play.",
       group: "android",
       image: "/ProjectImgs/project5.png",
       url: "https://play.google.com/store/apps/details?id=runner.starrunner",
@@ -62,7 +62,7 @@ const Page = () => {
     {
       id: 6,
       title: "Weather Report Suite",
-      description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with JavaScript, HTMl, CSS, and Android Studio. Published to Google Play.",
+      description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with html, css, JavaScript, and Android Studio. Published to Google Play.",
       group: "android",
       image: "/ProjectImgs/project6.png",
       url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
