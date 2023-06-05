@@ -24,7 +24,7 @@ const Page = () => {
     {
       id: 2,
       title: "Jewelry & Gems",
-      description: "E-commerce app for selling jewelry and gems. Creaed with React, Next, Tailwind, Zustand, Stripe, and Vercel.",
+      description: "E-commerce app for selling jewelry and gems. Created with React, Next, Tailwind, Zustand, Stripe, and Vercel.",
       group: "software",
       image: "/ProjectImgs/project2.png",
     },
