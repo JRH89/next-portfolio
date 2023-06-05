@@ -29,14 +29,14 @@ const Page = () => {
       image: "/ProjectImgs/project2.png",
     },
     {
-      id: 4,
+      id: 3,
       title: "Fall Hollow (UE5)",
       description: "Action adventure game featuring three playable characters, open world exploration, expansive cave system, magic-melee battles, and rpg elements. Being built with Unreal Engine 5",
       group: "games",
       image: "/ProjectImgs/project4.png",
     },
     {
-      id: 3,
+      id: 4,
       title: "The Knight Life (Unity",
       description: "Sidescroller made with Unity. Play as a jaded knight rescuing princesses from danger. Published for in browser play on itch.io",
       group: "games",
@@ -48,6 +48,13 @@ const Page = () => {
       description: "Endless runner in which the player helps a shooting star navigate space junk. Developed with html, css, JavaScript, and Android Studio. Displays banner ads at the bottom using Google AdMob.",
       group: "android",
       image: "/ProjectImgs/project5.png",
+    },
+    {
+      id: 6,
+      title: "Weather Report Suite",
+      description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with JavaScript, HTMl, CSS, and Android Studio. Published to Google Play.",
+      group: "android",
+      image: "/ProjectImgs/project6.png",
     },
   ];
 
@@ -171,7 +178,7 @@ const Page = () => {
           </div>
           {activeGroup !== null &&
             <div className="flex w-full justify-center place-items-center content-center items-center self-center align-middle">
-              <button className=" border-2 p-2 rounded-md justify-center items-center w-1/4 shadow-lg shadow-white/50 text-center relative flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
+              <button className=" border-2 p-2 rounded-md justify-center items-center w-1/4 shadow-lg shadow-white/50 text-center  flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
                 Close
               </button>
             </div>
@@ -220,7 +227,9 @@ const Page = () => {
                   : activeProject.group === "games"
                     ? "text-blue-400"
                     : "text-green-400"
-                  }`}
+                  }`
+                }
+
               >
                 {activeProject.title}
               </h2>
