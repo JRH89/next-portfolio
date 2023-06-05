@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content="https://jareds-portfolio.vercel.app/" />
         <meta property="og:title" content="Jareds Portfolio" />
         <meta property="og:description" content="Project portfolio developed with React, Next, Tailwind, and Vercel" />
-        <meta property="og:image" content="images/preview.png" />
+        <meta property="og:image" content="https://jareds-portfolio.vercel.app/images/preview.png" />
         <meta property="url" content="https://jareds-portfolio.vercel.app/" />
         <meta property="title" content="Jareds Portfolio" />
         <meta property="description" content="Project portfolio developed with React, Next, Tailwind, and Vercel" />
