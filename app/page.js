@@ -146,7 +146,7 @@ const Page = () => {
           </ul>
         </nav>
         {!activeGroup &&
-          <section className="bg-black border-2 mt-5 border-slate-700 min-h-screen rounded-xl ">
+          <section className="bg-black border-2 mt-5 border-slate-700 rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
