@@ -1,15 +1,16 @@
 "use client"
-import DOMPurify from "dompurify";
 import React, { useState } from "react";
+import DOMPurify from "dompurify";
 import Loading from "@/utils/Loading";
 
 export default function Settings() {
 	const [showMessage, setShowMessage] = useState(false);
-	const [isLoading, setISLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
 	async function handleSubmit(event) {
 		event.preventDefault();
-		setISLoading(true);
+		setIsLoading(true);
+
 		const subject = DOMPurify.sanitize(event.target.elements.subject.value);
 		const message = DOMPurify.sanitize(event.target.elements.message.value);
 
@@ -26,15 +27,15 @@ export default function Settings() {
 					"Content-Type": "application/json",
 				},
 			});
-			console.log(response)
+
 			const data = await response.json();
-			setISLoading(false);
-			console.log(JSON.stringify(data.success));
-			const pdata = await JSON.stringify(data.success);
-			if (pdata === "true") {
+
+			setIsLoading(false);
+
+			if (response.ok) {
 				setShowMessage(true);
 				event.target.reset();
-			} else if (pdata === "false") {
+			} else {
 				setShowMessage(false);
 				console.log(data);
 			}
@@ -48,22 +49,25 @@ export default function Settings() {
 	}
 
 	return (
-		<>
+		<div className="flex items-center justify-center h-screen">
 			<div className="flex text-center justify-center">
 				{isLoading && <Loading />}
 			</div>
 
 			{!isLoading && showMessage ? (
-				<div className="p-2 rounded-md flex flex-col border-red-400 border border-solid justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
+				<div className="max-w-[800px] p-2 rounded-md flex flex-col pt-5 border-red-400 border border-solid align-middle items-center justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
 					Thank you for reaching out,
-					<br /> we will review your email and <br />
+					<br /> I will review your email and <br />
 					be in touch as soon as possible.
 					<br />
 					<br />
-					<p className="text-blue-400">-My Card Support</p>
+					<p className="text-blue-400">-Jared</p>
 				</div>
 			) : (
-				<form className="flex flex-col text-center text-white" onSubmit={handleSubmit}>
+				<form
+					className="flex justify-center  max-w-[400px] flex-col text-center text-white"
+					onSubmit={handleSubmit}
+				>
 					<p className="text-blue-400 font-extrabold text-2xl">Subject:</p>
 					<input
 						className="p-2 rounded-md text-black mb-4"
@@ -87,6 +91,6 @@ export default function Settings() {
 					/>
 				</form>
 			)}
-		</>
+		</div>
 	);
 }
