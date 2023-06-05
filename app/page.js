@@ -26,7 +26,7 @@ const Page = () => {
     {
       id: 2,
       title: "Jewelry & Gems",
-      description: "E-commerce app for selling jewelry and gems. Creaed with React, Next, Tailwind, Zustand, Stripe, and Vercel.",
+      description: "E-commerce app for selling jewelry and gems. Created with React, Next, Tailwind, Zustand, Stripe, and Vercel.",
       group: "software",
       image: "/ProjectImgs/project2.png",
       url: "https://next-jewelry.vercel.app",
@@ -44,7 +44,7 @@ const Page = () => {
     {
       id: 4,
       title: "The Knight Life",
-      description: "Sidescroller made with Unity. Play as a jaded knight rescuing princesses from danger. Published for in browser play on itch.io",
+      description: "A Sidescroller made with Unity 2D. Play as a jaded knight rescuing princesses from danger. Published for in browser play on itch.io",
       group: "games",
       image: "/ProjectImgs/project3.png",
       url: "https://jrh89.itch.io/the-knight-life",
@@ -164,7 +164,7 @@ const Page = () => {
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind&perline=4" />
               </a>
               <p className="text-slate-500 text-xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
-                I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
+                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
               <p className="text-slate-500 text-xl text-center mx-2 sm:mx-0 pt-2">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
