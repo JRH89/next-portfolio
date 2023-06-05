@@ -121,6 +121,7 @@ const Page = () => {
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-8">
               <div className="w-1/3 flex justify-center place-content-center items-center">
                 <Image
+                  alt="profile picture"
                   width={400}
                   height={400}
                   eager={true}
@@ -199,7 +200,7 @@ const Page = () => {
                     cover
                     height={1032}
                     width={1920}
-                    eager
+                    eager={true}
                     className="w-full h-auto object-cover rounded border-2 border-slate-400"
                     src={project.image}
                     alt={project.title}
