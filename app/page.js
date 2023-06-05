@@ -133,17 +133,19 @@ const Page = () => {
                   height={400}
                   cover
                   eager={true}
-                  className="w-full justify-center items-center h-auto object-cover mb-8 rounded-full border-2 border-slate-700"
+                  className="w-full justify-center items-center h-auto object-cover mb-8 rounded-lg border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl font-bold text-center text-slate-400 mb-8">Jared R Hooker</h1>
-              <p className="text-slate-400 text-center mx-5 sm:mx-0 mb-4">
+              <h1 className="text-4xl font-bold text-center text-slate-300 mb-8">Jared R Hooker</h1>
+              <p className="text-slate-300 text-xl text-center border-b mx-3 sm:mx-0 pb-1">
                 I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
-                Whether you need a game developed from scratch or a custom website/app to be built, I am confident in my ability to provide you with high quality solutions that will meet your needs and exceed your expectations.
               </p>
-              <a title="skills" className="flex mx-5 mt-8 justify-center" href="https://skillicons.dev">
+              <p className="text-slate-300 text-xl text-center mx-3 sm:mx-0 pb-1 pt-1">
+                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
+              </p>
+
+              <a title="skills" className="flex mx-3 mt-8 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=js,react,nextjs,nodejs,tailwind,firebase,unity,unrealengine&perline=8" />
               </a>
             </div>
@@ -208,12 +210,12 @@ const Page = () => {
                     height={1032}
                     width={1920}
 
-                    className="w-full h-auto object-cover rounded border-2 border-slate-400"
+                    className="w-full h-auto object-cover rounded border-2 border-slate-300"
                     src={project.image}
                     alt={project.title}
                   />
                 </div>
-                <p className="text-slate-400 text-center">{project.description}</p>
+                <p className="text-slate-300 text-center">{project.description}</p>
               </div>
             ))}
           </div>
