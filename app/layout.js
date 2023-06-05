@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         <meta property="title" content="Jareds Portfolio" />
         <meta property="description" content="Project prtfolio developed with React, Next, Tailwind, and Vercel" />
         <meta property="image" content="https://jareds-portfolio.vercel.app/images/preview.png" />
-        <link type="image/png" rel="shortcut icon" href="images/profile_pic.png" />
+        <link type="image/png" rel="shortcut icon" href="/images/profilepic.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
