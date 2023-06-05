@@ -138,14 +138,14 @@ const Page = () => {
                 ></Image>
               </div>
               <h1 className="text-4xl font-bold text-center text-slate-300 mb-8">Jared R Hooker</h1>
-              <p className="text-slate-300 text-xl text-center border-b mx-3 sm:mx-0 pb-1">
+              <p className="text-slate-300 text-2xl text-center border-b mx-2 sm:mx-0 pb-2">
                 I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
-              <p className="text-slate-300 text-xl text-center mx-3 sm:mx-0 pb-1 pt-1">
+              <p className="text-slate-300 text-2xl text-center mx-2 sm:mx-0 pt-2">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
               </p>
 
-              <a title="skills" className="flex mx-3 mt-8 justify-center" href="https://skillicons.dev">
+              <a title="skills" className="flex mt-8 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=js,react,nextjs,nodejs,tailwind,firebase,unity,unrealengine&perline=8" />
               </a>
             </div>
