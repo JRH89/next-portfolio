@@ -1,0 +1,1 @@
+Project portfolio developed with React, Next, Tailwind, and Vercel.
