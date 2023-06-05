@@ -117,3 +117,7 @@
 	font-weight: bold;
 	text-decoration: none;
 }
+
+.gallery-arrow {
+	@apply bg-transparent border-none text-2xl px-2 py-1 m-2 cursor-pointer outline-none;
+}
