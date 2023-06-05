@@ -2,12 +2,21 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MyImageGallery from "./components/imageGallery";
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
   const [activeProject, setActiveProject] = useState(null);
   const buttonRowRef = useRef(null)
   const [showMenu, setShowMenu] = useState(false)
+  const [certs, setShowCerts] = useState(false);
+
+
+  function showCerts() {
+    setShowCerts(!certs);
+
+  }
+
 
   function openMenu() {
     setShowMenu(!showMenu)
@@ -96,7 +105,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex font-bold select-none flex-col items-center justify-center bg-black rounded-xl">
+      <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
         <nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold ">
           <ul className="flex justify-evenly mx-5">
             <li className="hover:scale-90 hover:opacity-50 duration-300">
@@ -145,10 +154,10 @@ const Page = () => {
             </li>
           </ul>
         </nav>
-        {!activeGroup &&
-          <section className="bg-black border-2 mt-5 border-slate-700 rounded-xl ">
+        {!activeGroup && !certs &&
+          <section className="bg-black border-2 mt-6 border-slate-700 rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
-              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
+              <div className="w-1/2 sm:w-1/3 flex justify-center pt-1 place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -174,94 +183,97 @@ const Page = () => {
             </div>
           </section>
         }
-        <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-          <h1 className="p-2 underline text-3xl text-slate-500 text-center flex justify-center"
-          >PROJECTS:
-          </h1>
-          <div ref={buttonRowRef} className={`flex justify-center gap-2 rounded-xl mx-5 text-sm sm:text-3xl mb-4 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
-            }`}>
-            <button
-              className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
-                }`}
-              onClick={() => setActiveGroup("software")}
-            >
-              SOFTWARE
-            </button>
-            <button
-              className={`border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
-                }`}
-              onClick={() => setActiveGroup("games")}
-            >
-              GAMES
-            </button>
-            <button
-              className={`border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
-                }`}
-              onClick={() => setActiveGroup("android")}
-            >
-              ANDROID
-            </button>
-            {activeGroup !== null &&
+        {!certs &&
+          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
 
-              <button className=" border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center w-1/4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
-                X
-              </button>
-
-            }
-          </div>
-
-          <div className={`grid text-center ${activeGroup !== null ? "mt-4" : "mt-0"} gap-8 ${activeGroup === null ? "" : "md:grid-cols-2"}`}>
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-black shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
-                  ? "opacity-0 pointer-events-none"
-                  : "opacity-100"
+            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-2 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
+              }`}>
+              <button
+                className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`}
-                onClick={() => openProject(project.id)}
+                onClick={() => setActiveGroup("software")}
               >
-                <h2
-                  className={`text-3xl font-bold mb-2 ${project.group === "software"
-                    ? "text-red-400"
-                    : project.group === "games"
-                      ? "text-blue-400"
-                      : "text-green-400"
+                SOFTWARE
+              </button>
+              <button
+                className={`border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+                  }`}
+                onClick={() => setActiveGroup("games")}
+              >
+                GAMES
+              </button>
+              <button
+                className={`border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+                  }`}
+                onClick={() => setActiveGroup("android")}
+              >
+                ANDROID
+              </button>
+              {activeGroup !== null &&
+
+                <button className=" border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center w-1/4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
+                  X
+                </button>
+
+              }
+            </div>
+
+            <div className={`grid mb-5 h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-4"}`}>
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-black shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
+                    ? "opacity-0 pointer-events-none"
+                    : "opacity-100"
                     }`}
+                  onClick={() => openProject(project.id)}
                 >
-                  {project.title}
-                </h2>
-                <div className="mb-2">
-                  <Image
-                    height={1032}
-                    width={1920}
+                  <h2
+                    className={`text-3xl font-bold mb-2 ${project.group === "software"
+                      ? "text-red-400"
+                      : project.group === "games"
+                        ? "text-blue-400"
+                        : "text-green-400"
+                      }`}
+                  >
+                    {project.title}
+                  </h2>
+                  <div className="mb-2">
+                    <Image
+                      height={1032}
+                      width={1920}
 
-                    className="w-full h-auto object-cover  border-2 rounded-xl border-slate-500"
-                    src={project.image}
-                    alt={project.title}
-                  />
+                      className="w-full h-auto object-cover  border-2 rounded-xl border-slate-500"
+                      src={project.image}
+                      alt={project.title}
+                    />
+                  </div>
+                  <p className="text-slate-500 text-center">
+                    {project.description.split('. ')[0] + '...'}
+                  </p>
+
+
                 </div>
-                <p className="text-slate-500 text-center">
-                  {project.description.split('. ')[0] + '...'}
-                </p>
+              ))}
+            </div>
+          </div>}
+        {!activeGroup && <div className="w-full mb-6 rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
+          <div ref={buttonRowRef} className="flex my-2 justify-center ">
+            <button
+              className={`border-2 sm:text-3xl text-xl border-blue-400 w-auto text-center shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
+              onClick={showCerts}
+            >
+              CERTIFICATES
+            </button>
 
-
-              </div>
-            ))}
           </div>
-        </div>
-        <div className="w-full mb-5 rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-          <h1 className="p-2 underline text-3xl text-slate-500 text-center flex justify-center">CERTIFICATES:</h1>
-          <div className="flex justify-center">
-            <Link className="border-2 sm:text-4xl text-xl  border-blue-400 w-auto text-center shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300" href="/certificates">
-              VIEW ALL
-            </Link>
-          </div>
-        </div>
+          {certs && <MyImageGallery />}
+        </div>}
         {activeProject && (
           <div className="fixed top-0  left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
-            <div className="max-w-3xl p-8">
+            <div className=" max-w-[800px] p-8">
               <h2
-                className={`text-2xl text-center font-bold ${activeProject.group === "software"
+                className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
@@ -277,13 +289,12 @@ const Page = () => {
                 <Image
                   height={1032}
                   width={1920}
-
                   className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-500"
                   src={activeProject.image}
                   alt={activeProject.title}
                 />
               </div>
-              <p className="text-slate-500 text-center mb-4">{activeProject.description}</p>
+              <p className="text-slate-500 text-center mb-4 text-xl sm:text-2xl">{activeProject.description}</p>
               <div className="flex w-full flex-row justify-center gap-10">
                 <Link className="flex justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2 mr-5xl" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}

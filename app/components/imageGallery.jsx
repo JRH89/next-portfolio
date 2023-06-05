@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const MyImageGallery = () => {
+const MyImageGallery = (showCerts) => {
 
 	const imagePaths = [
 		'/images/certificates/cert1.png',
@@ -27,10 +27,8 @@ const MyImageGallery = () => {
 
 	return (
 		<>
-			<div className='flex bg-black pt-5 w-auto justify-center'>
-				<Link className='hover:scale-90 place-items-center items-center align-middle flex rounded-lg border-2 border-blue-400 shadow-lg shadow-blue-400/50 text-blue-400 font-bold p-2 bg-black justify-center max-w-[800px] duration-300 hover:opacity-60' href={('/')}>Back to Portfolio</Link>
-			</div>
-			<div className="text-center justify-center items-center flex flex-col bg-black  gap-3 p-5">
+
+			<div className="text-center justify-center items-center flex flex-col gap-3 p-5">
 
 				{imagePaths.map((imagePath) => (
 					<Image
@@ -41,7 +39,7 @@ const MyImageGallery = () => {
 						height={500}
 						alt="Image"
 						lazy={true}
-						className=" object-cover cursor-pointer border-2 bg-slate-900 p-4 border-yellow-400 rounded-md"
+						className=" object-cover cursor-pointer border-2 bg-slate-600 p-4 border-yellow-400 rounded-xl"
 						onClick={() => handleClick(imagePath)}
 					/>
 				))}
