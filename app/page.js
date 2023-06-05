@@ -197,7 +197,7 @@ const Page = () => {
                 </h2>
                 <div className="mb-2">
                   <Image
-                    cover
+
                     height={1032}
                     width={1920}
                     eager={true}

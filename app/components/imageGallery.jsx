@@ -50,7 +50,7 @@ const MyImageGallery = () => {
 						className="fixed inset-0 z-50 flex items-center justify-center"
 						onClick={handleClose}
 					>
-						<img src={clickedImage} alt="Clicked Image" className="max-w-full max-h-full" />
+						<Image width={1920} height={1080} src={clickedImage} alt="Clicked Image" className="max-w-full max-h-full" />
 					</div>
 				)}
 			</div></>
