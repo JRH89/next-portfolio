@@ -156,14 +156,14 @@ const Page = () => {
           <div ref={buttonRowRef} className={`flex justify-center gap-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-lg z-10 p-4" : ""
             }`}>
             <button
-              className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+              className={`border-2  w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                 }`}
               onClick={() => setActiveGroup("software")}
             >
               Software
             </button>
             <button
-              className={`border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+              className={`border-2 bm-5 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
                 }`}
               onClick={() => setActiveGroup("games")}
             >
