@@ -124,6 +124,7 @@ const Page = () => {
                   alt="profile picture"
                   width={400}
                   height={400}
+                  cover
                   eager={true}
                   className="w-full justify-center items-center h-auto object-cover mb-8 rounded-full border-2 border-slate-700"
                   src={"/ProjectImgs/profile_pic.png"}
@@ -197,10 +198,9 @@ const Page = () => {
                 </h2>
                 <div className="mb-2">
                   <Image
-
                     height={1032}
                     width={1920}
-                    eager={true}
+
                     className="w-full h-auto object-cover rounded border-2 border-slate-400"
                     src={project.image}
                     alt={project.title}
