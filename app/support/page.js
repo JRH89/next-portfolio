@@ -3,11 +3,9 @@ import DOMPurify from "dompurify";
 import React, { useState } from "react";
 import Loading from "@/utils/Loading";
 
-export default async function Settings() {
-
+export default function Settings() {
 	const [showMessage, setShowMessage] = useState(false);
 	const [isLoading, setISLoading] = useState(false);
-
 
 	async function handleSubmit(event) {
 		event.preventDefault();
@@ -28,12 +26,11 @@ export default async function Settings() {
 					"Content-Type": "application/json",
 				},
 			});
-
+			console.log(response)
 			const data = await response.json();
-
 			setISLoading(false);
 			console.log(JSON.stringify(data.success));
-			const pdata = JSON.stringify(data.success);
+			const pdata = await JSON.stringify(data.success);
 			if (pdata === "true") {
 				setShowMessage(true);
 				event.target.reset();
@@ -66,10 +63,7 @@ export default async function Settings() {
 					<p className="text-blue-400">-My Card Support</p>
 				</div>
 			) : (
-				<form
-					className="flex flex-col text-center text-white"
-					onSubmit={handleSubmit}
-				>
+				<form className="flex flex-col text-center text-white" onSubmit={handleSubmit}>
 					<p className="text-blue-400 font-extrabold text-2xl">Subject:</p>
 					<input
 						className="p-2 rounded-md text-black mb-4"

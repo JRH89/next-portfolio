@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+export default async function POST(req, res) {
 	if (req.method === "POST") {
 		const { subject, message, to, html } = req.body;
 		const sgMail = require("@sendgrid/mail");
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
 			res.status(500).json({ success: false });
 		}
 	} else {
+		res.setHeader("Allow", ["POST"]); // Set the allowed methods
 		res.status(405).json({ message: `Method ${req.method} Not Allowed` });
 	}
 }
