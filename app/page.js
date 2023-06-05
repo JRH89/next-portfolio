@@ -124,7 +124,7 @@ const Page = () => {
                   width={400}
                   height={400}
                   className="w-full justify-center items-center h-auto object-cover mb-8 rounded-full border-2 border-slate-700"
-                  eager
+                  eager={true}
                   src={"/ProjectImgs/profile_pic.png"}
 
                 ></Image></div>
