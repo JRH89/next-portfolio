@@ -150,7 +150,7 @@ const Page = () => {
                 ></Image>
               </div>
               <h1 className="text-4xl font-bold text-center text-slate-500 mb-4">Jared R Hooker</h1>
-              <p className="text-slate-500 text-2xl text-center border-b mx-2 sm:mx-0 pb-2">
+              <p className="text-slate-500 text-2xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
                 I specialize in Javascript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
               <p className="text-slate-500 text-2xl text-center mx-2 sm:mx-0 pt-2">
