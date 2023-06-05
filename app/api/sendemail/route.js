@@ -1,14 +1,14 @@
-import { NextResponse } from "next/server";
-import sgMail from "@sendgrid/mail";
+import mail from '@sendgrid/mail';
+import { NextResponse, NextRequest } from 'next/server';
 
-export async function POST(req, res) {
-	if (req.method === "POST") {
-		const { subject, message } = req.body;
+export async function POST(request) {
+	if (NextRequest.method === "POST") {
+		const { subject, message } = new NextRequest.body;
 		const sanitizedSubject = subject;
 		const sanitizedMessage = message;
 
 		try {
-			sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+			mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
 			const msg = {
 				to: "gamedevjared@gmail.com",
@@ -17,21 +17,18 @@ export async function POST(req, res) {
 				text: sanitizedMessage,
 			};
 
-			await sgMail.send(msg);
+			await mail.send(msg);
 
 			// Send the success response
-			return NextResponse.json({ success: true });
+			return new NextResponse({ body: { success: true }, status: 200 });
 		} catch (error) {
 			console.error(error);
 
 			// Send the error response
-			return NextResponse.json({ success: false, error: error.message });
+			return new NextResponse({ body: { success: false, error: error.message }, status: 500 });
 		}
 	}
 
 	// Handle other HTTP methods
-	return NextResponse.error({
-		statusCode: 405,
-		message: `Method ${req.method} Not Allowed`,
-	});
+	return new NextResponse({ body: { message: `Method ${request.method} Not Allowed` }, status: 405 });
 }
