@@ -127,7 +127,7 @@ const Page = () => {
                   cover
                   eager={true}
                   className="w-full justify-center items-center h-auto object-cover mb-8 rounded-full border-2 border-slate-700"
-                  src={"/profilepic.png"}
+                  src={"/images/profilepic.png"}
                 ></Image>
               </div>
               <h1 className="text-4xl font-bold text-center text-slate-400 mb-8">Jared R Hooker</h1>
