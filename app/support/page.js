@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import Loading from "@/utils/Loading";
 
@@ -14,12 +14,10 @@ export default function Settings() {
 		const message = event.target.elements.message.value;
 
 		try {
-			const response = await fetch("/api/sendemail", {
+			const response = fetch("/api/sendemail", {
 				method: "POST",
 				body: JSON.stringify({
-					to: "gamedevjared@gmail.com",
 					subject: subject,
-					from: "hookerhillstudios@gmail.com",
 					message: message,
 				}),
 				headers: {
@@ -28,8 +26,7 @@ export default function Settings() {
 			});
 
 			if (response.ok) {
-				const data = await response.json();
-				setShowMessage(data.success);
+				setShowMessage(true);
 				event.target.reset();
 			} else {
 				console.log("Error occurred while sending email.");

@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MyImageGallery from "./components/imageGallery";
+import projects from "./projectsData";
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
@@ -11,73 +12,13 @@ const Page = () => {
   const [showMenu, setShowMenu] = useState(false)
   const [certs, setShowCerts] = useState(false);
 
-
   function showCerts() {
     setShowCerts(!certs);
-
   }
-
 
   function openMenu() {
     setShowMenu(!showMenu)
   }
-
-  const projects = [
-    {
-      id: 1,
-      title: "My Card",
-      description: "Personalized digital cards with QR code and URL for easy contact sharing. Reduces waste and eliminates waiting on processing and shipping. Created with React, Next, Tailwind, and Vercel.",
-      group: "software",
-      image: "/ProjectImgs/project1.png",
-      url: "https://have-mycard.vercel.app",
-      urlLabel: "View Live"
-    },
-    {
-      id: 2,
-      title: "Jewelry & Gems",
-      description: "E-commerce app for selling jewelry and gems. Created with React, Next, Tailwind, Zustand, Stripe, and Vercel.",
-      group: "software",
-      image: "/ProjectImgs/project2.png",
-      url: "https://next-jewelry.vercel.app",
-      urlLabel: "View Live"
-    },
-    {
-      id: 3,
-      title: "Fall Hollow",
-      description: "Action adventure game featuring three playable characters, open world exploration, expansive cave system, magic-melee battles, and rpg elements. Being built with Unreal Engine 5",
-      group: "games",
-      image: "/ProjectImgs/project4.png",
-      url: "https://fall-hollow.vercel.app",
-      urlLabel: "About"
-    },
-    {
-      id: 4,
-      title: "The Knight Life",
-      description: "A Sidescroller made with Unity 2D. Play as a jaded knight rescuing princesses from danger. Published for in browser play on itch.io",
-      group: "games",
-      image: "/ProjectImgs/project3.png",
-      url: "https://jrh89.itch.io/the-knight-life",
-      urlLabel: "Play on itch.io"
-    },
-    {
-      id: 5,
-      title: "STARRUNNER",
-      description: "Endless runner in which the player helps a shooting star navigate space junk. Developed with html, css, JavaScript, and Android Studio. Displays banner ads at the bottom using Google AdMob. Published to Google Play.",
-      group: "android",
-      image: "/ProjectImgs/project5.png",
-      url: "https://play.google.com/store/apps/details?id=runner.starrunner",
-      urlLabel: "Google Play"
-    },
-    {
-      id: 6,
-      title: "Weather Report Suite",
-      description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with html, css, JavaScript, and Android Studio. Published to Google Play.",
-      group: "android",
-      image: "/ProjectImgs/project6.png",
-      url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
-      urlLabel: "Google Play"
-    },
-  ];
 
   const filteredProjects =
     activeGroup === null
@@ -98,10 +39,6 @@ const Page = () => {
     setActiveGroup(group);
     setShowMenu(false);
   };
-
-
-  //RETURN//RETURN//RETURN//RETURN//RETURN//RETURN//RETURN
-
 
   return (
     <>
@@ -140,13 +77,11 @@ const Page = () => {
                 </div>
               )}
             </li>
-
             <li className="hover:scale-90 hover:opacity-50 duration-300">
               <a href="https://github.com/jrh89"
               >GITHUB
               </a>
             </li>
-
             <li className="hover:scale-90 hover:opacity-50 duration-300 ">
               <a href="https://have-mycard.vercel.app/api/xT17MRpa">
                 CONTACT
@@ -178,14 +113,11 @@ const Page = () => {
               <p className="text-slate-500 text-xl text-center mx-2 sm:mx-0 pt-2">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
               </p>
-
-
             </div>
           </section>
         }
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-
             <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-2 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
               }`}>
               <button
@@ -217,8 +149,7 @@ const Page = () => {
 
               }
             </div>
-
-            <div className={`grid  h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
+            <div className={`grid mb-5  h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}

@@ -1,9 +1,9 @@
+import { NextResponse } from 'next/server';
 import mail from '@sendgrid/mail';
-import { NextResponse, NextRequest } from 'next/server';
 
-export async function POST(request) {
-	if (request.method === 'POST') {
-		const { subject, message } = await request.body.json();
+export async function sendEmail(req) {
+	if (req.method === 'POST') {
+		const { subject, message } = await req.body;
 
 		try {
 			mail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
@@ -25,11 +25,18 @@ export async function POST(request) {
 			// Send the error response
 			return NextResponse.json({ success: false, error: error.message });
 		}
+	} else {
+		return NextResponse.error({
+			statusCode: 405,
+			message: `Method ${req.method} Not Allowed`,
+		});
 	}
+}
 
-	// Handle other HTTP methods
-	return NextResponse.error({
-		statusCode: 405,
-		message: `Method ${request.method} Not Allowed`,
-	});
+export async function POST(req) {
+	sendEmail(req);
+}
+
+export async function GET(req) {
+	return NextResponse.json({ message: 'GET method is not supported for this route' });
 }
