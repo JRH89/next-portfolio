@@ -44,7 +44,7 @@ const Page = () => {
     <>
       <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
         <nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold ">
-          <ul className="flex justify-evenly mx-5">
+          <ul className="flex py-2 justify-evenly mx-5">
             <li className="hover:scale-90 hover:opacity-50 duration-300">
               <a href="/">
                 HOME
