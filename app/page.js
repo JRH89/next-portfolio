@@ -139,11 +139,11 @@ const Page = () => {
                 onClick={() => setActiveGroup("android")}
               >
                 ANDROID
-              </button>
-              {activeGroup !== null &&
+              </button>    
+            </div>
+{activeGroup !== null &&
                 <i onClick={() => setActiveGroup(null)} className="duration-300 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
               }
-            </div>
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
               {filteredProjects.map((project) => (
                 <div
