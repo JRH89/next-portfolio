@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Jareds Portfolio',
   description: 'Project portfolio created with React, Next, Tailwind, and Vercel.',
   icons: {
-    url: "images/profile_pic.png",
+    url: "images/profilepic.png",
     rel: 'icon',
     type: 'image/png',
 

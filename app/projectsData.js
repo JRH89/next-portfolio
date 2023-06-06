@@ -58,6 +58,7 @@ const projects = [
 		url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
 		urlLabel: "Google Play"
 	},
+
 ];
 
 export default projects
