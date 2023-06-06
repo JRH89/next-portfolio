@@ -148,7 +148,7 @@ const Page = () => {
 
               }
             </div>
-            <div className={`grid mb-5  h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4 mb-5"} gap-4 ${activeGroup === null ? "mb-4" : "mb-0"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -159,7 +159,7 @@ const Page = () => {
                   onClick={() => openProject(project.id)}
                 >
                   <h2
-                    className={`text-3xl font-bold mb-2 ${project.group === "software"
+                    className={`text-3xl font-bold mb-4 ${project.group === "software"
                       ? "text-red-400"
                       : project.group === "games"
                         ? "text-blue-400"
@@ -168,7 +168,7 @@ const Page = () => {
                   >
                     {project.title}
                   </h2>
-                  <div className="mb-2">
+                  <div className="mb-4">
                     <Image
                       height={1032}
                       width={1920}
@@ -178,7 +178,7 @@ const Page = () => {
                     />
                   </div>
                   <p className="text-slate-500 text-center">
-                    {project.description.split('. ')[0] + '...'}
+                    {project.description.split('. ')[1] + '...'}
                   </p>
 
 
