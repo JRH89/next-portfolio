@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-
         <meta charSet="UTF-8" />
         <meta property="og:url" content="https://jareds-portfolio.vercel.app/" />
         <meta property="og:title" content="Jareds Portfolio" />

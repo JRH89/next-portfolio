@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import MyImageGallery from "./components/imageGallery";
 import projects from "./projectsData";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
@@ -37,58 +39,15 @@ const Page = () => {
 
   const handleMenuClick = (group) => {
     setActiveGroup(group);
-    setShowMenu(false);
+    setShowMenu(!showMenu)
   };
 
   return (
     <>
       <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold ">
-          <ul className="flex py-2 justify-evenly mx-5">
-            <li className="hover:scale-90 hover:opacity-50 duration-300">
-              <a href="/">
-                HOME
-              </a>
-            </li>
-            <li className=" relative">
-              <button className="hover:scale-90 hover:opacity-50 duration-300" onClick={openMenu}>
-                SECTIONS
-              </button>
-              {showMenu && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center mt-2 space-y-3 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6">
-                  <button
-                    onClick={() => handleMenuClick("software")}
-                    className="hover:text-red-400 hover:scale-90 duration-300"
-                  >
-                    SOFTWARE
-                  </button>
-                  <button
-                    onClick={() => handleMenuClick("games")}
-                    className="hover:text-blue-400 duration-300 hover:scale-90"
-                  >
-                    GAMES
-                  </button>
-                  <button
-                    onClick={() => handleMenuClick("android")}
-                    className="hover:text-green-400 duration-300 hover:scale-90"
-                  >
-                    ANDROID
-                  </button>
-                </div>
-              )}
-            </li>
-            <li className="hover:scale-90 hover:opacity-50 duration-300">
-              <a href="https://github.com/jrh89"
-              >GITHUB
-              </a>
-            </li>
-            <li className="hover:scale-90 hover:opacity-50 duration-300 ">
-              <a href="https://have-mycard.vercel.app/api/xT17MRpa">
-                CONTACT
-              </a>
-            </li>
-          </ul>
-        </nav>
+
+        <Nav activeGroup={activeGroup} handleMenuClick={handleMenuClick} openMenu={openMenu} />
+
         {!activeGroup && !certs &&
           <section className="bg-black border-2 mt-10 border-slate-700 rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
@@ -115,20 +74,25 @@ const Page = () => {
             </div>
           </section>
         }
+
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
             <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
-              }`}>
+              }`
+            }
+            >
               <button
                 className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
-                  }`}
+                  }`
+                }
                 onClick={() => setActiveGroup("software")}
               >
                 SOFTWARE
               </button>
               <button
                 className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
-                  }`}
+                  }`
+                }
                 onClick={() => setActiveGroup("games")}
               >
                 GAMES
@@ -141,12 +105,15 @@ const Page = () => {
                 ANDROID
               </button>
             </div>
+
             {activeGroup !== null &&
               <div className="flex justify-center">
                 <i onClick={() => setActiveGroup(null)} className="duration-300 mb-2 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
               </div>
             }
+
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
+
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -178,14 +145,14 @@ const Page = () => {
                   <p className="text-slate-500 text-center">
                     {project.description.split('. ')[0] + '...'}
                   </p>
-
-
                 </div>
-              ))}
+              ))
+              }
             </div>
-          </div>}
-        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
+          </div>
+        }
 
+        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
             {!certs &&
               <button
@@ -195,16 +162,15 @@ const Page = () => {
                 CERTIFICATES
               </button>}
             {certs &&
-
               <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-slate-500"></i>
             }
           </div>
           {certs && <MyImageGallery />}
-        </div>}
+        </div>
+        }
+
         {activeProject && (
-
           <div className="fixed top-0  left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
-
             <div className=" max-w-[800px] p-8">
               <h2
                 className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
@@ -219,7 +185,6 @@ const Page = () => {
                 {activeProject.title}
               </h2>
               <div className="mb-2 flex  justify-center">
-
                 <Image
                   height={1032}
                   width={1920}
@@ -227,8 +192,6 @@ const Page = () => {
                   src={activeProject.image}
                   alt={activeProject.title}
                 />
-
-
               </div>
               <p className="text-slate-500 text-center mb-4 text-xl sm:text-2xl">{activeProject.description}</p>
               <div className="flex w-full flex-row justify-center gap-10">
@@ -244,11 +207,9 @@ const Page = () => {
             </div>
           </div>
         )}
-        <div className="rounded-top-xl fixed bottom-0 w-full z-50 flex justify-center">
-          <footer className="w-full z-50 font-bold max-w-[800px] text-center bg-gradient-to-r rounded-t-xl from-blue-500 via-green-500 to-red-500 text-slate-900">Hooker Hill Studios ⓒ 2023</footer>
-        </div>
-      </div></>
+        <Footer />
+      </div>
+    </>
   );
 };
-
 export default Page;
