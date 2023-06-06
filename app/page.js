@@ -194,7 +194,7 @@ const Page = () => {
               </button>}
             {certs &&
 
-              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-5xl absolute top-2 right-5 flex text-slate-500"></i>
+              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-4xl absolute mb-2 top-2 right-5 flex text-slate-500"></i>
             }
           </div>
           {certs && <MyImageGallery />}
