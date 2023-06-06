@@ -90,7 +90,7 @@ const Page = () => {
           </ul>
         </nav>
         {!activeGroup && !certs &&
-          <section className="bg-black border-2 mt-6 border-slate-700 rounded-xl ">
+          <section className="bg-black border-2 mt-10 border-slate-700 rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center pt-1 place-content-center items-center">
                 <Image
@@ -116,8 +116,8 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] z-10 p-2" : ""
+          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
+            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
               }`}>
               <button
                 className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
@@ -139,14 +139,14 @@ const Page = () => {
                 onClick={() => setActiveGroup("android")}
               >
                 ANDROID
-              </button>    
+              </button>
             </div>
-{activeGroup !== null &&
-        <div className="flex justify-center">       
- <i onClick={() => setActiveGroup(null)} className="duration-300 mb-2 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
-</div>
-              }
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
+            {activeGroup !== null &&
+              <div className="flex justify-center">
+                <i onClick={() => setActiveGroup(null)} className="duration-300 mb-2 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
+              </div>
+            }
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -184,7 +184,7 @@ const Page = () => {
               ))}
             </div>
           </div>}
-        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-6' : ''}`}>
+        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
 
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
             {!certs &&
@@ -196,7 +196,7 @@ const Page = () => {
               </button>}
             {certs &&
 
-              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-4xl absolute mb-2 top-2 right-5 flex text-slate-500"></i>
+              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-slate-500"></i>
             }
           </div>
           {certs && <MyImageGallery />}
