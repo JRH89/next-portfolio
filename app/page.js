@@ -117,7 +117,7 @@ const Page = () => {
         }
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-2 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
+            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-2 rounded-xl sm:mx-5 mx-10 text-md sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
               }`}>
               <button
                 className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
