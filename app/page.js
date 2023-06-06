@@ -107,8 +107,8 @@ const Page = () => {
             </div>
 
             {activeGroup !== null &&
-              <div className="flex justify-center">
-                <i onClick={() => setActiveGroup(null)} className="duration-300 mb-2 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
+              <div className="flex mb-4 justify-center">
+                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark text-slate-400 text-2xl align-middle  border-2 border-slate-400   hover:rotate-90 cursor-pointer duration-300 px-2 py-1 rounded-xl flex justify-center"></i>
               </div>
             }
 
@@ -137,14 +137,15 @@ const Page = () => {
                     <Image
                       height={1032}
                       width={1920}
-                      className="w-full h-auto object-cover  border-2 rounded-xl border-slate-500"
+                      className="w-full h-auto object-cover  border-2 rounded-xl border-slate-5400"
                       src={project.image}
                       alt={project.title}
                     />
                   </div>
-                  <p className="text-slate-500 text-center">
-                    {project.description.split('. ')[0] + '...'}
+                  <p className="text-slate-400 text-center">
+                    {`${project.description.split('. ')[0]}. ${project.description.split('. ')[1]}...`}
                   </p>
+
                 </div>
               ))
               }
@@ -170,8 +171,8 @@ const Page = () => {
         }
 
         {activeProject && (
-          <div className="fixed top-0  left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
-            <div className=" max-w-[800px] p-8">
+          <div className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
+            <div className="max-w-[800px] p-8">
               <h2
                 className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
@@ -184,26 +185,26 @@ const Page = () => {
               >
                 {activeProject.title}
               </h2>
-              <div className="mb-2 flex  justify-center">
+              <div className="mb-2 flex justify-center">
                 <Image
                   height={1032}
                   width={1920}
-                  className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-500"
+                  className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-400"
                   src={activeProject.image}
                   alt={activeProject.title}
                 />
               </div>
-              <p className="text-slate-500 text-center mb-4 text-xl sm:text-2xl">{activeProject.description}</p>
-              <div className="flex w-full flex-row justify-center gap-10">
-                <Link className="flex justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2 mr-5xl" target="_blank" href={activeProject.url}>
+              <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
+              <div className="flex align-middle place-items-ceetner w-full flex-row justify-center gap-10">
+                <Link className="flex text-2xl justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2 " target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
-                <button
-                  className="bg-red-400 text-black shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl flex justify-center"
+                <i
+                  className=" fa-solid fa-xmark text-slate-400 text-2xl align-middle  border-2 border-slate-400   hover:rotate-90 duration-300 px-4 py-3 rounded-xl flex justify-center"
                   onClick={closeProject}
                 >
-                  Close
-                </button></div>
+
+                </i></div>
             </div>
           </div>
         )}
