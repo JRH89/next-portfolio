@@ -97,7 +97,7 @@ const Page = () => {
                   alt="profile picture"
                   width={400}
                   height={400}
-                  cover
+                  cover="true"
                   className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover mb-4 rounded-xl border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
@@ -148,7 +148,7 @@ const Page = () => {
 
               }
             </div>
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4 mb-5"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -231,16 +231,7 @@ const Page = () => {
                   src={activeProject.image}
                   alt={activeProject.title}
                 />
-                <h3>Images:</h3>
-                {activeProject.images.map((imageUrl, index) => (
-                  <img
-                    key={index}
-                    src={imageUrl}
-                    alt={`Image ${index}`}
-                    height={200}
-                    width={400}
-                    className="h-auto object-cover rounded-xl border-2 border-slate-500"
-                  />))}
+
 
               </div>
               <p className="text-slate-500 text-center mb-4 text-xl sm:text-2xl">{activeProject.description}</p>
