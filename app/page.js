@@ -142,13 +142,13 @@ const Page = () => {
               </button>
               {activeGroup !== null &&
 
-                <button className=" border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center w-1/4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
+                <button className="font-bold border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center w-1/4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
                   X
                 </button>
 
               }
             </div>
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4 mb-5"} gap-4 ${activeGroup === null ? "mb-4" : "mb-0"}`}>
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4 mb-5"} gap-4 ${activeGroup === null ? "mb-0" : "mb-0"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -178,7 +178,7 @@ const Page = () => {
                     />
                   </div>
                   <p className="text-slate-500 text-center">
-                    {project.description.split('. ')[1] + '...'}
+                    {project.description.split('. ')[0] + '...'}
                   </p>
 
 
