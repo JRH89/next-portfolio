@@ -35,7 +35,7 @@ const MyImageGallery = (showCerts) => {
 						cover="true"
 						height={500}
 						alt="Image"
-						className=" object-cover cursor-pointer border-2 bg-slate-700 p-4 border-yellow-400 rounded-xl"
+						className="object-cover cursor-pointer border-2 bg-slate-700 p-4 border-yellow-400 rounded-xl"
 						onClick={() => handleClick(imagePath)}
 					/>
 				))}

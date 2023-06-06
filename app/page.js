@@ -43,7 +43,7 @@ const Page = () => {
   return (
     <>
       <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold ">
+        <nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold ">
           <ul className="flex justify-evenly mx-5">
             <li className="hover:scale-90 hover:opacity-50 duration-300">
               <a href="/">
@@ -102,14 +102,14 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-500 mb-4">Jared R Hooker</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
               <a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind&perline=4" />
               </a>
-              <p className="text-slate-500 text-xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
+              <p className="text-slate-400 text-xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
-              <p className="text-slate-500 text-xl text-center mx-2 sm:mx-0 pt-2">
+              <p className="text-slate-400 text-xl text-center mx-2 sm:mx-0 pt-2">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
               </p>
             </div>
@@ -117,35 +117,31 @@ const Page = () => {
         }
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
-            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-2 rounded-xl sm:mx-5 mx-10 text-md sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] rounded-xl z-10 p-4" : ""
+            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? " top-[200px] z-10 p-2" : ""
               }`}>
               <button
-                className={`border-2 w-full border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup("software")}
               >
                 SOFTWARE
               </button>
               <button
-                className={`border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup("games")}
               >
                 GAMES
               </button>
               <button
-                className={`border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup("android")}
               >
                 ANDROID
               </button>
               {activeGroup !== null &&
-
-                <button className="font-bold border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center w-1/4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={() => setActiveGroup(null)}>
-                  X
-                </button>
-
+                <i onClick={() => setActiveGroup(null)} className="duration-300 text-3xl sm:text-4xl hover:rotate-180 fa-solid fa-xmark text-slate-500"></i>
               }
             </div>
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-0" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-5"}`}>
@@ -186,7 +182,8 @@ const Page = () => {
               ))}
             </div>
           </div>}
-        {!activeGroup && <div className="w-full mb-6 rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-4">
+        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-6' : ''}`}>
+
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
             {!certs &&
               <button
@@ -197,10 +194,7 @@ const Page = () => {
               </button>}
             {certs &&
 
-              <button className=" border-2 border-slate-500 p-2 text-slate-500 rounded-xl justify-center items-center px-4 shadow-lg shadow-slate-500/50 text-center flex place-items-center align-middle" onClick={showCerts}>
-                X
-              </button>
-
+              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-5xl absolute top-2 right-5 flex text-slate-500"></i>
             }
           </div>
           {certs && <MyImageGallery />}
