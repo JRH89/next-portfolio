@@ -1,7 +1,6 @@
 "use client"
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const MyImageGallery = (showCerts) => {
 
@@ -36,7 +35,6 @@ const MyImageGallery = (showCerts) => {
 						cover
 						height={500}
 						alt="Image"
-						lazy={true}
 						className=" object-cover cursor-pointer border-2 bg-slate-700 p-4 border-yellow-400 rounded-xl"
 						onClick={() => handleClick(imagePath)}
 					/>
@@ -46,7 +44,10 @@ const MyImageGallery = (showCerts) => {
 						className="fixed inset-0 z-50 flex items-center justify-center"
 						onClick={handleClose}
 					>
-						<Image width={1920} height={1080} src={clickedImage} alt="Clicked Image" className="max-w-full max-h-full" />
+						<Image
+							width={1920}
+							height={1080}
+							src={clickedImage} alt="Clicked Image" className="max-w-full max-h-full" />
 					</div>
 				)}
 			</div></>

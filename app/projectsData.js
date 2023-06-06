@@ -6,7 +6,12 @@ const projects = [
 		group: "software",
 		image: "/ProjectImgs/project1.png",
 		url: "https://have-mycard.vercel.app",
-		urlLabel: "View Live"
+		urlLabel: "View Live",
+		images: [
+			"/activeProjectImgs/img1.png",
+			"/activeProjectImgs/img2.png",
+			"/activeProjectImgs/img3.png",
+		],
 	},
 	{
 		id: 2,

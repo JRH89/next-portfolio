@@ -98,7 +98,6 @@ const Page = () => {
                   width={400}
                   height={400}
                   cover
-                  eager={true}
                   className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover mb-4 rounded-xl border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
@@ -173,7 +172,6 @@ const Page = () => {
                     <Image
                       height={1032}
                       width={1920}
-
                       className="w-full h-auto object-cover  border-2 rounded-xl border-slate-500"
                       src={project.image}
                       alt={project.title}
@@ -208,7 +206,9 @@ const Page = () => {
           {certs && <MyImageGallery />}
         </div>}
         {activeProject && (
+
           <div className="fixed top-0  left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
+
             <div className=" max-w-[800px] p-8">
               <h2
                 className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
@@ -231,6 +231,17 @@ const Page = () => {
                   src={activeProject.image}
                   alt={activeProject.title}
                 />
+                <h3>Images:</h3>
+                {activeProject.images.map((imageUrl, index) => (
+                  <img
+                    key={index}
+                    src={imageUrl}
+                    alt={`Image ${index}`}
+                    height={200}
+                    width={400}
+                    className="h-auto object-cover rounded-xl border-2 border-slate-500"
+                  />))}
+
               </div>
               <p className="text-slate-500 text-center mb-4 text-xl sm:text-2xl">{activeProject.description}</p>
               <div className="flex w-full flex-row justify-center gap-10">
