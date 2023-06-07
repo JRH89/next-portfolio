@@ -7,15 +7,20 @@ import projects from "./projectsData";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
 import Message from "./components/message";
+import Loading from "@/utils/Loading";
+
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
   const [activeProject, setActiveProject] = useState(null);
   const buttonRowRef = useRef(null)
   const [showMenu, setShowMenu] = useState(false)
   const [certs, setShowCerts] = useState(false);
+  const [isLoading, setISLoading] = useState(false)
 
   function showCerts() {
+    setISLoading(true)
     setShowCerts(!certs);
+    setISLoading(false)
   }
 
   function openMenu() {
@@ -44,9 +49,15 @@ const Page = () => {
 
   return (
     <>
+
+
       <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
 
         <Nav activeGroup={activeGroup} handleMenuClick={handleMenuClick} openMenu={openMenu} />
+
+        {isLoading &&
+          <Loading />
+        }
 
         {!activeGroup && !certs &&
           <section className="bg-black border-2 mt-10 border-slate-700 rounded-xl ">
