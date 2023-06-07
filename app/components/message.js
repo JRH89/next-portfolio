@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from "react";
 import Loading from "@/utils/Loading";
+import DOMPurify from "dompurify";
 
-export default function Settings() {
+export default function Message() {
 	const [showMessage, setShowMessage] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -10,8 +11,8 @@ export default function Settings() {
 		event.preventDefault();
 		setIsLoading(true);
 
-		const subject = event.target.elements.subject.value;
-		const message = event.target.elements.message.value;
+		const subject = DOMPurify.sanitize(event.target.elements.subject.value);
+		const message = DOMPurify.sanitize(event.target.elements.message.value);
 
 		try {
 			const response = await fetch("/api/send-email", {
@@ -51,20 +52,24 @@ export default function Settings() {
 			</div>
 
 			{!isLoading && showMessage ? (
-				<div className="p-2 rounded-md flex flex-col border-red-400 border border-solid justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
+				<div className="p-10 mt-4 mb-4 rounded-xl flex flex-col border-red-400 border-2 border-solid justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
 					Thank you for reaching out,
-					<br /> we will review your email and <br />
+					<br /> I will review your message and <br />
 					be in touch as soon as possible.
 					<br />
 					<br />
-					<p className="text-blue-400">-My Card Support</p>
+					<p className="text-blue-400">
+						-Jared
+					</p>
 				</div>
 			) : (
 				<form
-					className="flex flex-col text-center text-white"
+					className="flex px-10 py-4 flex-col text-center text-white"
 					onSubmit={handleSubmit}
 				>
-					<p className="text-blue-400 font-extrabold text-2xl">Subject:</p>
+					<p className="text-blue-400 font-extrabold text-2xl">
+						Subject:
+					</p>
 					<input
 						className="p-2 rounded-md text-black mb-4"
 						type="text"
@@ -72,7 +77,9 @@ export default function Settings() {
 						placeholder="Subject"
 					/>
 
-					<p className="text-green-400 font-extrabold text-2xl">Message:</p>
+					<p className="text-green-400 font-extrabold text-2xl">
+						Message:
+					</p>
 					<textarea
 						className="p-2 rounded-md text-black"
 						name="message"
@@ -81,9 +88,9 @@ export default function Settings() {
 						placeholder="Your Message"
 					></textarea>
 					<input
-						className="cursor-pointer font-extrabold hover:opacity-50 hover:scale-95 text-2xl text-red-400 mt-4 border-2 border-solid border-red-400 rounded-md"
+						className="cursor-pointer py-1 self-center duration-300 shadow-lg w-1/3 shadow-red-400/50 font-extrabold hover:opacity-50 hover:scale-95 text-2xl text-red-400 mt-4 border-2 border-solid border-red-400 rounded-md"
 						type="submit"
-						value="Send"
+						value="SEND"
 					/>
 				</form>
 			)}

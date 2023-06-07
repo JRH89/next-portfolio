@@ -6,7 +6,7 @@ import MyImageGallery from "./components/imageGallery";
 import projects from "./projectsData";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
-
+import Message from "./components/message";
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
   const [activeProject, setActiveProject] = useState(null);
@@ -74,7 +74,6 @@ const Page = () => {
             </div>
           </section>
         }
-
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
             <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
@@ -153,7 +152,7 @@ const Page = () => {
           </div>
         }
 
-        {!activeGroup && <div className={`w-full mb-6 rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
+        {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
             {!certs &&
               <button
@@ -168,8 +167,13 @@ const Page = () => {
           </div>
           {certs && <MyImageGallery />}
         </div>
-        }
 
+        }
+        {!activeGroup && !certs &&
+          <div className="bg-black  max-w-[770px] w-full mb-6 rounded-xl border-slate-700 border-2">
+            <Message />
+          </div>
+        }
         {activeProject && (
           <div className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
             <div className="max-w-[800px] p-8">
@@ -203,11 +207,12 @@ const Page = () => {
                   className=" fa-solid fa-xmark text-slate-400 text-2xl align-middle  border-2 border-slate-400   hover:rotate-90 duration-300 px-4 py-3 rounded-xl flex justify-center"
                   onClick={closeProject}
                 >
-
-                </i></div>
+                </i>
+              </div>
             </div>
           </div>
         )}
+
         <Footer />
       </div>
     </>
