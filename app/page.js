@@ -39,7 +39,9 @@ const Page = () => {
   };
 
   const closeProject = () => {
+    setISLoading(true)
     setActiveProject(null);
+    setISLoading(false)
   };
 
   const handleMenuClick = (group) => {
