@@ -62,7 +62,7 @@ const Page = () => {
         }
 
         {!activeGroup && !certs &&
-          <section className="bg-black border-2 mt-10 border-slate-700 rounded-xl ">
+          <section className="bg-dark border-2 mt-10 border-slate-700 rounded-xl ">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center pt-1 place-content-center items-center">
                 <Image
@@ -88,7 +88,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
+          <div className="w-full rounded-xl items-center place-items-center bg-dark content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
             <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
               }`
             }
@@ -129,7 +129,7 @@ const Page = () => {
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-black shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
+                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-dark shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
                     ? "opacity-0 pointer-events-none"
                     : "opacity-100"
                     }`}
@@ -165,7 +165,7 @@ const Page = () => {
           </div>
         }
 
-        {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
+        {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-dark relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10' : ''}`}>
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center ">
             {!certs &&
               <button
@@ -183,12 +183,12 @@ const Page = () => {
 
         }
         {!activeGroup && !certs &&
-          <div className="bg-black  max-w-[770px] w-full mb-6 rounded-xl border-slate-700 border-2">
+          <div className="bg-dark max-w-[770px] w-full mb-6 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
+          <div className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen bg-dark">
             <div className="max-w-[800px] p-8">
               <h2
                 className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
