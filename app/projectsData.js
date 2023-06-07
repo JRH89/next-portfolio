@@ -58,7 +58,15 @@ const projects = [
 		url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
 		urlLabel: "Google Play"
 	},
-
+	{
+		id: 7,
+		title: "Weather Pal",
+		description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with React, Next, Tailwind, and Vercel.",
+		group: "software",
+		image: "/ProjectImgs/project7.png",
+		url: "https://weather-pal.vercel.app",
+		urlLabel: "View Live"
+	},
 ];
 
 export default projects
