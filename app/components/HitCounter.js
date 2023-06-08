@@ -1,25 +1,36 @@
 import { useState, useEffect } from 'react';
-import { collection, doc, getDoc, increment } from 'firebase/firestore';
-import db from '@/utils/firebase';
-function HitCounter() {
-	const [hitCount, setHitCount] = useState(0);
+import { doc, updateDoc, getDoc } from 'firebase/firestore';
+import { increment } from 'firebase/firestore';
+import db from '../../firebase';
+
+const VisitorCounter = () => {
+	const [visitorCount, setVisitorCount] = useState(0);
 
 	useEffect(() => {
-		const fetchData = async () => {
-			const docRef = doc(db, 'counter', 'hitCount');
-			const snapshot = await getDoc(docRef);
+		const incrementVisitorCount = async () => {
+			const visitorsRef = doc(db, 'visitors', 'counter');
+			await updateDoc(visitorsRef, {
+				count: increment(1)
+			});
+		};
 
+		const fetchVisitorCount = async () => {
+			const visitorsRef = doc(db, 'visitors', 'counter');
+			const snapshot = await getDoc(visitorsRef);
 			if (snapshot.exists()) {
-				setHitCount(snapshot.data().count);
-			} else {
-				setHitCount(0);
+				setVisitorCount(snapshot.data().count);
 			}
 		};
 
-		fetchData();
+		incrementVisitorCount();
+		fetchVisitorCount();
 	}, []);
 
-	return <p>Hit Count: {hitCount}</p>;
-}
+	return (
+		<div>
+			<p>Visitor count: {visitorCount}</p>
+		</div>
+	);
+};
 
-export default HitCounter;
+export default VisitorCounter;
