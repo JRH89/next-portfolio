@@ -10,8 +10,9 @@ const VisitorCounter = () => {
 		const incrementVisitorCount = async () => {
 			const visitorsRef = doc(db, 'visitors', 'counter');
 			await updateDoc(visitorsRef, {
-				count: increment(1)
+				count: increment(1),
 			});
+			fetchVisitorCount(); // Fetch the updated count after incrementing
 		};
 
 		const fetchVisitorCount = async () => {
@@ -23,7 +24,6 @@ const VisitorCounter = () => {
 		};
 
 		incrementVisitorCount();
-		fetchVisitorCount();
 	}, []);
 
 	return (
