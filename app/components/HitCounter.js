@@ -28,7 +28,7 @@ const VisitorCounter = () => {
 
 	return (
 		<div>
-			<p>Visitor count: {visitorCount}</p>
+			<p>Visitors: {visitorCount}</p>
 		</div>
 	);
 };
