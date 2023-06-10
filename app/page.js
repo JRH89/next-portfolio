@@ -88,7 +88,7 @@ const Page = () => {
               </a>
               <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.{!more && <button
-                  className={`border-2 w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-md shadow-red-400/50 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-red-400 shadow-md shadow-red-400/50 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                     }`
                   }
                   onClick={() => setMore(true)}
@@ -98,7 +98,7 @@ const Page = () => {
                 }
               </p>
               {more && <p className="text-slate-400 text-xl text-center mx-2 sm:mx-0 ">
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-red-400 border-2 border-red-400 p-1 hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
+                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-red-400 p-1 hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
                   ...less
                 </button>
               </p>}
@@ -107,12 +107,12 @@ const Page = () => {
         }
         {!certs &&
           <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
-            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-10 text-sm sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
+            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-5 text-md sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
               }`
             }
             >
               <button
-                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 px-4 py-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup("software")}
@@ -120,7 +120,7 @@ const Page = () => {
                 SOFTWARE
               </button>
               <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup("games")}
@@ -128,7 +128,7 @@ const Page = () => {
                 GAMES
               </button>
               <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg px-4 py-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup("android")}
               >
