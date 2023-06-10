@@ -88,7 +88,7 @@ const Page = () => {
               </a>
               <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.{!more && <button
-                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-red-400 shadow-md shadow-red-400/50 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-red-400 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                     }`
                   }
                   onClick={() => setMore(true)}
