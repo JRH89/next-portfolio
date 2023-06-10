@@ -212,7 +212,7 @@ const projects = [
 			},
 
 			{
-				id: 1,
+				id: 3,
 				path: "/images/activeProjectImgs/proj7/img2.png",
 				alt: "Image 3"
 			},]
@@ -236,12 +236,43 @@ const projects = [
 				path: "/images/activeProjectImgs/proj8/img1.png",
 				alt: "Image 2"
 			},
-
 			{
-				id: 1,
+				id: 3,
 				path: "/images/activeProjectImgs/proj8/img2.png",
 				alt: "Image 3"
-			},]
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj8/img3.png",
+				alt: "Image 4"
+			},
+		]
+	},
+	{
+		id: 9,
+		title: "FM 3.0",
+		description: "A Python .exe packaged with PyInstaller. Version 2.0 opens a tkinter GUI for easily downloading media using 'youtube-dl'. Version 3.0 includes a custom web browser with 'youtube-dl' built in for even easier use.",
+		group: "software",
+		image: "/ProjectImgs/project9.png",
+		url: "https://github.com/JRH89/FM_v2.0_youtube-dl_GUI",
+		urlLabel: "Source Code",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project9.png",
+				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj9/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj9/img2.png",
+				alt: "Image 3"
+			},
+		]
 	},
 ];
 

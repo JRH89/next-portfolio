@@ -18,6 +18,7 @@ const Page = () => {
   const [isLoading, setISLoading] = useState(false)
   const [clickedImage, setClickedImage] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [more, setMore] = useState(false)
 
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
 
@@ -81,16 +82,26 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
+              <h1 className="text-3xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
               <a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
-                <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind&perline=4" />
+                <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,unreal,cpp,unity,cs&perline=4" />
               </a>
-              <p className="text-slate-400 text-xl text-center border-b border-slate-500/80 mx-2 sm:mx-0 pb-2">
-                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
+              <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
+                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.{!more && <button
+                  className={`border-2 w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-md shadow-red-400/50 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                    }`
+                  }
+                  onClick={() => setMore(true)}
+                >
+                  more...
+                </button>
+                }
               </p>
-              <p className="text-slate-400 text-xl text-center mx-2 sm:mx-0 pt-2">
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
-              </p>
+              {more && <p className="text-slate-400 text-xl text-center mx-2 sm:mx-0 ">
+                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-red-400 border-2 border-red-400 p-1 hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
+                  ...less
+                </button>
+              </p>}
             </div>
           </section>
         }
@@ -171,10 +182,10 @@ const Page = () => {
           <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center">
             {!certs &&
               <button
-                className={`border-2 sm:text-3xl text-xl border-blue-400 w-auto text-center shadow-blue-400/50 text-blue-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
+                className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
                 onClick={showCerts}
               >
-                CERTIFICATES
+                Certificates
               </button>}
             {certs &&
               <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
