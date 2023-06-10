@@ -19,8 +19,6 @@ const Page = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
 
-
-
   function showCerts() {
     setISLoading(true)
     setShowCerts(!certs);
@@ -132,7 +130,7 @@ const Page = () => {
             </div>
             {activeGroup !== null &&
               <div className="flex mb-4 justify-center">
-                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark text-slate-400 text-2xl align-middle  border-2 border-slate-400   hover:rotate-90 cursor-pointer duration-300 px-2 py-1 rounded-xl flex justify-center"></i>
+                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
               </div>
             }
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
@@ -183,7 +181,7 @@ const Page = () => {
                 CERTIFICATES
               </button>}
             {certs &&
-              <i onClick={showCerts} className="duration-300 hover:rotate-180 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-slate-500"></i>
+              <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
             }
           </div>
           {certs && <MyImageGallery />}
@@ -212,13 +210,12 @@ const Page = () => {
                 <button
                   className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
                   onClick={() => {
+                    setISLoading(true)
                     setActiveImageIndex((prevIndex) =>
-                      setISLoading(true)
-                        (prevIndex - 1 + totalImages) % totalImages
+                      (prevIndex - 1 + totalImages) % totalImages,
                     )
                     setISLoading(false)
                   }
-
                   }
                 >
                   <i className="fa-solid fa-caret-left text-3xl"></i>

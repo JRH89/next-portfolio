@@ -157,7 +157,22 @@ const projects = [
 				id: 1,
 				path: "/ProjectImgs/project5.png",
 				alt: "Image 1"
-			}
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj5/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj5/img2.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj5/img3.png",
+				alt: "Image 4"
+			},
 		]
 	},
 	{
@@ -199,6 +214,32 @@ const projects = [
 			{
 				id: 1,
 				path: "/images/activeProjectImgs/proj7/img2.png",
+				alt: "Image 3"
+			},]
+	},
+	{
+		id: 8,
+		title: "Sorting Hat",
+		description: "A Python .exe packaged to work on any computer. Written in Python and packaged with PyInstaller. Extracts and sorts numerical data (integers, floats) and displays it on the user's choice of graph type (histogram, bar, plot, scatter, line, pie). Uses the Radix algorithm for quick sorting of small or large data sets.",
+		group: "software",
+		image: "/ProjectImgs/project8.png",
+		url: "https://github.com/jrh89/Sorting-Hat",
+		urlLabel: "Source Code",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project8.png",
+				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj8/img1.png",
+				alt: "Image 2"
+			},
+
+			{
+				id: 1,
+				path: "/images/activeProjectImgs/proj8/img2.png",
 				alt: "Image 3"
 			},]
 	},

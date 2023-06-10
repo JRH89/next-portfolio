@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Nav({ activeGroup, handleMenuClick }) {
+function Nav({ activeGroup, handleMenuClick, showCerts }) {
 	const [showMenu, setShowMenu] = useState(false);
 
 	function openMenu() {
@@ -49,6 +49,7 @@ function Nav({ activeGroup, handleMenuClick }) {
 							>
 								ANDROID
 							</button>
+
 						</div>
 					)}
 				</li>
