@@ -16,8 +16,18 @@ const Page = () => {
   const [showMenu, setShowMenu] = useState(false)
   const [certs, setShowCerts] = useState(false);
   const [isLoading, setISLoading] = useState(false)
+  const [clickedImage, setClickedImage] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
+
+  const handleImageClick = (imagePath) => {
+    setClickedImage(imagePath);
+  };
+
+  const handleClose = () => {
+    setClickedImage(null);
+  };
 
   function showCerts() {
     setISLoading(true)
@@ -49,20 +59,6 @@ const Page = () => {
   const handleMenuClick = (group) => {
     setActiveGroup(group);
     setShowMenu(!showMenu)
-  };
-
-  const changeImage = (delta) => {
-    const projectImages = activeProject.images || [];
-    const numImages = projectImages.length;
-    setActiveImageIndex((prevIndex) => {
-      let newIndex = prevIndex + delta;
-      if (newIndex < 0) {
-        newIndex = numImages - 1;
-      } else if (newIndex >= numImages) {
-        newIndex = 0;
-      }
-      return newIndex;
-    });
   };
 
   return (
@@ -155,7 +151,7 @@ const Page = () => {
                   </h2>
                   <div className="mb-4">
                     <Image
-                      height={1032}
+                      height={1080}
                       width={1920}
                       className="w-full h-auto object-cover  border-2 rounded-xl border-slate-5400"
                       src={project.image}
@@ -196,7 +192,7 @@ const Page = () => {
           <div className="fixed top-0  z-10 flex items-center self-center  justify-center w-full max-w-[760px] h-screen bg-black">
             <div className="max-w-[760px] p-8">
               <h2
-                className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
+                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
@@ -207,6 +203,35 @@ const Page = () => {
               </h2>
               {isLoading && <Loading />}
               <div className="mb-2 flex justify-center">
+                {!isLoading && (
+                  <Image
+                    height={1080}
+                    width={1920}
+                    className="sm:w-1/2 h-auto object-cover shadow-md hover:opacity-75 shadow-slate-400/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-slate-400/70 cursor-pointer"
+                    src={activeProject.images[activeImageIndex].path}
+                    alt={activeProject.images[activeImageIndex].alt}
+                    onClick={() =>
+                      handleImageClick(activeProject.images[activeImageIndex].path)
+                    }
+                  />
+                )}
+                {clickedImage && (
+                  <div
+                    className="absolute inset-0 z-50 bg-black max-w-[800px] left-0 right-0 place-items-center flex flex-col items-center justify-center"
+
+                  >
+                    <i onClick={handleClose} className="text-red-400 right-5 absolute top-12 text-3xl hover:scale-75 duration-300 hover:rotate-180 hover:opacity-50 fa-solid fa-xmark"></i>
+                    <Image
+                      height={1080}
+                      width={1920}
+                      src={clickedImage}
+                      alt="Clicked Image"
+                      className="w-full border border-white  h-auto"
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="flex align-middle items-center flex-row gap-5 justify-center">
                 <button
                   className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
                   onClick={() => {
@@ -220,13 +245,9 @@ const Page = () => {
                 >
                   <i className="fa-solid fa-caret-left text-3xl"></i>
                 </button>
-                {!isLoading && <Image
-                  height={1032}
-                  width={1920}
-                  className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-400"
-                  src={activeProject.images[activeImageIndex].path}
-                  alt={activeProject.images[activeImageIndex].alt}
-                />}
+                <p className="text-white align-middle flex text-center justify-center text-sm">
+                  (click image to enlarge)
+                </p>
                 <button
                   className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
                   onClick={() => {
@@ -236,7 +257,6 @@ const Page = () => {
                     )
                     setISLoading(false)
                   }
-
                   }
                 >
                   <i className="fa-solid fa-caret-right text-3xl"></i>
@@ -244,11 +264,11 @@ const Page = () => {
               </div>
               <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
               <div className="flex align-middle place-items-ceetner w-full flex-row justify-center gap-10">
-                <Link className="flex text-2xl justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
+                <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
                 <i
-                  className="fa-solid fa-xmark right-0 absolute top-10 text-red-400 hover:opacity-60 text-4xl align-middle hover:scale-75 cursor-pointer hover:rotate-180 duration-300 px-4 py-3 rounded-xl flex justify-center"
+                  className="fa-solid fa-xmark right-5 absolute top-12 text-red-400 hover:opacity-60 mb-5 text-4xl align-middle hover:scale-75 cursor-pointer hover:rotate-180 duration-300 rounded-xl flex justify-center"
                   onClick={closeProject}
                 >
                 </i>

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-const MyImageGallery = (showCerts) => {
+const MyImageGallery = () => {
 
 	const imagePaths = [
 		'/images/certificates/cert1.png',
