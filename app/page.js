@@ -97,7 +97,7 @@ const Page = () => {
                 </button>
                 }
               </p>
-              {more && <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
+              {more && <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-red-400 p-1 hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
                   ...less
                 </button>
