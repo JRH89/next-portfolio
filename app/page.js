@@ -207,30 +207,39 @@ const Page = () => {
               >
                 {activeProject.title}
               </h2>
+              {isLoading && <Loading />}
               <div className="mb-2 flex justify-center">
                 <button
                   className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
-                  onClick={() =>
+                  onClick={() => {
                     setActiveImageIndex((prevIndex) =>
-                      (prevIndex - 1 + totalImages) % totalImages
+                      setISLoading(true)
+                        (prevIndex - 1 + totalImages) % totalImages
                     )
+                    setISLoading(false)
+                  }
+
                   }
                 >
                   <i className="fa-solid fa-caret-left text-3xl"></i>
                 </button>
-                <Image
+                {!isLoading && <Image
                   height={1032}
                   width={1920}
                   className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-400"
                   src={activeProject.images[activeImageIndex].path}
                   alt={activeProject.images[activeImageIndex].alt}
-                />
+                />}
                 <button
                   className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
-                  onClick={() =>
+                  onClick={() => {
+                    setISLoading(true)
                     setActiveImageIndex((prevIndex) =>
                       (prevIndex + 1) % totalImages
                     )
+                    setISLoading(false)
+                  }
+
                   }
                 >
                   <i className="fa-solid fa-caret-right text-3xl"></i>

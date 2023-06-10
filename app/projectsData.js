@@ -116,6 +116,31 @@ const projects = [
 				id: 1,
 				path: "/ProjectImgs/project3.png",
 				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj4/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj4/img2.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj4/img3.png",
+				alt: "Image 4"
+			},
+			{
+				id: 5,
+				path: "/images/activeProjectImgs/proj4/img4.png",
+				alt: "Image 5"
+			},
+			{
+				id: 6,
+				path: "/images/activeProjectImgs/proj4/img5.png",
+				alt: "Image 6"
 			}
 		]
 	},
@@ -164,8 +189,18 @@ const projects = [
 				id: 1,
 				path: "/ProjectImgs/project7.png",
 				alt: "Image 1"
-			}
-		]
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj7/img1.png",
+				alt: "Image 2"
+			},
+
+			{
+				id: 1,
+				path: "/images/activeProjectImgs/proj7/img2.png",
+				alt: "Image 3"
+			},]
 	},
 ];
 
