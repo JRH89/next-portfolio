@@ -8,9 +8,42 @@ const projects = [
 		url: "https://have-mycard.vercel.app",
 		urlLabel: "View Live",
 		images: [
-			"/activeProjectImgs/img1.png",
-			"/activeProjectImgs/img2.png",
-			"/activeProjectImgs/img3.png",
+			{
+				id: 1,
+				path: "/ProjectImgs/project1.png",
+				alt: "Image 1"
+
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj1/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj1/img2.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj1/img3.png",
+				alt: "Image 4"
+			},
+			{
+				id: 5,
+				path: "/images/activeProjectImgs/proj1/img4.png",
+				alt: "Image 5"
+			},
+			{
+				id: 6,
+				path: "/images/activeProjectImgs/proj1/img5.png",
+				alt: "Image 6"
+			},
+			{
+				id: 7,
+				path: "/images/activeProjectImgs/proj1/img6.png",
+				alt: "Image 7"
+			}
 		],
 	},
 	{
@@ -20,7 +53,24 @@ const projects = [
 		group: "software",
 		image: "/ProjectImgs/project2.png",
 		url: "https://next-jewelry.vercel.app",
-		urlLabel: "View Live"
+		urlLabel: "View Live",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project2.png",
+				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj2/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj2/img2.png",
+				alt: "Image 3"
+			}
+		]
 	},
 	{
 		id: 3,
@@ -29,7 +79,29 @@ const projects = [
 		group: "games",
 		image: "/ProjectImgs/project4.png",
 		url: "https://fall-hollow.vercel.app",
-		urlLabel: "About"
+		urlLabel: "About",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project4.png",
+				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj3/img2.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj3/img3.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj3/img1.png",
+				alt: "Image 4"
+			}
+		],
 	},
 	{
 		id: 4,
@@ -38,7 +110,14 @@ const projects = [
 		group: "games",
 		image: "/ProjectImgs/project3.png",
 		url: "https://jrh89.itch.io/the-knight-life",
-		urlLabel: "Play on itch.io"
+		urlLabel: "Play on itch.io",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project3.png",
+				alt: "Image 1"
+			}
+		]
 	},
 	{
 		id: 5,
@@ -47,7 +126,14 @@ const projects = [
 		group: "android",
 		image: "/ProjectImgs/project5.png",
 		url: "https://play.google.com/store/apps/details?id=runner.starrunner",
-		urlLabel: "Google Play"
+		urlLabel: "Google Play",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project5.png",
+				alt: "Image 1"
+			}
+		]
 	},
 	{
 		id: 6,
@@ -56,7 +142,14 @@ const projects = [
 		group: "android",
 		image: "/ProjectImgs/project6.png",
 		url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
-		urlLabel: "Google Play"
+		urlLabel: "Google Play",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project6.png",
+				alt: "Image 1"
+			}
+		]
 	},
 	{
 		id: 7,
@@ -65,7 +158,14 @@ const projects = [
 		group: "software",
 		image: "/ProjectImgs/project7.png",
 		url: "https://weather-pal.vercel.app",
-		urlLabel: "View Live"
+		urlLabel: "View Live",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project7.png",
+				alt: "Image 1"
+			}
+		]
 	},
 ];
 

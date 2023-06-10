@@ -16,6 +16,10 @@ const Page = () => {
   const [showMenu, setShowMenu] = useState(false)
   const [certs, setShowCerts] = useState(false);
   const [isLoading, setISLoading] = useState(false)
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
+
+
 
   function showCerts() {
     setISLoading(true)
@@ -35,7 +39,7 @@ const Page = () => {
   const openProject = (projectId) => {
     const project = projects.find((project) => project.id === projectId);
     setActiveProject(project);
-
+    setActiveImageIndex(0);
   };
 
   const closeProject = () => {
@@ -47,6 +51,20 @@ const Page = () => {
   const handleMenuClick = (group) => {
     setActiveGroup(group);
     setShowMenu(!showMenu)
+  };
+
+  const changeImage = (delta) => {
+    const projectImages = activeProject.images || [];
+    const numImages = projectImages.length;
+    setActiveImageIndex((prevIndex) => {
+      let newIndex = prevIndex + delta;
+      if (newIndex < 0) {
+        newIndex = numImages - 1;
+      } else if (newIndex >= numImages) {
+        newIndex = 0;
+      }
+      return newIndex;
+    });
   };
 
   return (
@@ -177,36 +195,54 @@ const Page = () => {
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-screen bg-black">
-            <div className="max-w-[800px] p-8">
+          <div className="fixed top-0  z-10 flex items-center self-center  justify-center w-full max-w-[760px] h-screen bg-black">
+            <div className="max-w-[760px] p-8">
               <h2
                 className={`text-3xl mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
                     : "text-green-400"
-                  }`
-                }
-
+                  }`}
               >
                 {activeProject.title}
               </h2>
               <div className="mb-2 flex justify-center">
+                <button
+                  className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
+                  onClick={() =>
+                    setActiveImageIndex((prevIndex) =>
+                      (prevIndex - 1 + totalImages) % totalImages
+                    )
+                  }
+                >
+                  <i className="fa-solid fa-caret-left text-3xl"></i>
+                </button>
                 <Image
                   height={1032}
                   width={1920}
                   className="sm:w-1/2 h-auto object-cover rounded-xl border-2 border-slate-400"
-                  src={activeProject.image}
-                  alt={activeProject.title}
+                  src={activeProject.images[activeImageIndex].path}
+                  alt={activeProject.images[activeImageIndex].alt}
                 />
+                <button
+                  className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
+                  onClick={() =>
+                    setActiveImageIndex((prevIndex) =>
+                      (prevIndex + 1) % totalImages
+                    )
+                  }
+                >
+                  <i className="fa-solid fa-caret-right text-3xl"></i>
+                </button>
               </div>
               <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
               <div className="flex align-middle place-items-ceetner w-full flex-row justify-center gap-10">
-                <Link className="flex text-2xl justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2 " target="_blank" href={activeProject.url}>
+                <Link className="flex text-2xl justify-center text-green-400 font-bold underline hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
                 <i
-                  className=" fa-solid fa-xmark text-slate-400 text-2xl align-middle  border-2 border-slate-400   hover:rotate-90 duration-300 px-4 py-3 rounded-xl flex justify-center"
+                  className="fa-solid fa-xmark right-0 absolute top-10 text-red-400 hover:opacity-60 text-4xl align-middle hover:scale-75 cursor-pointer hover:rotate-180 duration-300 px-4 py-3 rounded-xl flex justify-center"
                   onClick={closeProject}
                 >
                 </i>
