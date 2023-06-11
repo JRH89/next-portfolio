@@ -65,7 +65,7 @@ const Page = () => {
   return (
     <>
       <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <Nav activeGroup={activeGroup} handleMenuClick={handleMenuClick} openMenu={openMenu} />
+        <Nav activeGroup={activeGroup} setActiveGroup={setActiveGroup} handleMenuClick={handleMenuClick} openMenu={openMenu} />
         {isLoading &&
           <Loading />
         }
@@ -87,21 +87,30 @@ const Page = () => {
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,unreal,cpp,unity,cs&perline=4" />
               </a>
               <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
-                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.{!more && <button
-                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-400 underline rounded-lg ${activeGroup === "software" ? "text-slate-400" : ""
-                    }`
-                  }
-                  onClick={() => setMore(true)}
-                >
-                  More...
-                </button>
+                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
+                {!more &&
+                  <button
+                    className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-400 underline rounded-lg ${activeGroup === "software" ? "text-slate-400" : ""
+                      }`
+                    }
+                    onClick={() => setMore(true)}
+                  >
+                    More...
+                  </button>
+                }
+                {more &&
+                  <button onClick={() => setMore(false)} className="text-slate-400 ml-2 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
+                    ...Less
+                  </button>
                 }
               </p>
-              {more && <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-slate-400 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
+              {more &&
+                <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
+                  I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
+                  {/* <button onClick={() => setMore(false)} className="text-slate-400 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
                   ...Less
-                </button>
-              </p>}
+                </button> */}
+                </p>}
             </div>
           </section>
         }
@@ -188,7 +197,7 @@ const Page = () => {
                 Certificates
               </button>}
             {certs &&
-              <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark text-4xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
+              <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
             }
           </div>
           {certs && <MyImageGallery />}
