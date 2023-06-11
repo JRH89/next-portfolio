@@ -29,6 +29,11 @@ export default function RootLayout({ children }) {
         <meta property="description" content="Project portfolio developed with React, Next, Tailwind, and Vercel" />
         <meta property="image" content="https://jareds-portfolio.vercel.app/images/preview.png" />
         <link type="image/png" rel="shortcut icon" href="/images/profilepic.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Jared's Portfolio" />
+        <meta property="twitter:description" content="Jared Hooker's project portfolio created with React JS, Next JS, Tailwind CSS, Firebase, and Vercel." />
+        <meta property="twitter:image" content="https://jareds-portfolio.vercel.app/images/twitter_preview.png" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
