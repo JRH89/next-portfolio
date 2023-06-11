@@ -56,6 +56,9 @@ function Nav({ activeGroup, handleMenuClick, showCerts }) {
 				<li className="hover:scale-90 hover:opacity-50 duration-300">
 					<a href="https://github.com/jrh89">GITHUB</a>
 				</li>
+				<li className="hover:scale-90 hover:opacity-50 duration-300">
+					<a download href="/Jared-Hooker-Resume.pdf">RESUME</a>
+				</li>
 				<li className="hover:scale-90 hover:opacity-50 duration-300 ">
 					<a href="https://have-mycard.vercel.app/api/xT17MRpa">CONTACT</a>
 				</li>
