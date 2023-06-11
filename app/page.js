@@ -88,18 +88,18 @@ const Page = () => {
               </a>
               <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.{!more && <button
-                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-red-400 p-1 rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                  className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-600 underline rounded-lg ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                     }`
                   }
                   onClick={() => setMore(true)}
                 >
-                  more...
+                  More...
                 </button>
                 }
               </p>
               {more && <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-red-400 p-1 hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
-                  ...less
+                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles. <button onClick={() => setMore(false)} className="text-slate-600 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
+                  ...Less
                 </button>
               </p>}
             </div>
@@ -179,7 +179,7 @@ const Page = () => {
           </div>
         }
         {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10 mb-12' : ''}`}>
-          <div ref={buttonRowRef} className="flex gap-2 my-2 justify-center">
+          <div ref={buttonRowRef} className="flex gap-2 justify-center">
             {!certs &&
               <button
                 className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
