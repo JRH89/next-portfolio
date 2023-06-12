@@ -43,6 +43,16 @@ const projects = [
 				id: 7,
 				path: "/images/activeProjectImgs/proj1/img6.png",
 				alt: "Image 7"
+			},
+			{
+				id: 8,
+				path: "/images/activeProjectImgs/proj1/img7.png",
+				alt: "Image 8"
+			},
+			{
+				id: 9,
+				path: "/images/activeProjectImgs/proj1/img8.png",
+				alt: "Image 9"
 			}
 		],
 	},
