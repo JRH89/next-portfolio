@@ -99,7 +99,7 @@ const Page = () => {
         {!activeGroup && !certs &&
           <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
             <div className="w-full justify-evenly flex flex-col gap-2 items-center max-w-3xl py-2 px-2">
-              <div className="w-1/3 sm:w-1/2 flex justify-center place-content-center items-center">
+              <div className="w-1/2 sm:w-1/2 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
