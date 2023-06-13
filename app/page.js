@@ -154,7 +154,7 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-10"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
