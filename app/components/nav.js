@@ -88,12 +88,12 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 								spy={true}
 								smooth={true}
 								duration={500}
-								onClick={() =>
-									openMenu()
-          setShowCerts(false)
-           setActiveProject(null)
-          setActiveGroup(null)
-								}
+								onClick={() => {
+								 openMenu()
+         setShowCerts(false)
+         setActiveProject(null)
+         setActiveGroup(null)
+								}}
 								className="hover:text-green-400 duration-300 hover:scale-90"
 							>
 								Message
