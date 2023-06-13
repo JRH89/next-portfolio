@@ -1,15 +1,12 @@
 "use client"
 import React, { useState } from "react";
-import Loading from "@/utils/Loading";
 import DOMPurify from "dompurify";
 
 export default function Message() {
 	const [showMessage, setShowMessage] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
 
 	async function handleSubmit(event) {
 		event.preventDefault();
-		setIsLoading(true);
 
 		const subject = DOMPurify.sanitize(event.target.elements.subject.value);
 		const message = DOMPurify.sanitize(event.target.elements.message.value);
@@ -38,8 +35,6 @@ export default function Message() {
 			console.error(error);
 		}
 
-		setIsLoading(false);
-
 		setTimeout(() => {
 			setShowMessage(false);
 		}, 5000);
@@ -48,7 +43,7 @@ export default function Message() {
 	return (
 		<>
 			<>
-				{!isLoading && showMessage ? (
+				{showMessage ? (
 					<div className="p-10 mt-4 mb-4 rounded-xl flex flex-col border-red-400 border-2 border-solid justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
 						Thank you for reaching out,
 						<br /> I will review your message and <br />
@@ -61,7 +56,7 @@ export default function Message() {
 					</div>
 				) : (
 					<form
-						className="flex border-2 border-slate-700 rounded-xl shadow-slate-400/50 shadow-lg px-12 py-12 flex-col gap-3 text-center text-white"
+						className="flex flex-col gap-3 text-center text-white"
 						onSubmit={handleSubmit}
 					>
 						<p className="text-blue-400 font-extrabold underline text-2xl">
