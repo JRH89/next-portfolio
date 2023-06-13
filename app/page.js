@@ -114,7 +114,7 @@ const Page = () => {
               <a title="skills" className="flex justify-center" href="https://skillicons.dev">
                 <img className="flex w-80 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
-              <p className="text-slate-400 mt-2 text-lg sm:text-lg text-center mx-2 leading-tight
+              <p className="text-slate-400 mt-1 text-lg sm:text-lg text-center mx-2 leading-tight
                sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 <br/>
