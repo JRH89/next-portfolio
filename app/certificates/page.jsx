@@ -1,5 +1,5 @@
 import React from 'react'
-import MyImageGallery from '../components/imageGallery'
+import MyImageGallery from './imageGallery'
 
 function CertificateGallery() {
 	return (

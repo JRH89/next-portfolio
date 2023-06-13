@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import MyImageGallery from "./components/imageGallery";
+import MyImageGallery from "./certificates/imageGallery";
 import projects from "./projects/projectsData";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
