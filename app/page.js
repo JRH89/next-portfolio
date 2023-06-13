@@ -118,7 +118,7 @@ const Page = () => {
              </p>
              <p id="more" name="more" className="text-slate-400 text-lg text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
-                </p>}
+                </p>
             </div>
           </section>
         {!certs &&
