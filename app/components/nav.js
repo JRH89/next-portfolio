@@ -75,6 +75,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 								duration={500}
 								onClick={() => {
 									setActiveGroup(null)
+									setActiveProject(null)
 									setShowCerts(true)
 									openMenu()
 								}}

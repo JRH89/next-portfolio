@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import MyImageGallery from "./components/imageGallery";
-import projects from "./projectsData";
+import projects from "./projects/projectsData";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
 import Message from "./components/message";
