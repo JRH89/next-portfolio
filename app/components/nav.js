@@ -40,31 +40,48 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6">
 							<button
 								onClick={() => {
+									setShowCerts(false)
 									handleMenuClick("software")
 									openMenu()
 								}}
 								className="hover:text-red-400 hover:scale-90 duration-300"
 							>
-								SOFTWARE
+								Software
 							</button>
 							<button
 								onClick={() => {
+									setShowCerts(false)
 									handleMenuClick("games")
 									openMenu()
 								}}
 								className="hover:text-blue-400 duration-300 hover:scale-90"
 							>
-								GAMES
+								Games
 							</button>
 							<button
 								onClick={() => {
+									setShowCerts(false)
 									handleMenuClick("android")
 									openMenu()
 								}}
 								className="hover:text-green-400 duration-300 hover:scale-90"
 							>
-								ANDROID
+								Android
 							</button>
+							<Link
+								to="hero"
+								spy={true}
+								smooth={true}
+								duration={500}
+								onClick={() => {
+									setActiveGroup(null)
+									setShowCerts(true)
+									openMenu()
+								}}
+								className="hover:text-green-400 duration-300 hover:scale-90"
+							>
+								Certificates
+							</Link>
 							<Link
 								to="message"
 								spy={true}
@@ -76,7 +93,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 								href={"#message"}
 								className="hover:text-green-400 duration-300 hover:scale-90"
 							>
-								MESSAGE
+								Message
 							</Link>
 
 						</div>
