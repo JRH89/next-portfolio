@@ -61,7 +61,7 @@ export default function Message() {
 					</div>
 				) : (
 					<form
-						className="flex px-10 py-4 flex-col gap-3 text-center text-white"
+						className="flex border-2 border-slate-700 rounded-xl shadow-slate-400/50 shadow-lg px-12 py-12 flex-col gap-3 text-center text-white"
 						onSubmit={handleSubmit}
 					>
 						<p className="text-blue-400 font-extrabold underline text-2xl">
