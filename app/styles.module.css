@@ -121,3 +121,7 @@
 .gallery-arrow {
 	@apply bg-transparent border-none text-2xl px-2 py-1 m-2 cursor-pointer outline-none;
 }
+
+.min-h-calc {
+	min-height: calc(100vh - var(--nav-height) - var(--footer-height));
+}

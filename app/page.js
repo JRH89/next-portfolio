@@ -20,6 +20,7 @@ const Page = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [more, setMore] = useState(false)
 
+
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
 
   const handleImageClick = (imagePath) => {
@@ -77,9 +78,9 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className="bg-black border-2 mt-10 border-slate-700 rounded-xl ">
+          <section className="bg-black  place-items-center items-center align-middle flex border-2 mt-11 border-slate-700 rounded-xl pt-7 pb-7">
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
-              <div className="w-1/2 sm:w-1/3 flex justify-center pt-1 place-content-center items-center">
+              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -119,11 +120,14 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2" >
-            <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-5 text-md sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
-              }`
-            }
+          <div className="text-xl rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+            <div
+              ref={buttonRowRef}
+              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
+                }`}
             >
+
+
               <button
                 className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
@@ -133,7 +137,7 @@ const Page = () => {
                 Software
               </button>
               <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup("games")}
@@ -150,10 +154,10 @@ const Page = () => {
             </div>
             {activeGroup !== null &&
               <div className="flex mb-4 justify-center">
-                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
+                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark right-0 text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
               </div>
             }
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -194,9 +198,8 @@ const Page = () => {
         {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10 mb-12' : ''}`}>
           <div ref={buttonRowRef} className="flex gap-2 justify-center">
             {!certs &&
-
               <button
-                className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
+                className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg p-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl p-4" : ""}`}
                 onClick={showCerts}
               >
                 Certificates
