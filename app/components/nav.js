@@ -1,4 +1,4 @@
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 import React, { useState } from 'react';
 
@@ -83,23 +83,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 							>
 								Certificates
 							</Link>
-							<Link
-        href={"#message"}
-								to="message"
-								spy={true}
-								smooth={true}
-								duration={500}
-								onClick={() => {
-								 openMenu()
-         setShowCerts(false)
-         setActiveProject(null)
-         setActiveGroup(null)
-								}}
-								className="hover:text-green-400 duration-300 hover:scale-90"
-							>
-								Message
-							</Link>
-
 						</div>
 					)}
 				</li>
