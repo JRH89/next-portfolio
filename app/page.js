@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import MyImageGallery from "./certificates/imageGallery";
 import projects from "./projects/projectDetails";
@@ -19,9 +19,28 @@ const Page = () => {
   const [clickedImage, setClickedImage] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [more, setMore] = useState(false)
-
+  const [remainingHeight, setRemainingHeight] = useState(0);
 
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
+
+  useEffect(() => {
+    const navHeight = Nav.Height;
+    const footerHeight = Footer.Height; // Set the actual footer height here
+
+    const calculateRemainingHeight = () => {
+      const windowHeight = window.innerHeight;
+      const newRemainingHeight = windowHeight - navHeight - footerHeight;
+      setRemainingHeight(newRemainingHeight);
+    };
+
+    calculateRemainingHeight();
+
+    // Recalculate remaining height on window resize
+    window.addEventListener("resize", calculateRemainingHeight);
+    return () => {
+      window.removeEventListener("resize", calculateRemainingHeight);
+    };
+  }, []);
 
   const handleImageClick = (imagePath) => {
     setClickedImage(imagePath);
@@ -78,7 +97,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className="bg-black  place-items-center items-center align-middle flex border-2 mt-11 border-slate-700 rounded-xl pt-7 pb-7">
+          <section className={`bg-black h-[calc(100vh_-_92px)] place-items-center items-center align-middle flex border-2 mt-11 border-slate-700 rounded-xl`}>
             <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
@@ -130,31 +149,35 @@ const Page = () => {
                 className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
-                onClick={() => setActiveGroup("software")}
+                onClick={() => setActiveGroup(activeGroup === "software" ? null : "software")}
               >
                 Software
               </button>
               <button
                 className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
-                  }`
-                }
-                onClick={() => setActiveGroup("games")}
+                  }`}
+                onClick={() => setActiveGroup(activeGroup === "games" ? null : "games")}
               >
                 Games
               </button>
+
               <button
                 className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
-                onClick={() => setActiveGroup("android")}
+                onClick={() => setActiveGroup(activeGroup === "android" ? null : "android")}
               >
                 Android
               </button>
+
             </div>
-            {activeGroup !== null &&
-              <div className="flex mb-4 justify-center">
-                <i onClick={() => setActiveGroup(null)} className=" fa-solid fa-xmark right-0 text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
-              </div>
-            }
+            {/* {activeGroup !== null &&
+              <div className="flex bg-black w-full flex-col">
+
+                <div className="flex mb-12 bg-black w-full  justify-center">
+                  <i onClick={() => setActiveGroup(null)} className="mt-1 fa-solid fixed fa-xmark mb-4 text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
+                </div></div>
+            } */}
+
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
@@ -212,7 +235,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_90px)] flex justify-center items-center max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }

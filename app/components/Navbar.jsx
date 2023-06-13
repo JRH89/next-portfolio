@@ -83,6 +83,21 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 							>
 								Certificates
 							</Link>
+							<Link
+								to="message"
+								spy={true}
+								smooth={true}
+								duration={600}
+								onClick={() => {
+									setActiveGroup(null)
+									setActiveProject(null)
+									setShowCerts(false)
+									openMenu()
+								}}
+								className="hover:text-green-400 duration-300 hover:scale-90"
+							>
+								Message
+							</Link>
 						</div>
 					)}
 				</li>
