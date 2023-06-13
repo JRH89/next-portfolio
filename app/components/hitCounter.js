@@ -12,7 +12,7 @@ const VisitorCounter = () => {
 			await updateDoc(visitorsRef, {
 				count: increment(1),
 			});
-			fetchVisitorCount(); // Fetch the updated count after incrementing
+			fetchVisitorCount();
 		};
 
 		const fetchVisitorCount = async () => {
