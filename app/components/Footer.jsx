@@ -1,5 +1,5 @@
 import React from 'react'
-import VisitorCounter from './HitCounter'
+import VisitorCounter from './hitCounter'
 
 function Footer() {
 	return (
@@ -9,7 +9,6 @@ function Footer() {
 					<VisitorCounter />
 					<p>Hooker Hill Studios ⓒ 2023</p>
 				</div>
-
 			</footer>
 		</div>
 	)

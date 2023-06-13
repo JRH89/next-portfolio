@@ -3,9 +3,9 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import MyImageGallery from "./certificates/imageGallery";
 import projects from "./projects/projectsData";
-import Nav from "./components/nav";
-import Footer from "./components/footer";
-import Message from "./components/message";
+import Nav from "./components/Navbar";
+import Footer from "./components/Footer";
+import Message from "./components/Message";
 import Loading from "@/utils/Loading";
 import Link from "next/link";
 
@@ -126,8 +126,6 @@ const Page = () => {
               className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
                 }`}
             >
-
-
               <button
                 className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
