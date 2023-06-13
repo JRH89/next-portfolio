@@ -93,7 +93,7 @@ const Page = () => {
               <a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,unreal,cpp,unity,cs&perline=4" />
               </a>
-              <p className="text-slate-400 text-xl text-center  mx-2  sm:mx-0">
+              <p className="text-slate-400 text-xl text-justify mx-2 sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 {!more &&
                   <button
@@ -112,7 +112,7 @@ const Page = () => {
                 }
               </p>
               {more &&
-                <p id="more" name="more" className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
+                <p id="more" name="more" className="text-slate-400 text-xl text-justify border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
                 </p>}
             </div>
@@ -182,7 +182,7 @@ const Page = () => {
                       alt={project.title}
                     />
                   </div>
-                  <p className="text-slate-400 text-center">
+                  <p className="text-slate-400 text-justify">
                     {`${project.description.split('. ')[0]}. ${project.description.split('. ')[1]}...`}
                   </p>
                 </div>
@@ -216,7 +216,7 @@ const Page = () => {
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0  z-10 flex items-center self-center  justify-center w-full max-w-[760px] h-screen bg-black">
+          <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-black">
             <div className="max-w-[760px] p-8">
               <h2
                 className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
@@ -289,8 +289,8 @@ const Page = () => {
                   <i className="fa-solid fa-caret-right text-3xl"></i>
                 </button>
               </div>
-              <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
-              <div className="flex align-middle place-items-ceetner w-full flex-row justify-center gap-10">
+              <p className="text-slate-400 text-justify mb-4 text-xl">{activeProject.description}</p>
+              <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
                 <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
