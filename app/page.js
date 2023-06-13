@@ -113,11 +113,11 @@ const Page = () => {
               <a title="skills" className="flex mb-2 justify-center" href="https://skillicons.dev">
                 <img className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
-              <p className="text-slate-400 pb-2 text-md text-center mx-2 leading-tight
+              <p className="text-slate-400 pb-2 text-md sm:text-lg text-center mx-2 leading-normal
                sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
               </p>
-              <p id="more" name="more" className="text-slate-400 leading-tight text-md text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
+              <p id="more" name="more" className="text-slate-400 leading-normal sm:text-lg text-md text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
               </p>
             </div>
