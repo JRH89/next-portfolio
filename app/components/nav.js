@@ -90,8 +90,10 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 								duration={500}
 								onClick={() =>
 									openMenu()
+          setShowCerts(false)
+           setActiveProject(null)
+          setActiveGroup(null)
 								}
-								href={"#message"}
 								className="hover:text-green-400 duration-300 hover:scale-90"
 							>
 								Message
