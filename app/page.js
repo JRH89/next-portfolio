@@ -97,8 +97,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black h-[calc(100vh_-_92px)] place-items-center items-center align-middle flex border-2 mt-11 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-center flex flex-col items-center max-w-3xl p-4">
+          <section className={`bg-black min-h-[calc(100vh_-_96px)] place-items-center items-center flex align-middle  border-2 mt-11 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-center flex gap-3 flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
@@ -109,15 +109,15 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-3xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
               <a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
                 <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
-              <p className="text-slate-400 text-xl text-center mx-2 sm:mx-0">
+              <p className="text-slate-400 text-lg text-center mx-2 sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 {!more &&
                   <button
-                    className={`w-auto text-xl hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-400 underline rounded-lg ${activeGroup === "software" ? "text-slate-400" : ""
+                    className={`w-auto text-lg hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-400 underline rounded-lg ${activeGroup === "software" ? "text-slate-400" : ""
                       }`
                     }
                     onClick={() => setMore(true)}
@@ -132,7 +132,7 @@ const Page = () => {
                 }
               </p>
               {more &&
-                <p id="more" name="more" className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
+                <p id="more" name="more" className="text-slate-400 text-lg text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
                 </p>}
             </div>
@@ -235,7 +235,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_90px)] flex justify-center items-center max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_96px)] flex justify-center items-center max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
