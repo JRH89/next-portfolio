@@ -97,30 +97,32 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_96px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-center flex gap-3 flex-col items-center max-w-3xl p-4">
-              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-center flex flex-col items-center max-w-3xl py-2 px-2">
+              <div className="w-1/2 sm:w-1/2 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover mb-4 rounded-xl border-2 border-slate-700"
+                  className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover mb-2 rounded-xl border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-4">Jared R Hooker</h1>
-              <a title="skills" className="flex mb-4 justify-center" href="https://skillicons.dev">
-                <img className="flex flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-2">Jared R Hooker</h1>
+              <a title="skills" className="flex mb-2 justify-center" href="https://skillicons.dev">
+                <img className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
-              <p className="text-slate-400 text-lg text-center mx-2 sm:mx-0">
+              <p className="text-slate-400 pb-2 text-md text-center mx-2 leading-tight
+               sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-             </p>
-             <p id="more" name="more" className="text-slate-400 text-lg text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
-                  I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
-                </p>
+              </p>
+              <p id="more" name="more" className="text-slate-400 leading-tight text-md text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
+                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
+              </p>
             </div>
           </section>
+        }
         {!certs &&
           <div className="text-xl rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
@@ -151,16 +153,7 @@ const Page = () => {
               >
                 Android
               </button>
-
             </div>
-            {/* {activeGroup !== null &&
-              <div className="flex bg-black w-full flex-col">
-
-                <div className="flex mb-12 bg-black w-full  justify-center">
-                  <i onClick={() => setActiveGroup(null)} className="mt-1 fa-solid fixed fa-xmark mb-4 text-red-400 text-3xl hover:scale-75 align-middle hover:rotate-180 cursor-pointer duration-300 flex justify-center"></i>
-                </div></div>
-            } */}
-
             <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-4 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
@@ -208,7 +201,6 @@ const Page = () => {
               >
                 Certificates
               </button>
-
             }
             {certs &&
               <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
@@ -218,7 +210,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_96px)] flex justify-center items-center max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
@@ -252,7 +244,6 @@ const Page = () => {
                 {clickedImage && (
                   <div
                     className="absolute inset-0 z-50 bg-black max-w-[800px] left-0 right-0 place-items-center flex flex-col items-center justify-center"
-
                   >
                     <i onClick={handleClose} className="text-red-400 right-5 absolute top-12 text-3xl hover:scale-75 duration-300 hover:rotate-180 hover:opacity-50 fa-solid fa-xmark"></i>
                     <Image
