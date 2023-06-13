@@ -97,7 +97,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] sm:min-h-[calc(100vh_-_120px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] sm:min-h-[calc(100vh_-_120px)] place-items-center items-center flex align-middle border-2 mt-10 border-slate-700 rounded-xl`}>
             <div className="w-full justify-evenly flex flex-col items-center max-w-3xl py-2 px-2">
               <div className="w-1/2 sm:w-1/2 flex justify-center place-content-center items-center">
                 <Image
