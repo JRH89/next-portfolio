@@ -91,7 +91,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 					<a download href="/Jared-Hooker-Resume.pdf">RESUME</a>
 				</li>
 				<li className="hover:scale-90 hover:opacity-50 duration-300 ">
-					<a href="https://have-mycard.vercel.app/api/xT17MRpa">CONTACT</a>
+					<a href="https://have-mycard.vercel.app/api/3dhrOh3i">CONTACT</a>
 				</li>
 			</ul>
 		</nav>
