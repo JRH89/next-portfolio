@@ -97,20 +97,21 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly flex flex-col gap-2 items-center max-w-3xl py-2 px-2">
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-9 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-evenly flex flex-col gap-2 items-center max-w-3xl py-4 px-2">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
                   alt="profile picture"
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover mb-2 rounded-xl border-2 border-slate-700"
+                  className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover rounded-xl border-2 border-slate-700"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400 mb-2">Jared R Hooker</h1>
-              <a title="skills" className="flex mb-2 justify-center" href="https://skillicons.dev">
+              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400
+              ">Jared R Hooker</h1>
+              <a title="skills" className="flex justify-center" href="https://skillicons.dev">
                 <img className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
               <p className="text-slate-400  text-lg sm:text-lg text-center mx-2 leading-tight
@@ -209,7 +210,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-10 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
