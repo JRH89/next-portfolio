@@ -98,8 +98,8 @@ const Page = () => {
         }
         {!activeGroup && !certs &&
           <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-9 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly flex flex-col gap-2 items-center max-w-3xl py-4 px-2">
-              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
+            <div className="w-full justify-evenly flex flex-col gap-3 items-center max-w-3xl py-4 px-2">
+              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -112,12 +112,12 @@ const Page = () => {
               <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400
               ">Jared R Hooker</h1>
               <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                <img className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                <img className="flex w-80 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
               </a>
-              <p className="text-slate-400  text-lg sm:text-lg text-center mx-2 leading-tight
+              <p className="text-slate-400 text-lg sm:text-lg text-center mx-2 leading-tight
                sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-                <br></br>
+                <br/>
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
               </p>
             </div>
@@ -145,7 +145,6 @@ const Page = () => {
               >
                 Games
               </button>
-
               <button
                 className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
