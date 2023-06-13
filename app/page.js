@@ -97,7 +97,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_96px)] place-items-center items-center flex align-middle  border-2 mt-11 border-slate-700 rounded-xl`}>
+          <section className={`bg-black min-h-[calc(100vh_-_96px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
             <div className="w-full justify-center flex gap-3 flex-col items-center max-w-3xl p-4">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
@@ -115,29 +115,12 @@ const Page = () => {
               </a>
               <p className="text-slate-400 text-lg text-center mx-2 sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-                {!more &&
-                  <button
-                    className={`w-auto text-lg hover:scale-90 ml-2 hover:opacity-60 duration-300 text-slate-400 underline rounded-lg ${activeGroup === "software" ? "text-slate-400" : ""
-                      }`
-                    }
-                    onClick={() => setMore(true)}
-                  >
-                    More...
-                  </button>
-                }
-                {more &&
-                  <button onClick={() => setMore(false)} className="text-slate-400 ml-2 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
-                    ...Less
-                  </button>
-                }
-              </p>
-              {more &&
-                <p id="more" name="more" className="text-slate-400 text-lg text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
+             </p>
+             <p id="more" name="more" className="text-slate-400 text-lg text-center border-t border-slate-400/60 pt-2 mx-2 sm:mx-0 ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
                 </p>}
             </div>
           </section>
-        }
         {!certs &&
           <div className="text-xl rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
