@@ -1,13 +1,13 @@
 "use client"
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import MyImageGallery from "./components/imageGallery";
 import projects from "./projectsData";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
 import Message from "./components/message";
 import Loading from "@/utils/Loading";
+import Link from "next/link";
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null);
@@ -64,8 +64,15 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <Nav activeGroup={activeGroup} setActiveGroup={setActiveGroup} handleMenuClick={handleMenuClick} openMenu={openMenu} />
+      <div id="hero" name="hero" className="flex mx-3  font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
+        <Nav
+          activeGroup={activeGroup}
+          setActiveGroup={setActiveGroup}
+          handleMenuClick={handleMenuClick}
+          openMenu={openMenu}
+          setShowCerts={setShowCerts}
+          setActiveProject={setActiveProject}
+        />
         {isLoading &&
           <Loading />
         }
@@ -105,17 +112,14 @@ const Page = () => {
                 }
               </p>
               {more &&
-                <p className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
+                <p id="more" name="more" className="text-slate-400 text-xl text-center border-t border-slate-400/60 pt-2 mt-2 mx-2 sm:mx-0 ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, always seeking creative solutions to overcome any obstacles.
-                  {/* <button onClick={() => setMore(false)} className="text-slate-400 underline hover:scale-90 hover:opacity-60 duration-300 rounded-lg">
-                  ...Less
-                </button> */}
                 </p>}
             </div>
           </section>
         }
         {!certs &&
-          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2">
+          <div className="w-full rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 max-w-3xl p-2" >
             <div ref={buttonRowRef} className={`flex  justify-center gap-1 sm:gap-5 rounded-xl sm:mx-5 mx-5 text-md sm:text-3xl my-2 mt-3 flex-row items-center place-items-center content-center ${activeGroup ? "mt-8 top-[200px] z-10 p-2" : ""
               }`
             }
@@ -190,12 +194,15 @@ const Page = () => {
         {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10 mb-12' : ''}`}>
           <div ref={buttonRowRef} className="flex gap-2 justify-center">
             {!certs &&
+
               <button
                 className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg px-4 py-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl  p-4" : ""}`}
                 onClick={showCerts}
               >
                 Certificates
-              </button>}
+              </button>
+
+            }
             {certs &&
               <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
             }
@@ -204,7 +211,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div className="bg-black max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
+          <div id="message" name="message" className="bg-black max-w-[770px] w-full mb-12 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
