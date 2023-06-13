@@ -25,7 +25,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 							setActiveProject(null)
 						}}
 					>
-						HOME
+						Home
 					</Link>
 
 				</li>
@@ -34,7 +34,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 						className="hover:scale-90 hover:opacity-50 duration-300"
 						onClick={openMenu}
 					>
-						SECTIONS
+						Sections
 					</button>
 					{showMenu && (
 						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6">
@@ -86,12 +86,15 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 						</div>
 					)}
 				</li>
-
 				<li className="hover:scale-90 hover:opacity-50 duration-300">
-					<a download href="/Jared-Hooker-Resume.pdf">RESUME</a>
+					<a download href="/Jared-Hooker-Resume.pdf">
+Resume
+</a>
 				</li>
 				<li className="hover:scale-90 hover:opacity-50 duration-300 ">
-					<a href="https://have-mycard.vercel.app/api/3dhrOh3i">CONTACT</a>
+					<a href="https://have-mycard.vercel.app/api/3dhrOh3i">
+Contact
+</a>
 				</li>
 			</ul>
 		</nav>
