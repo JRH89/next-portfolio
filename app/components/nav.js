@@ -84,6 +84,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 								Certificates
 							</Link>
 							<Link
+        href={"#message"}
 								to="message"
 								spy={true}
 								smooth={true}
