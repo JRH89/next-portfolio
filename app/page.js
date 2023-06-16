@@ -24,24 +24,28 @@ const Page = () => {
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0
 
   useEffect(() => {
-    const navHeight = Nav.Height
-    const footerHeight = Footer.Height // Set the actual footer height here
-
     const calculateRemainingHeight = () => {
       const windowHeight = window.innerHeight
-      const newRemainingHeight = windowHeight - navHeight - footerHeight
+      const navbar = document.getElementById('navbar')
+      const navbarHeight = navbar.offsetHeight
+      const footer = document.getElementById('footer')
+      const footerHeight = footer.offsetHeight
+
+      const newRemainingHeight = windowHeight - navbarHeight - footerHeight
       setRemainingHeight(newRemainingHeight)
     }
 
     calculateRemainingHeight()
 
-    // Recalculate remaining height on window resize
-    window.addEventListener("resize", calculateRemainingHeight)
-    return () => {
-      window.removeEventListener("resize", calculateRemainingHeight)
+    const handleResize = () => {
+      calculateRemainingHeight()
     }
-  }, [])
 
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [activeGroup, remainingHeight])
   const handleImageClick = (imagePath) => {
     setClickedImage(imagePath)
   }
@@ -85,24 +89,23 @@ const Page = () => {
   return (
     <>
       <div id="hero" name="hero" className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <Nav
+        <div id="navbar" className="flex justify-center"><Nav
           activeGroup={activeGroup}
           setActiveGroup={setActiveGroup}
           handleMenuClick={handleMenuClick}
           openMenu={openMenu}
           setShowCerts={setShowCerts}
           setActiveProject={setActiveProject}
-        />
+        /></div>
         {isLoading &&
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
-              ">Jared R Hooker</h1>
-              <div className="w-1/2 max-w-[300px]  flex flex-col justify-center place-content-center align-middle items-center">
-
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
+            <div className="w-full py-5 justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
+              <h1 className="text-5xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
+              ">Jared Hooker</h1>
+              <div className="w-1/3 max-w-[300px]  flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -114,17 +117,19 @@ const Page = () => {
               </div>
               <div className="border-b-2 border-t-2 p-2 mt-1 rounded-xl border-slate-500">
                 <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                  <img className="flex w-60 sm:w-80  flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
-                </a></div>
+                  <img className="flex w-60 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                </a>
+              </div>
               <div>
-                <p className="text-slate-500 leading-tight text-lg font-bold text-center mx-5 
+                <p className="text-slate-500 leading-tight sm:text-2xl text-lg font-medium text-center mx-3 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-500 leading-tight text-lg font-bold text-center text-md mx-5 
+                <p className="text-slate-500 leading-tight sm:text-2xl text-lg font-medium text-center text-md mx-3 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
-                </p></div>
+                </p>
+              </div>
             </div>
           </section>
         }
@@ -196,10 +201,6 @@ const Page = () => {
             </div>
           </div>
         }
-
-
-
-
         {certs && <>
           <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
 
@@ -210,13 +211,6 @@ const Page = () => {
           </div>
         </>
         }
-
-
-
-
-
-
-
         {!activeGroup && !certs &&
           <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
             <Message />
@@ -309,7 +303,8 @@ const Page = () => {
             </div>
           </div>
         )}
-        <Footer />
+        <div className="flex justify-center" id="footer">
+          <Footer /></div>
       </div>
     </>
   )
