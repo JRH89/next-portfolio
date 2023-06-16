@@ -1,17 +1,16 @@
-import { Link } from "react-scroll";
-
-import React, { useState } from 'react';
+import { Link } from "react-scroll"
+import React, { useState } from 'react'
 
 function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }) {
-	const [showMenu, setShowMenu] = useState(false);
+	const [showMenu, setShowMenu] = useState(false)
 
 	function openMenu() {
-		setShowMenu(!showMenu);
+		setShowMenu(!showMenu)
 	}
 
 	return (
 		<nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed text-lg z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold">
-			<ul className="flex py-2 justify-evenly mx-5">
+			<ul className="flex py-2 duration-300 justify-evenly mx-5">
 				<li className="hover:scale-90 hover:opacity-50 cursor-pointer duration-300">
 					<Link
 						to="hero"
@@ -27,7 +26,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 					>
 						Home
 					</Link>
-
 				</li>
 				<li className="relative">
 					<button
@@ -37,7 +35,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 						Sections
 					</button>
 					{showMenu && (
-						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6">
+						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6 transition-opacity ">
 							<button
 								onClick={() => {
 									setShowCerts(false)
@@ -98,7 +96,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 				</li>
 			</ul>
 		</nav>
-	);
+	)
 }
 
-export default Nav;
+export default Nav

@@ -18,34 +18,9 @@ const Page = () => {
   const [isLoading, setISLoading] = useState(false)
   const [clickedImage, setClickedImage] = useState(null)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
-  const [more, setMore] = useState(false)
-  const [remainingHeight, setRemainingHeight] = useState(0)
 
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0
 
-  useEffect(() => {
-    const calculateRemainingHeight = () => {
-      const windowHeight = window.innerHeight
-      const navbar = document.getElementById('navbar')
-      const navbarHeight = navbar.offsetHeight
-      const footer = document.getElementById('footer')
-      const footerHeight = footer.offsetHeight
-
-      const newRemainingHeight = windowHeight - navbarHeight - footerHeight
-      setRemainingHeight(newRemainingHeight)
-    }
-
-    calculateRemainingHeight()
-
-    const handleResize = () => {
-      calculateRemainingHeight()
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [activeGroup, remainingHeight])
   const handleImageClick = (imagePath) => {
     setClickedImage(imagePath)
   }
@@ -89,21 +64,23 @@ const Page = () => {
   return (
     <>
       <div id="hero" name="hero" className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
-        <div id="navbar" className="flex justify-center"><Nav
-          activeGroup={activeGroup}
-          setActiveGroup={setActiveGroup}
-          handleMenuClick={handleMenuClick}
-          openMenu={openMenu}
-          setShowCerts={setShowCerts}
-          setActiveProject={setActiveProject}
-        /></div>
+        <div id="navbar" className="flex justify-center">
+          <Nav
+            activeGroup={activeGroup}
+            setActiveGroup={setActiveGroup}
+            handleMenuClick={handleMenuClick}
+            openMenu={openMenu}
+            setShowCerts={setShowCerts}
+            setActiveProject={setActiveProject}
+          />
+        </div>
         {isLoading &&
           <Loading />
         }
         {!activeGroup && !certs &&
           <section className={`bg-black min-h-[calc(100vh_-_100px)] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
             <div className="w-full py-5 justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
-              <h1 className="text-5xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
               ">Jared Hooker</h1>
               <div className="w-1/3 max-w-[300px]  flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -121,11 +98,11 @@ const Page = () => {
                 </a>
               </div>
               <div>
-                <p className="text-slate-500 leading-tight sm:text-2xl text-lg font-medium text-center mx-3 
+                <p className="text-slate-500 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-500 leading-tight sm:text-2xl text-lg font-medium text-center text-md mx-3 
+                <p className="text-slate-500 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -137,7 +114,7 @@ const Page = () => {
           <div className="text-xl  rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
-              className={`flex  justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
+              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
                 }`}
             >
               <button
