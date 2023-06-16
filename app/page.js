@@ -101,7 +101,7 @@ const Page = () => {
             <div className="w-full justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
               <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
               ">Jared R Hooker</h1>
-              <div className="w-1/3 flex flex-col justify-center place-content-center align-middle items-center">
+              <div className="w-1/2 max-w-[300px]  flex flex-col justify-center place-content-center align-middle items-center">
 
                 <Image
                   alt="profile picture"
@@ -117,11 +117,11 @@ const Page = () => {
                   <img className="flex w-60 sm:w-80  flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
                 </a></div>
               <div>
-                <p className="text-slate-500 text-md sm:text-lg font-bold text-center mx-5 
+                <p className="text-slate-500 leading-tigher text-lg font-bold text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-500 sm:text-lg font-bold text-center text-md mx-5 
+                <p className="text-slate-500 leading-tighter text-lg font-bold text-center text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p></div>
