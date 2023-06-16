@@ -1,58 +1,58 @@
 "use client"
-import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-import MyImageGallery from "./certificates/imageGallery";
-import projects from "./projects/projectDetails";
-import Nav from "./components/Navbar";
-import Footer from "./components/Footer";
-import Message from "./components/Message";
-import Loading from "@/utils/Loading";
-import Link from "next/link";
+import React, { useState, useRef, useEffect } from "react"
+import Image from "next/image"
+import MyImageGallery from "./certificates/imageGallery"
+import projects from "./projects/projectDetails"
+import Nav from "./components/Navbar"
+import Footer from "./components/Footer"
+import Message from "./components/Message"
+import Loading from "@/utils/Loading"
+import Link from "next/link"
 
 const Page = () => {
-  const [activeGroup, setActiveGroup] = useState(null);
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeGroup, setActiveGroup] = useState(null)
+  const [activeProject, setActiveProject] = useState(null)
   const buttonRowRef = useRef(null)
   const [showMenu, setShowMenu] = useState(false)
-  const [certs, setShowCerts] = useState(false);
+  const [certs, setShowCerts] = useState(false)
   const [isLoading, setISLoading] = useState(false)
-  const [clickedImage, setClickedImage] = useState(null);
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [clickedImage, setClickedImage] = useState(null)
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [more, setMore] = useState(false)
-  const [remainingHeight, setRemainingHeight] = useState(0);
+  const [remainingHeight, setRemainingHeight] = useState(0)
 
-  const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0;
+  const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0
 
   useEffect(() => {
-    const navHeight = Nav.Height;
-    const footerHeight = Footer.Height; // Set the actual footer height here
+    const navHeight = Nav.Height
+    const footerHeight = Footer.Height // Set the actual footer height here
 
     const calculateRemainingHeight = () => {
-      const windowHeight = window.innerHeight;
-      const newRemainingHeight = windowHeight - navHeight - footerHeight;
-      setRemainingHeight(newRemainingHeight);
-    };
+      const windowHeight = window.innerHeight
+      const newRemainingHeight = windowHeight - navHeight - footerHeight
+      setRemainingHeight(newRemainingHeight)
+    }
 
-    calculateRemainingHeight();
+    calculateRemainingHeight()
 
     // Recalculate remaining height on window resize
-    window.addEventListener("resize", calculateRemainingHeight);
+    window.addEventListener("resize", calculateRemainingHeight)
     return () => {
-      window.removeEventListener("resize", calculateRemainingHeight);
-    };
-  }, []);
+      window.removeEventListener("resize", calculateRemainingHeight)
+    }
+  }, [])
 
   const handleImageClick = (imagePath) => {
-    setClickedImage(imagePath);
-  };
+    setClickedImage(imagePath)
+  }
 
   const handleClose = () => {
-    setClickedImage(null);
-  };
+    setClickedImage(null)
+  }
 
   function showCerts() {
     setISLoading(true)
-    setShowCerts(!certs);
+    setShowCerts(!certs)
     setISLoading(false)
   }
 
@@ -63,24 +63,24 @@ const Page = () => {
   const filteredProjects =
     activeGroup === null
       ? []
-      : projects.filter((project) => project.group === activeGroup);
+      : projects.filter((project) => project.group === activeGroup)
 
   const openProject = (projectId) => {
-    const project = projects.find((project) => project.id === projectId);
-    setActiveProject(project);
-    setActiveImageIndex(0);
-  };
+    const project = projects.find((project) => project.id === projectId)
+    setActiveProject(project)
+    setActiveImageIndex(0)
+  }
 
   const closeProject = () => {
     setISLoading(true)
-    setActiveProject(null);
+    setActiveProject(null)
     setISLoading(false)
-  };
+  }
 
   const handleMenuClick = (group) => {
-    setActiveGroup(group);
+    setActiveGroup(group)
     setShowMenu(!showMenu)
-  };
+  }
 
   return (
     <>
@@ -97,7 +97,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-9 border-slate-700 rounded-xl`}>
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
             <div className="w-full justify-evenly flex flex-col gap-2 items-center max-w-3xl py-4 px-2">
               <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center items-center">
                 <Image
@@ -112,22 +112,27 @@ const Page = () => {
               <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400
               ">Jared R Hooker</h1>
               <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                <img className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                <img
+                  className="flex w-60 flex-row items-center place-content-center text-center place-items-center justify-center"
+                  title="skill-images"
+                  src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6"
+                  alt="skill images"
+                />
               </a>
-              <p className="text-slate-400  text-lg sm:text-lg text-center mx-2 leading-tight
+              <p className="text-slate-400 font-normal text-lg sm:text-lg text-center mx-2 leading-tight
                sm:mx-0">
                 I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-                <br></br>
+                <br />
                 I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
               </p>
             </div>
           </section>
         }
         {!certs &&
-          <div className="text-xl rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div className="text-xl  rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
-              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
+              className={`flex  justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
                 }`}
             >
               <button
@@ -178,7 +183,7 @@ const Page = () => {
                     <Image
                       height={1080}
                       width={1920}
-                      className="w-full h-auto object-cover  border-2 rounded-xl border-slate-5400"
+                      className="w-full h-auto object-cover border-2 rounded-xl border-slate-5400"
                       src={project.image}
                       alt={project.title}
                     />
@@ -210,7 +215,7 @@ const Page = () => {
         </div>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-10 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
@@ -304,6 +309,6 @@ const Page = () => {
         <Footer />
       </div>
     </>
-  );
-};
-export default Page;
+  )
+}
+export default Page
