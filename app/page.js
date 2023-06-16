@@ -97,29 +97,34 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly flex flex-col gap-3 items-center max-w-3xl py-4 px-2">
-              <div className="w-1/2 sm:w-1/3 flex justify-center place-content-center align-middle items-center">
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
+              ">Jared R Hooker</h1>
+              <div className="w-1/3 flex flex-col justify-center place-content-center align-middle items-center">
+
                 <Image
                   alt="profile picture"
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-full shadow-md shadow-slate-700/50 justify-center items-center h-auto object-cover rounded-xl border-2 border-slate-700"
+                  className="w-full justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-500"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-slate-400
-              ">Jared R Hooker</h1>
-              <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                <img className="flex w-80 flex-row items-center place-content-center text-center place-items-center justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
-              </a>
-              <p className="text-slate-400  text-lg sm:text-lg text-center mx-2 leading-tight
-               sm:mx-0">
-                I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
-                <br></br>
-                I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
-              </p>
+              <div className="border-b-2 border-t-2 p-2 mt-1 rounded-xl border-slate-500">
+                <a title="skills" className="flex justify-center" href="https://skillicons.dev">
+                  <img className="flex w-60 sm:w-80  flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                </a></div>
+              <div>
+                <p className="text-slate-500 sm:text-lg font-normal text-center mx-5 
+               ">
+                  I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
+                </p>
+                <p className="text-slate-500 sm:text-lg font-normal  text-center mx-5 
+               ">
+                  I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
+                </p></div>
             </div>
           </section>
         }
@@ -191,23 +196,27 @@ const Page = () => {
             </div>
           </div>
         }
-        {!activeGroup && <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-10 mb-12' : ''}`}>
-          <div ref={buttonRowRef} className="flex gap-2 justify-center">
-            {!certs &&
-              <button
-                className={`border-2 sm:text-3xl text-xl border-slate-400 w-auto text-center shadow-slate-400/50 text-slate-400 shadow-lg p-2 rounded-xl hover:scale-90 hover:opacity-50 duration-300 ${certs ? "top-[200px] rounded-xl p-4" : ""}`}
-                onClick={showCerts}
-              >
-                Certificates
-              </button>
-            }
-            {certs &&
-              <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
-            }
+
+
+
+
+        {certs && <>
+          <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
+
+            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
+            <div className="mt-3">
+              <MyImageGallery />
+            </div>
           </div>
-          {certs && <MyImageGallery />}
-        </div>
+        </>
         }
+
+
+
+
+
+
+
         {!activeGroup && !certs &&
           <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
             <Message />
