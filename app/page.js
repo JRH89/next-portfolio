@@ -97,7 +97,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
+          <section className={`bg-black min-h-[calc(100vh_-_100px)] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 border-slate-700 rounded-xl`}>
             <div className="w-full justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
               <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
               ">Jared R Hooker</h1>
