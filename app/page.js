@@ -83,7 +83,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 min-h-[88vh] mt-10 my-auto content-center place-content-center flex place-items-center items-center justify-evenly flex align-middle border-2 m-0  border-slate-700 rounded-xl`}>
+          <section className={`bg-neutral-950 min-h-[86vh] mt-10 my-auto content-center place-content-center flex place-items-center items-center justify-evenly flex align-middle border-2 m-0  border-slate-700 rounded-xl`}>
             <div className="w-full justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
               <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -196,7 +196,7 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[98vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl mb-12 border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[86vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl mb-10 border-slate-700 border-2">
             <Message />
           </div>
         }
