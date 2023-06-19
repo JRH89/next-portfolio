@@ -97,7 +97,7 @@ const Page = () => {
               </div>
               <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
               ">
-                Jared Hooker
+                Jared R Hooker
               </h1>
 
               <div>
