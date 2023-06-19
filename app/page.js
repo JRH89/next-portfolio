@@ -83,7 +83,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
+          <section className={`bg-neutral-950 min-h-[80vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 m-0  border-slate-700 rounded-xl`}>
             <div className="w-full py-5 justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
               <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -188,7 +188,7 @@ const Page = () => {
         {certs && <>
           <div className={`w-full rounded-xl items-center place-items-center bg-neutral-950 relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
 
-            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
+            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
             <div className="mt-3">
               <MyImageGallery />
             </div>
@@ -196,7 +196,7 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[80vh] flex justify-center items-center max-w-[770px] w-full rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
