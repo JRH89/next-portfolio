@@ -83,25 +83,23 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-black min-h-[calc(100vh_-_100px)] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
-            <div className="w-full py-5 justify-evenly gap-4 flex flex-col  items-center max-w-3xl">
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
-              ">Jared Hooker</h1>
-              <div className="w-1/3 max-w-[300px]  flex flex-col justify-center place-content-center align-middle items-center">
+          <section className={`bg-neutral-950 min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
+            <div className="w-full py-5 justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
+              <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-full justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-500"
+                  className="w-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-500"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <div className="border-b-2 border-t-2 p-2 mt-1 rounded-xl border-slate-500">
-                <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                  <img className="flex w-60 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
-                </a>
-              </div>
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
+              ">
+                Jared Hooker
+              </h1>
+
               <div>
                 <p className="text-slate-500 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
                ">
@@ -112,14 +110,18 @@ const Page = () => {
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
               </div>
-            </div>
+              <div className="border-b-2 border-t-2 p-1 mt-3 rounded-xl border-slate-500">
+                <a title="skills" className="flex justify-center" href="https://skillicons.dev">
+                  <img className="flex w-80 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                </a>
+              </div></div>
           </section>
         }
         {!certs &&
-          <div className="text-xl  rounded-xl items-center place-items-center bg-black content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div className="text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
-              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-black z-10 p-2 sticky flex " : ""
+              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
                 }`}
             >
               <button
@@ -149,7 +151,7 @@ const Page = () => {
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-black shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
+                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-neutral-950 shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
                     ? "opacity-0 pointer-events-none"
                     : "opacity-100"
                     }`}
@@ -184,7 +186,7 @@ const Page = () => {
           </div>
         }
         {certs && <>
-          <div className={`w-full rounded-xl items-center place-items-center bg-black relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
+          <div className={`w-full rounded-xl items-center place-items-center bg-neutral-950 relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
 
             <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
             <div className="mt-3">
@@ -194,12 +196,12 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-black h-[calc(100vh_-_100px)] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-black">
+          <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
             <div className="max-w-[760px] p-8">
               <h2
                 className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
@@ -227,7 +229,7 @@ const Page = () => {
                 )}
                 {clickedImage && (
                   <div
-                    className="absolute inset-0 z-50 bg-black max-w-[800px] left-0 right-0 place-items-center flex flex-col items-center justify-center"
+                    className="absolute inset-0 z-50 bg-neutral-950 max-w-[800px] left-0 right-0 place-items-center flex flex-col items-center justify-center"
                   >
                     <i onClick={handleClose} className="text-red-400 right-5 absolute top-12 text-3xl hover:scale-75 duration-300 hover:rotate-180 hover:opacity-50 fa-solid fa-xmark"></i>
                     <Image
