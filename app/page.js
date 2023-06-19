@@ -110,7 +110,7 @@ const Page = () => {
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
               </div>
-              <div className="border-b-2  border-t-2 p-1 mt-3 rounded-xl border-slate-400">
+              <div className="border-b-2  border-t-2 p-2 mt-3 rounded-xl border-slate-400">
                 <a title="skills" className="flex justify-center" href="https://skillicons.dev">
                   <img className="flex w-80 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
                 </a>
