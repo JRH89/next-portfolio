@@ -1,5 +1,10 @@
 "use client"
-import React, { useState, useRef, useEffect } from "react"
+
+import React, {
+  useState,
+  useRef,
+  useEffect
+} from "react"
 import Image from "next/image"
 import MyImageGallery from "./certificates/imageGallery"
 import projects from "./projects/projectDetails"
@@ -140,7 +145,7 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
