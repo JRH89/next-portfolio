@@ -91,26 +91,26 @@ const Page = () => {
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-500"
+                  className="w-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-400"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-500
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
               ">
                 Jared Hooker
               </h1>
 
               <div>
-                <p className="text-slate-500 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-500 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
+                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
               </div>
-              <div className="border-b-2 border-t-2 p-1 mt-3 rounded-xl border-slate-500">
+              <div className="border-b-2  border-t-2 p-1 mt-3 rounded-xl border-slate-400">
                 <a title="skills" className="flex justify-center" href="https://skillicons.dev">
                   <img className="flex w-80 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
                 </a>
@@ -171,7 +171,7 @@ const Page = () => {
                     <Image
                       height={1080}
                       width={1920}
-                      className="w-full h-auto object-cover border-2 rounded-xl border-slate-5400"
+                      className="w-full h-auto object-cover border-2 rounded-xl border-slate-400"
                       src={project.image}
                       alt={project.title}
                     />

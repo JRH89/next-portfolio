@@ -1,15 +1,15 @@
 "use client"
-import React, { useState } from "react";
-import DOMPurify from "dompurify";
+import React, { useState } from "react"
+import DOMPurify from "dompurify"
 
 export default function Message() {
-	const [showMessage, setShowMessage] = useState(false);
+	const [showMessage, setShowMessage] = useState(false)
 
 	async function handleSubmit(event) {
-		event.preventDefault();
+		event.preventDefault()
 
-		const subject = DOMPurify.sanitize(event.target.elements.subject.value);
-		const message = DOMPurify.sanitize(event.target.elements.message.value);
+		const subject = DOMPurify.sanitize(event.target.elements.subject.value)
+		const message = DOMPurify.sanitize(event.target.elements.message.value)
 
 		try {
 			const response = await fetch("/api/send-email", {
@@ -23,21 +23,21 @@ export default function Message() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-			});
+			})
 
 			if (response.ok) {
-				setShowMessage(true);
-				event.target.reset();
+				setShowMessage(true)
+				event.target.reset()
 			} else {
-				console.log("Error occurred while sending email.");
+				console.log("Error occurred while sending email.")
 			}
 		} catch (error) {
-			console.error(error);
+			console.error(error)
 		}
 
 		setTimeout(() => {
-			setShowMessage(false);
-		}, 5000);
+			setShowMessage(false)
+		}, 5000)
 	}
 
 	return (
@@ -56,14 +56,14 @@ export default function Message() {
 					</div>
 				) : (
 					<form
-						className="flex flex-col gap-3 text-center text-white"
+						className="flex flex-col gap-3 text-center text-slate-400"
 						onSubmit={handleSubmit}
 					>
 						<p className="text-blue-400 font-extrabold underline text-2xl">
 							Subject:
 						</p>
 						<input
-							className="p-2 rounded-md text-black mb-4"
+							className="p-2 rounded-md border-2 border-slate-400 text-slate-400 bg-neutral-950 mb-4"
 							type="text"
 							name="subject"
 							placeholder="Subject"
@@ -73,7 +73,7 @@ export default function Message() {
 							Message:
 						</p>
 						<textarea
-							className="p-2 rounded-md text-black"
+							className="p-2 rounded-md border-2 border-slate-400 text-slate-400 bg-neutral-950"
 							name="message"
 							rows="5"
 							cols="30"
@@ -87,5 +87,5 @@ export default function Message() {
 					</form>
 				)}</>
 		</>
-	);
+	)
 }
