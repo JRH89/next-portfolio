@@ -196,7 +196,7 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[85vh] flex justify-center items-center max-w-[770px] w-full rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[85vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl border-slate-700 border-2">
             <Message />
           </div>
         }
