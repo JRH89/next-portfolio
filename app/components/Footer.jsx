@@ -7,7 +7,7 @@ function Footer() {
 			<footer className="w-full p-1 z-50 font-bold max-w-[800px] text-center bg-gradient-to-r rounded-t-xl from-blue-500 via-green-500 to-red-500 text-slate-900">
 				<div>
 					<VisitorCounter />
-					<p>Hooker Hill Studios ⓒ 2023</p>
+					<p><a className='hover:scale-90 hover:opacity-60' href='https://hooker-hill-studios.vercel.app'>Hooker Hill Studios</a> ⓒ 2023</p>
 				</div>
 			</footer>
 		</div>
