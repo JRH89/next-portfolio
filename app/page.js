@@ -95,7 +95,7 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-justify text-slate-400
               ">
                 Jared R Hooker
               </h1>
@@ -147,11 +147,11 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div id="activegroup" className={`grid h-full text-left ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-neutral-950 shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
+                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col  bg-neutral-950 shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
                     ? "opacity-0 pointer-events-none"
                     : "opacity-100"
                     }`}
@@ -204,7 +204,7 @@ const Page = () => {
           <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
             <div className="max-w-[760px] p-8">
               <h2
-                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
+                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-left font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
@@ -273,7 +273,7 @@ const Page = () => {
                   <i className="fa-solid fa-caret-right text-3xl"></i>
                 </button>
               </div>
-              <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
+              <p className="text-slate-400 text-left mb-4 text-xl">{activeProject.description}</p>
               <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
                 <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
