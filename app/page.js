@@ -95,17 +95,17 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-justify text-slate-400
+              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
               ">
                 Jared R Hooker
               </h1>
 
               <div>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="text-slate-400 leading-tight  sm:text-xl text-lg font-medium text-justify mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
+                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-justify text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -147,7 +147,7 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div id="activegroup" className={`grid h-full text-left ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
@@ -176,7 +176,7 @@ const Page = () => {
                       alt={project.title}
                     />
                   </div>
-                  <p className="text-slate-400 text-center">
+                  <p className="text-slate-400 text-justify">
                     {`${project.description.split('. ')[0]}. ${project.description.split('. ')[1]}...`}
                   </p>
                 </div>
@@ -204,7 +204,7 @@ const Page = () => {
           <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
             <div className="max-w-[760px] p-8">
               <h2
-                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-left font-bold ${activeProject.group === "software"
+                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
@@ -256,7 +256,7 @@ const Page = () => {
                 >
                   <i className="fa-solid fa-caret-left text-3xl"></i>
                 </button>
-                <p className="text-white align-middle flex text-center justify-center text-sm">
+                <p className="text-white align-middle font-medium flex text-justify justify-center text-md">
                   (click image to enlarge)
                 </p>
                 <button
