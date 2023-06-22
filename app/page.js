@@ -68,7 +68,7 @@ const Page = () => {
 
   return (
     <>
-      <div id="hero" name="hero" className="flex min-h-[100vh] w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
+      <div id="hero" name="hero" className="flex min-h-[100vh] w-full font-bold select-none flex-col items-center  justify-center bg-slate-700 rounded-xl">
 
         <div id="navbar" className="flex justify-center">
           <Nav
