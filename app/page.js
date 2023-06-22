@@ -67,8 +67,8 @@ const Page = () => {
   }
 
   return (
-    <div className="min-h-[100vh] ">
-      <div id="hero" name="hero" className="flex  w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
+    <div className="min-h-[100vh]">
+      <div id="hero" name="hero" className="flex flex-grow h-full w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
 
         <div id="navbar" className="flex justify-center">
           <Nav
@@ -84,8 +84,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 h-full  mt-12 py-5 content-center place-content-center flex place-items-center items-center justify-evenly align-middle border-2 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly gap-3 flex flex-col  items-center max-w-3xl">
+          <section className={`bg-neutral-950 h-full  mt-12 py-5 my-auto content-center place-content-center flex place-items-center items-center justify-evenly align-middle border-2 border-slate-700 rounded-xl`}>
+            <div className="w-full h-full my-auto justify-evenly gap-3 flex flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
@@ -119,7 +119,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14" : ""}`} >
+          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle h-full border-slate-700 my-auto border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14" : "pb-48"}`} >
             <div
               id="buttonrow"
               ref={buttonRowRef}
@@ -149,7 +149,7 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
+            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : ""}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
