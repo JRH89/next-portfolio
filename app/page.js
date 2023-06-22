@@ -83,8 +83,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
-            <div className="w-full py-5 justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
+          <section className={`bg-neutral-950 min-h-[85vh] mt-9 my-auto content-center place-content-center flex place-items-center items-center justify-evenly flex align-middle border-2 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
               <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
@@ -95,17 +95,17 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
+              <h1 className="text-4xl flex align-middle sm:text-5xl font-bold text-center text-slate-400
               ">
                 Jared R Hooker
               </h1>
 
               <div>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-justify mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
+                <p className="text-slate-400 leading-tight sm:text-xl mt-2 text-lg font-medium text-justify text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -151,7 +151,7 @@ const Page = () => {
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col items-center bg-neutral-950 shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
+                  className={`border-2 ${project.group === "software" ? "border-red-400 shadow-red-400/50" : project.group === "games" ? "border-blue-400 shadow-blue-400/50" : "border-green-400 shadow-green-400/50"} flex flex-col  bg-neutral-950 shadow-lg rounded-xl p-4 cursor-pointer transition duration-300 ${activeProject && activeProject.id === project.id
                     ? "opacity-0 pointer-events-none"
                     : "opacity-100"
                     }`}
@@ -176,7 +176,7 @@ const Page = () => {
                       alt={project.title}
                     />
                   </div>
-                  <p className="text-slate-400 text-center">
+                  <p className="text-slate-400 text-justify">
                     {`${project.description.split('. ')[0]}. ${project.description.split('. ')[1]}...`}
                   </p>
                 </div>
@@ -188,7 +188,7 @@ const Page = () => {
         {certs && <>
           <div className={`w-full rounded-xl items-center place-items-center bg-neutral-950 relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
 
-            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
+            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer flex text-red-400"></i>
             <div className="mt-3">
               <MyImageGallery />
             </div>
@@ -196,12 +196,12 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[85vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl mb-10 border-slate-700 border-2">
             <Message />
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
+          <div className="fixed top-0 z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
             <div className="max-w-[760px] p-8">
               <h2
                 className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
@@ -237,7 +237,7 @@ const Page = () => {
                       width={1920}
                       src={clickedImage}
                       alt="Clicked Image"
-                      className="w-full border border-white  h-auto"
+                      className="w-full border border-white h-auto"
                     />
                   </div>
                 )}
@@ -256,7 +256,7 @@ const Page = () => {
                 >
                   <i className="fa-solid fa-caret-left text-3xl"></i>
                 </button>
-                <p className="text-white align-middle flex text-center justify-center text-sm">
+                <p className="text-white align-middle font-medium flex text-center justify-center text-md">
                   (click image to enlarge)
                 </p>
                 <button
@@ -273,7 +273,7 @@ const Page = () => {
                   <i className="fa-solid fa-caret-right text-3xl"></i>
                 </button>
               </div>
-              <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
+              <p className="text-slate-400 text-justify mb-4 text-xl">{activeProject.description}</p>
               <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
                 <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
