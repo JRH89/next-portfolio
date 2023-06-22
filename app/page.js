@@ -68,7 +68,8 @@ const Page = () => {
 
   return (
     <>
-      <div id="hero" name="hero" className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
+      <div id="hero" name="hero" className="flex min-h-[100vh] mx-3 font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
+
         <div id="navbar" className="flex justify-center">
           <Nav
             activeGroup={activeGroup}
@@ -83,8 +84,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 min-h-[85vh] mt-9 my-auto content-center place-content-center flex place-items-center items-center justify-evenly flex align-middle border-2 border-slate-700 rounded-xl`}>
-            <div className="w-full justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
+          <section className={`bg-neutral-950 h-full  mt-11 py-5 content-center place-content-center flex place-items-center items-center justify-evenly align-middle border-2 border-slate-700 rounded-xl`}>
+            <div className="w-full justify-evenly gap-3 flex flex-col  items-center max-w-3xl">
               <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
@@ -101,11 +102,11 @@ const Page = () => {
               </h1>
 
               <div>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-justify mx-5 
+                <p className="text-slate-400 leading-tight sm:text-lg text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-400 leading-tight sm:text-xl mt-2 text-lg font-medium text-justify text-md mx-5 
+                <p className="text-slate-400 leading-tight sm:text-lg mt-2 text-lg font-medium text-center text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -118,8 +119,9 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className="text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14" : ""}`} >
             <div
+              id="buttonrow"
               ref={buttonRowRef}
               className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
                 }`}
@@ -195,11 +197,11 @@ const Page = () => {
           </div>
         </>
         }
-        {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[85vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl mb-10 border-slate-700 border-2">
+        {/* {!activeGroup && !certs &&
+          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] flex justify-center my-auto items-center max-w-[770px] w-full rounded-xl mb-12 border-slate-700 border-2">
             <Message />
           </div>
-        }
+        } */}
         {activeProject && (
           <div className="fixed top-0 z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
             <div className="max-w-[760px] p-8">

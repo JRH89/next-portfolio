@@ -1,7 +1,7 @@
 import { Link } from "react-scroll"
 import React, { useState } from 'react'
 
-function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }) {
+function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, activeGroup }) {
 	const [showMenu, setShowMenu] = useState(false)
 
 	function openMenu() {
@@ -17,7 +17,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 						activeClass="active"
 						spy={true}
 						smooth={true}
-						duration={500}
+						duration={700}
 						onClick={() => {
 							setActiveGroup(null)
 							setShowCerts(false)
@@ -26,7 +26,25 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 					>
 						Home
 					</Link>
+
 				</li>
+				{/* <li className="hover:scale-90 hover:opacity-50 cursor-pointer duration-300">
+					<Link
+						to="hero"
+						activeClass="active"
+						spy={true}
+
+						smooth={true}
+						duration={700}
+						onClick={() => {
+							setActiveGroup("software")
+							setShowCerts(false)
+							setActiveProject(null)
+						}}
+					>
+						Projects
+					</Link></li> */}
+
 				<li className="relative">
 					<button
 						className="hover:scale-90 hover:opacity-50 duration-300"
@@ -77,7 +95,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject }
 									setShowCerts(true)
 									openMenu()
 								}}
-								className="hover:text-green-400 duration-300 hover:scale-90"
+								className="hover:text-slate-400 duration-300 hover:scale-90"
 							>
 								Certificates
 							</Link>
