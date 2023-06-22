@@ -67,8 +67,8 @@ const Page = () => {
   }
 
   return (
-    <>
-      <div id="hero" name="hero" className="flex min-h-[100vh] w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
+    <div className="min-h-[100vh] ">
+      <div id="hero" name="hero" className="flex  w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
 
         <div id="navbar" className="flex justify-center">
           <Nav
@@ -292,7 +292,7 @@ const Page = () => {
         <div className="flex justify-center" id="footer">
           <Footer /></div>
       </div>
-    </>
+    </div>
   )
 }
 export default Page
