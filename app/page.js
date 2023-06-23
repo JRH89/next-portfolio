@@ -127,7 +127,7 @@ const Page = () => {
                 }`}
             >
               <button
-                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup(activeGroup === "software" ? null : "software")}
@@ -142,7 +142,8 @@ const Page = () => {
                 Games
               </button>
               <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "android" ? null : "android")}
               >
