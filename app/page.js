@@ -84,9 +84,9 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950   border-slate-700 rounded-xl`}>
-            <div className="w-full py-5 justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
-              <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
+          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-slate-700 rounded-xl`}>
+            <div className="w-full py-5 justify-evenly gap-5 flex flex-col items-center max-w-3xl">
+              <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
