@@ -102,11 +102,11 @@ const Page = () => {
               </h1>
 
               <div>
-                <p className="text-slate-400 xsmall:text-sm leading-tight sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-400 leading-tight xsmall:text-sm sm:text-xl text-lg font-medium text-center text-md mx-5 
+                <p className="text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
