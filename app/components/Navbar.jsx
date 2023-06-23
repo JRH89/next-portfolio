@@ -28,23 +28,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 					</Link>
 
 				</li>
-				{/* <li className="hover:scale-90 hover:opacity-50 cursor-pointer duration-300">
-					<Link
-						to="hero"
-						activeClass="active"
-						spy={true}
-
-						smooth={true}
-						duration={700}
-						onClick={() => {
-							setActiveGroup("software")
-							setShowCerts(false)
-							setActiveProject(null)
-						}}
-					>
-						Projects
-					</Link></li> */}
-
 				<li className="relative">
 					<button
 						className="hover:scale-90 hover:opacity-50 duration-300"
@@ -54,7 +37,12 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 					</button>
 					{showMenu && (
 						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6 transition-opacity ">
-							<button
+							<Link
+								to="hero"
+								spy={true}
+								smooth={true}
+								duration={500}
+								offset={-20}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("software")
@@ -63,8 +51,13 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								className="hover:text-red-400 hover:scale-90 duration-300"
 							>
 								Software
-							</button>
-							<button
+							</Link>
+							<Link
+								to="hero"
+								spy={true}
+								smooth={true}
+								duration={500}
+								offset={-20}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("games")
@@ -73,8 +66,13 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								className="hover:text-blue-400 duration-300 hover:scale-90"
 							>
 								Games
-							</button>
-							<button
+							</Link>
+							<Link
+								to="hero"
+								spy={true}
+								smooth={true}
+								duration={500}
+								offset={-20}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("android")
@@ -83,7 +81,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								className="hover:text-green-400 duration-300 hover:scale-90"
 							>
 								Android
-							</button>
+							</Link>
 							<Link
 								to="hero"
 								spy={true}
