@@ -42,7 +42,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								spy={true}
 								smooth={true}
 								duration={500}
-								offset={-20}
+								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("software")
@@ -57,7 +57,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								spy={true}
 								smooth={true}
 								duration={500}
-								offset={-20}
+								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("games")
@@ -72,7 +72,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								spy={true}
 								smooth={true}
 								duration={500}
-								offset={-20}
+								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
 									handleMenuClick("android")

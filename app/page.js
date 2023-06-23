@@ -2,8 +2,7 @@
 
 import React, {
   useState,
-  useRef,
-  useEffect
+  useRef
 } from "react"
 import Image from "next/image"
 import MyImageGallery from "./certificates/imageGallery"
@@ -13,6 +12,8 @@ import Footer from "./components/Footer"
 import Message from "./components/Message"
 import Loading from "@/utils/Loading"
 import Link from "next/link"
+import { Link as ScrollLink } from "react-scroll"
+
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null)
@@ -124,28 +125,44 @@ const Page = () => {
               className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
                 }`}
             >
-              <button
-                className={`border-2 w-full hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+              <ScrollLink
+                to="hero"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-60}
+                className={`border-2 w-full text-center hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup(activeGroup === "software" ? null : "software")}
               >
                 Software
-              </button>
-              <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+              </ScrollLink>
+
+              <ScrollLink
+                to="hero"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-60}
+                className={`hover:scale-90 text-center hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "games" ? null : "games")}
               >
                 Games
-              </button>
-              <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+              </ScrollLink>
+              <ScrollLink
+                to="hero"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-60}
+                className={`hover:scale-90 text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "android" ? null : "android")}
               >
                 Android
-              </button>
+              </ScrollLink>
             </div>
             <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : "mb-14"}`}>
               {filteredProjects.map((project) => (
