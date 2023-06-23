@@ -122,7 +122,7 @@ const Page = () => {
           <div className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
-              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 xsmall:px-0 rounded-xl px-2 text-md w-auto mt-4 sm:text-3xl xsmall:mx-5 my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
+              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 xsmall:px-0 rounded-xl px-2 text-md w-auto mt-4 sm:text-3xl xsmall:mx-5 my-2 flex-row items-center  place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
                 }`}
             >
               <ScrollLink
@@ -131,21 +131,20 @@ const Page = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`border-2 w-full xsmall:w-auto text-center hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 xsmall:p-1 xsmall:text-sm rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                className={`border-2 w-full xsmall:w-auto text-center cursor-pointer hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 xsmall:p-1 xsmall:text-sm rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup(activeGroup === "software" ? null : "software")}
               >
                 Software
               </ScrollLink>
-
               <ScrollLink
                 to="hero"
                 spy={true}
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`hover:scale-90 xsmall:w-auto xsmall:text-sm text-center hover:opacity-60 xsmall:p-1 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2  rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
+                className={`hover:scale-90 xsmall:w-auto xsmall:text-sm text-center hover:opacity-60 cursor-pointer xsmall:p-1 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2  rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "games" ? null : "games")}
               >
@@ -157,7 +156,7 @@ const Page = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`hover:scale-90 xsmall:w-auto xsmall:p-1 xsmall:text-sm text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+                className={`hover:scale-90 cursor-pointer xsmall:w-auto xsmall:p-1 xsmall:text-sm text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "android" ? null : "android")}
               >
@@ -204,7 +203,6 @@ const Page = () => {
         }
         {certs && <>
           <div className={`w-full rounded-xl items-center place-items-center bg-neutral-950 relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
-
             <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl xsmall:text-sm absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
             <div className="mt-3">
               <MyImageGallery />
@@ -214,9 +212,7 @@ const Page = () => {
         }
         {!activeGroup && !certs &&
           <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] mx-auto xsmall:w-fit flex   justify-center items-center max-w-[770px] w-full xsmall:text-sm mb-14 rounded-xl border-slate-700 border-2">
-
             <Message />
-
           </div>
         }
         {activeProject && (

@@ -26,7 +26,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 					>
 						Home
 					</Link>
-
 				</li>
 				<li className="relative">
 					<button
@@ -36,7 +35,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 						Sections
 					</button>
 					{showMenu && (
-						<div className="absolute xsmall:text-md left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6 transition-opacity ">
+						<div className="absolute xsmall:text-md left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50  bg-gray-100 rounded-xl p-6 transition-opacity ">
 							<Link
 								to="hero"
 								spy={true}
@@ -48,7 +47,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 									handleMenuClick("software")
 									openMenu()
 								}}
-								className="hover:text-red-400 hover:scale-90 duration-300"
+								className="hover:text-red-400 cursor-pointer hover:scale-90 duration-300"
 							>
 								Software
 							</Link>
@@ -63,7 +62,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 									handleMenuClick("games")
 									openMenu()
 								}}
-								className="hover:text-blue-400 duration-300 hover:scale-90"
+								className="hover:text-blue-400 cursor-pointer duration-300 hover:scale-90"
 							>
 								Games
 							</Link>
@@ -78,7 +77,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 									handleMenuClick("android")
 									openMenu()
 								}}
-								className="hover:text-green-400 duration-300 hover:scale-90"
+								className="hover:text-green-400 cursor-pointer duration-300 hover:scale-90"
 							>
 								Android
 							</Link>
@@ -93,10 +92,25 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 									setShowCerts(true)
 									openMenu()
 								}}
-								className="hover:text-slate-400 duration-300 hover:scale-90"
+								className="hover:text-slate-400 cursor-pointer duration-300 hover:scale-90"
 							>
 								Certificates
 							</Link>
+							{/* <Link
+								to="message"
+
+								smooth={true}
+								duration={500}
+								onClick={() => {
+									setActiveGroup(null)
+									setShowCerts(false)
+									setActiveProject(null)
+								}}
+								className="hover:text-slate-400 cursor-pointer duration-300 hover:scale-90"
+							>
+								Message
+							</Link> */}
+
 						</div>
 					)}
 				</li>
