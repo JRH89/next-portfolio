@@ -67,7 +67,7 @@ const Page = () => {
   }
 
   return (
-    <div className="min-h-[100vh] my-auto place-items-center flex align-middle justify-center">
+    <div className="min-h-[100vh] my-auto h-full place-items-center flex align-middle justify-center">
       <div id="hero" name="hero" className="flex h-full w-full font-bold my-auto select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
 
         <div id="navbar" className="flex justify-center">
@@ -84,8 +84,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 py-5 my-auto  flex  justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
-            <div className="w-full my-auto justify-center flex gap-3 flex-col  items-center max-w-3xl">
+          <section className={`bg-neutral-950 py-5 my-auto h-full flex  justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
+            <div className="w-full my-auto h-full justify-center flex gap-5 flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"

@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <meta property="twitter:description" content="Jared Hooker's project portfolio created with React JS, Next JS, Tailwind CSS, Firebase, and Vercel." />
         <meta property="twitter:image" content="https://jareds-portfolio.vercel.app/images/twitter_preview.png" />
       </head>
-      <body className="bg-slate-700 justify-center mx-auto my-auto flex min-h-[100vh]">{children}</body>
+      <body className="bg-slate-700 justify-center mx-auto items-center place-content-center self-center place-items-center my-auto flex min-h-[100vh]">{children}</body>
     </html>
   )
 }
