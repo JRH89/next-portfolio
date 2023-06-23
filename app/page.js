@@ -87,7 +87,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 py-5 my-auto  self-center items-center flex-grow place-items-center flex sticky justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
+          <section className={`bg-neutral-950 py-5 my-auto  self-center items-center flex-grow place-items-center flex sticky justify-evenly align-middle  pt-16`}>
             <div className="w-full my-auto flex-grow  justify-center flex gap-3 flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -122,7 +122,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-slate-700 my-auto border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14 " : "pb-16"}`} >
+          <div className={`text-xl  items-center place-items-center bg-neutral-950 content-center align-middle  my-auto  p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "pb-16 " : "pb-16"}`} >
             <div
               id="buttonrow"
               ref={buttonRowRef}
