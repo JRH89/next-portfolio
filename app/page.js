@@ -67,8 +67,8 @@ const Page = () => {
   }
 
   return (
-    <div className="min-h-[100vh]">
-      <div id="hero" name="hero" className="flex flex-grow h-full w-full font-bold select-none flex-col items-center my-auto justify-center bg-slate-700 rounded-xl">
+    <div className="min-h-[100vh] my-auto place-items-center flex align-middle justify-center">
+      <div id="hero" name="hero" className="flex h-full w-full font-bold my-auto select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
 
         <div id="navbar" className="flex justify-center">
           <Nav
@@ -84,8 +84,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 h-full  mt-12 py-5 my-auto content-center place-content-center flex place-items-center items-center justify-evenly align-middle border-2 border-slate-700 rounded-xl`}>
-            <div className="w-full h-full my-auto justify-evenly gap-3 flex flex-col  items-center max-w-3xl">
+          <section className={`bg-neutral-950 py-5 my-auto  flex  justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
+            <div className="w-full my-auto justify-center flex gap-3 flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
@@ -119,7 +119,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle h-full border-slate-700 my-auto border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14" : "pb-48"}`} >
+          <div className={`text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-slate-700 my-auto border-2 p-2 justify-center w-full max-w-[770px] ${!activeGroup ? "mb-14 " : "pb-16"}`} >
             <div
               id="buttonrow"
               ref={buttonRowRef}
@@ -135,7 +135,7 @@ const Page = () => {
                 Software
               </button>
               <button
-                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
+                className={`hover:scale-90 hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "games" ? null : "games")}
               >
@@ -149,7 +149,7 @@ const Page = () => {
                 Android
               </button>
             </div>
-            <div id="activegroup" className={`grid h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "mb-0" : ""}`}>
+            <div id="activegroup" className={`grid my-auto h-full text-center ${activeGroup !== null ? "mt-2 mx-5" : "mt-4"} gap-5 ${activeGroup === null ? "h-full my-auto" : ""}`}>
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
