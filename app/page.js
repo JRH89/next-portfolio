@@ -69,7 +69,7 @@ const Page = () => {
 
   return (
     <>
-      <div id="hero" name="hero" className="flex mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
+      <div id="hero" name="hero" className="flex xsmall:text-md mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
         <div id="navbar" className="flex justify-center">
           <Nav
             activeGroup={activeGroup}
@@ -84,7 +84,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0  border-slate-700 rounded-xl`}>
+          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950   border-slate-700 rounded-xl`}>
             <div className="w-full py-5 justify-evenly gap-5 flex flex-col  items-center max-w-3xl">
               <div className="w-1/2 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -96,33 +96,33 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
+              <h1 className="text-4xl xsmall:text-xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
               ">
                 Jared R Hooker
               </h1>
 
               <div>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="text-slate-400 xsmall:text-sm leading-tight sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development and Unreal Engine for developing games. My current stack for building software is ReactJS, NextJS, TailwindCSS, and Firebase.
                 </p>
-                <p className="text-slate-400 leading-tight sm:text-xl text-lg font-medium text-center text-md mx-5 
+                <p className="text-slate-400 leading-tight xsmall:text-sm sm:text-xl text-lg font-medium text-center text-md mx-5 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
               </div>
-              <div className="border-b-2  border-t-2 p-2 mt-3 rounded-xl border-slate-400">
+              <div className="border-b-2 xsmall:w-2/3 border-t-2 p-2 mt-3 rounded-xl border-slate-400">
                 <a title="skills" className="flex justify-center" href="https://skillicons.dev">
-                  <img className="flex w-80 sm:w-80 flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
+                  <img className="flex w-80 sm:w-80  flex-row  justify-center" title="skill-images" src="https://skillicons.dev/icons?i=react,nextjs,nodejs,tailwind,cpp,cs&perline=6" />
                 </a>
               </div></div>
           </section>
         }
         {!certs &&
-          <div className="text-xl  rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
-              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 rounded-xl px-2 text-md w-full mt-4 sm:text-3xl my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
+              className={`flex justify-center sm:justify-between gap-1 sm:gap-5 xsmall:px-0 rounded-xl px-2 text-md w-auto mt-4 sm:text-3xl xsmall:mx-5 my-2 flex-row items-center place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
                 }`}
             >
               <ScrollLink
@@ -131,7 +131,7 @@ const Page = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`border-2 w-full text-center hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
+                className={`border-2 w-full xsmall:w-auto text-center hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 xsmall:p-1 xsmall:text-sm rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
                 }
                 onClick={() => setActiveGroup(activeGroup === "software" ? null : "software")}
@@ -145,7 +145,7 @@ const Page = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`hover:scale-90 text-center hover:opacity-60 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2 rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
+                className={`hover:scale-90 xsmall:w-auto xsmall:text-sm text-center hover:opacity-60 xsmall:p-1 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2  rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "games" ? null : "games")}
               >
@@ -157,7 +157,7 @@ const Page = () => {
                 smooth={true}
                 duration={500}
                 offset={-60}
-                className={`hover:scale-90 text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
+                className={`hover:scale-90 xsmall:w-auto xsmall:p-1 xsmall:text-sm text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
                 onClick={() => setActiveGroup(activeGroup === "android" ? null : "android")}
               >
@@ -205,7 +205,7 @@ const Page = () => {
         {certs && <>
           <div className={`w-full rounded-xl items-center place-items-center bg-neutral-950 relative content-center align-middle border-slate-700 border-2 max-w-3xl p-4 ${certs ? 'mt-11 mb-14' : ''}`}>
 
-            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
+            <i onClick={showCerts} className="duration-300 hover:rotate-180 hover:scale-75 fa-solid fa-xmark sm:texr-4xl text-3xl xsmall:text-sm absolute top-1 right-2 cursor-pointer  flex text-red-400"></i>
             <div className="mt-3">
               <MyImageGallery />
             </div>
@@ -213,8 +213,10 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] flex justify-center items-center max-w-[770px] w-full mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] mx-auto xsmall:w-fit flex   justify-center items-center max-w-[770px] w-full xsmall:text-sm mb-14 rounded-xl border-slate-700 border-2">
+
             <Message />
+
           </div>
         }
         {activeProject && (

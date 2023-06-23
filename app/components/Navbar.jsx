@@ -9,7 +9,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 	}
 
 	return (
-		<nav className="w-full max-w-[800px] top-0 rounded-b-xl fixed text-lg z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold">
+		<nav className="w-full max-w-[800px xsmall:text-sm top-0 rounded-b-xl fixed text-lg z-50 bg-gradient-to-r from-blue-500 via-green-500 to-red-500 text-slate-900 font-bold">
 			<ul className="flex py-2 duration-300 justify-evenly mx-5">
 				<li className="hover:scale-90 hover:opacity-50 cursor-pointer duration-300">
 					<Link
@@ -36,7 +36,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 						Sections
 					</button>
 					{showMenu && (
-						<div className="absolute left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6 transition-opacity ">
+						<div className="absolute xsmall:text-md left-1/2 transform -translate-x-1/2 duration-300 text-center flex flex-col text-xl mt-2 space-y-2 shadow-md shadow-white/50 bg-gray-100 rounded-xl p-6 transition-opacity ">
 							<Link
 								to="hero"
 								spy={true}
