@@ -71,7 +71,7 @@ const Page = () => {
 
     <div className="place-items-center flex align-middle justify-center">
 
-      <div id="hero" name="hero" className="flex w-full  font-bold select-none flex-col items-center justify-evenly bg-slate-700 rounded-xl">
+      <div id="hero" name="hero" className="flex w-full  font-bold select-none flex-col items-center justify-evenly bg-slate-700 rounded-xl ">
 
 
         <Nav
@@ -87,7 +87,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 py-5 my-auto h-full self-center items-center flex-grow place-items-center flex sticky justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
+          <section className={`bg-neutral-950 py-5 my-auto  self-center items-center flex-grow place-items-center flex sticky justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
             <div className="w-full my-auto flex-grow  justify-center flex gap-3 flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
