@@ -84,7 +84,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`bg-neutral-950 py-5 my-auto h-full flex  justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
+          <section className={`bg-neutral-950 py-10 my-auto h-auto flex  justify-evenly align-middle border-2 mt-12  border-slate-700 rounded-xl`}>
             <div className="w-full my-auto h-full justify-center flex gap-5 flex-col  items-center max-w-3xl">
               <div className="w-1/3 max-w-[300px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
