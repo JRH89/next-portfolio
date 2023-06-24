@@ -28,7 +28,7 @@ const MyImageGallery = () => {
 
 	return (
 		<>
-			<div className="text-center justify-center items-center flex flex-col gap-3 p-3">
+			<div className="text-center justify-center items-center flex rounded-xl flex-col gap-3 p-3">
 				{imagePaths.map((imagePath) => (
 					<Image
 						key={imagePath}
@@ -43,7 +43,7 @@ const MyImageGallery = () => {
 				))}
 				{clickedImage && (
 					<div
-						className="fixed inset-0 z-50 flex items-center justify-center"
+						className="fixed inset-0 z-50 flex items-center justify-center rounded-xl"
 						onClick={handleClose}
 					>
 						<Image
