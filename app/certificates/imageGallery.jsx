@@ -51,7 +51,7 @@ const MyImageGallery = () => {
 							height={1080}
 							src={clickedImage}
 							alt="Clicked Image"
-							className="max-w-full max-h-full" />
+							className="max-w-full rounded-xl max-h-full" />
 					</div>
 				)}
 			</div></>
