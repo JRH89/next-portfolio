@@ -111,7 +111,7 @@ const Page = () => {
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
               </div>
-          
+          </div>
           </section>
         }
         {!certs &&
