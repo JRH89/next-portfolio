@@ -86,7 +86,7 @@ const Page = () => {
         {!activeGroup && !certs &&
           <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-slate-700 rounded-xl`}>
             <div className="w-full py-5 justify-evenly gap-5 flex flex-col items-center max-w-3xl">
-              <div className="w-1/2 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
+              <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -102,11 +102,11 @@ const Page = () => {
               </h1>
 
               <div>
-                <p className="pb-1 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="pb-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 
                ">
                   I specialize in JavaScript for software development; my current stack is Firebase, React JS, and Next JS. I have built and deployed full stack web applications that have been used by 100+ users in 6 different countries, published 4 apps to Google Play, and launched 1 game to itch.io. 
                 </p>
-                <p className="pt-1 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 border-t border-slate-400 
+                <p className="pt-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 border-t border-slate-400 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
