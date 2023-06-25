@@ -129,7 +129,7 @@ const Page = () => {
                 to="hero"
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={800}
                 offset={-60}
                 className={`border-2 w-full xsmall:w-auto text-center cursor-pointer hover:scale-90 hover:opacity-60 duration-300 border-red-400 text-red-400 shadow-lg shadow-red-400/50 p-2 xsmall:p-1 xsmall:text-sm rounded-xl ${activeGroup === "software" ? "bg-red-400 text-slate-900" : ""
                   }`
@@ -142,7 +142,7 @@ const Page = () => {
                 to="hero"
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={800}
                 offset={-60}
                 className={`hover:scale-90 xsmall:w-auto xsmall:text-sm text-center hover:opacity-60 cursor-pointer xsmall:p-1 duration-300 border-2 w-full border-blue-400 z-10 shadow-blue-400/50 text-blue-400 shadow-lg p-2  rounded-xl ${activeGroup === "games" ? "bg-blue-400 text-slate-900 " : ""
                   }`}
@@ -154,7 +154,7 @@ const Page = () => {
                 to="hero"
                 spy={true}
                 smooth={true}
-                duration={500}
+                duration={800}
                 offset={-60}
                 className={`hover:scale-90 cursor-pointer xsmall:w-auto xsmall:p-1 xsmall:text-sm text-center hover:opacity-60 duration-300 border-2 w-full border-green-400 shadow-green-400/50 text-green-400 shadow-lg p-2 rounded-xl ${activeGroup === "android" ? "bg-green-400 text-slate-900" : ""
                   }`}
