@@ -102,11 +102,11 @@ const Page = () => {
               </h1>
 
               <div>
-                <p className="pb-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 
+                <p className="pb-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-justify mx-5 
                ">
                   I specialize in JavaScript for software development; my current stack is Firebase, React JS, and Next JS. I have built and deployed full stack web applications that have been used by 100+ users in 6 different countries, published 4 apps to Google Play, and launched 1 game to itch.io. 
                 </p>
-                <p className="pt-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-center mx-5 border-t border-slate-400 
+                <p className="pt-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-justify mx-5 border-t border-slate-400 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
