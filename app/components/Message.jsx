@@ -42,7 +42,7 @@ export default function Message() {
 
 	return (
 		<>
-			<div className=" xsmall:w-fit">
+			<div id="message" name="message" className=" xsmall:w-fit">
 				{showMessage ? (
 					<div className="p-10  xsmall:w-fit mt-4 mb-4  rounded-xl flex flex-col border-red-400 border-2 border-solid justify-center ml-10 mr-10 mx-auto my-auto text-green-400 text-center">
 						Thank you for reaching out,

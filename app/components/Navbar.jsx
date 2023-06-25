@@ -17,7 +17,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 						activeClass="active"
 						spy={true}
 						smooth={true}
-						duration={700}
+						duration={800}
 						onClick={() => {
 							setActiveGroup(null)
 							setShowCerts(false)
@@ -27,6 +27,8 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 						Home
 					</Link>
 				</li>
+
+
 				<li className="relative">
 					<button
 						className="hover:scale-90 hover:opacity-50 duration-300"
@@ -40,7 +42,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								to="hero"
 								spy={true}
 								smooth={true}
-								duration={500}
+								duration={800}
 								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
@@ -55,7 +57,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								to="hero"
 								spy={true}
 								smooth={true}
-								duration={500}
+								duration={800}
 								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
@@ -70,7 +72,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								to="hero"
 								spy={true}
 								smooth={true}
-								duration={500}
+								duration={800}
 								offset={-60}
 								onClick={() => {
 									setShowCerts(false)
@@ -85,7 +87,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 								to="hero"
 								spy={true}
 								smooth={true}
-								duration={500}
+								duration={800}
 								onClick={() => {
 									setActiveGroup(null)
 									setActiveProject(null)
@@ -96,21 +98,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 							>
 								Certificates
 							</Link>
-							{/* <Link
-								to="message"
-
-								smooth={true}
-								duration={500}
-								onClick={() => {
-									setActiveGroup(null)
-									setShowCerts(false)
-									setActiveProject(null)
-								}}
-								className="hover:text-slate-400 cursor-pointer duration-300 hover:scale-90"
-							>
-								Message
-							</Link> */}
-
 						</div>
 					)}
 				</li>
@@ -125,7 +112,7 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 					</a>
 				</li>
 			</ul>
-		</nav>
+		</nav >
 	)
 }
 
