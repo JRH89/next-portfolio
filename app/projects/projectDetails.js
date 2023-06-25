@@ -217,6 +217,42 @@ const projects = [
 		]
 	},
 	{
+		id: 11,
+		title: "My Card",
+		description: "Productivity app featuring personalized digital cards with QR code and URL, Weather Page, and ToDo List. Fetches weather data using the OpenWeather API. Reduces waste and eliminates waiting on processing and shipping. Uses SendGrid for in-app support. Published to Google Play.",
+		group: "android",
+		image: "/ProjectImgs/project1.png",
+		url: "https://play.google.com/store/apps/details?id=card.digitalbusinesscard",
+		urlLabel: "Google Play",
+		images: [
+			{
+				id: 1,
+				path: "/ProjectImgs/project1.png",
+				alt: "Image 1"
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj11/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj11/img2.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj11/img3.png",
+				alt: "Image 4"
+			},
+			{
+				id: 5,
+				path: "/images/activeProjectImgs/proj11/img4.png",
+				alt: "Image 5"
+			},
+		]
+	},
+	{
 		id: 7,
 		title: "Weather Pal",
 		description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with React, Next, Tailwind, and Vercel.",
