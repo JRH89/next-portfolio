@@ -187,18 +187,33 @@ const projects = [
 	},
 	{
 		id: 6,
-		title: "Weather Report Suite",
+		title: "Weather Pal",
 		description: "SPA that displays current weather and 5-day forecast for any chosen city. Uses the OpenWeather API. Created with html, css, JavaScript, and Android Studio. Published to Google Play.",
 		group: "android",
-		image: "/ProjectImgs/project6.png",
+		image: "/ProjectImgs/project7.png",
 		url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
 		urlLabel: "Google Play",
 		images: [
 			{
 				id: 1,
-				path: "/ProjectImgs/project6.png",
+				path: "/ProjectImgs/project7.png",
 				alt: "Image 1"
-			}
+			},
+			{
+				id: 2,
+				path: "/images/activeProjectImgs/proj6/img1.png",
+				alt: "Image 2"
+			},
+			{
+				id: 3,
+				path: "/images/activeProjectImgs/proj6/img2.png",
+				alt: "Image 3"
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj6/img3.png",
+				alt: "Image 4"
+			},
 		]
 	},
 	{
