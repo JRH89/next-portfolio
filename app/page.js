@@ -86,7 +86,7 @@ const Page = () => {
         {!activeGroup && !certs &&
           <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-slate-700 rounded-xl`}>
             <div className="w-full py-5 justify-evenly gap-5 flex flex-col items-center max-w-3xl">
-              <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
+              {/* <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
                   width={400}
@@ -95,7 +95,7 @@ const Page = () => {
                   className="w-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-400"
                   src={"/images/profilepic.png"}
                 ></Image>
-              </div>
+              </div> */}
               <h1 className="text-4xl xsmall:text-xl h-full align-bottom sm:text-5xl font-bold text-center mt-2 text-slate-400
               ">
                 Jared R Hooker
