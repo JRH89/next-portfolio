@@ -27,8 +27,6 @@ function Nav({ handleMenuClick, setShowCerts, setActiveGroup, setActiveProject, 
 						Home
 					</Link>
 				</li>
-
-
 				<li className="relative">
 					<button
 						className="hover:scale-90 hover:opacity-50 duration-300"
