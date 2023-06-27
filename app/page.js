@@ -14,7 +14,6 @@ import Loading from "@/utils/Loading"
 import Link from "next/link"
 import { Link as ScrollLink } from "react-scroll"
 
-
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null)
   const [activeProject, setActiveProject] = useState(null)
@@ -304,4 +303,5 @@ const Page = () => {
     </>
   )
 }
+
 export default Page
