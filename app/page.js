@@ -103,7 +103,7 @@ const Page = () => {
               <div>
                 <p className="pb-3 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-justify mx-5 
                ">
-                  I specialize in JavaScript for software development; my current stack is Firebase, React JS, and Next JS. I have built and deployed full stack web applications that have been used by 100+ users in 6 different countries, published 4 apps to Google Play, and launched 1 game to itch.io.
+                  I specialize in JavaScript for software development; my current stack is Firebase, React, and Next.js. My experience includes building full stack web and mobile applications that have been used by 100+ users in 6 different countries, publishing 4 apps to Google Play, and launching 1 game to itch.io.
                 </p>
                 <p className="pt-2 text-slate-400 xsmall:text-sm sm:text-xl text-lg font-medium text-justify mx-5 border-t border-slate-400 
                ">
