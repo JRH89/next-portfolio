@@ -89,7 +89,32 @@ const projects = [
 				id: 3,
 				path: "/images/activeProjectImgs/proj2/img2.png",
 				alt: "Image 3"
-			}
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj2/img3.png",
+				alt: "Image 4"
+			},
+			{
+				id: 5,
+				path: "/images/activeProjectImgs/proj2/img4.png",
+				alt: "Image 5"
+			},
+			{
+				id: 6,
+				path: "/images/activeProjectImgs/proj2/img5.png",
+				alt: "Image 6"
+			},
+			{
+				id: 7,
+				path: "/images/activeProjectImgs/proj2/img6.png",
+				alt: "Image 7"
+			},
+			{
+				id: 8,
+				path: "/images/activeProjectImgs/proj2/img7.png",
+				alt: "Image 8"
+			},
 		]
 	},
 	{
