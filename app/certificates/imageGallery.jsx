@@ -37,7 +37,7 @@ const MyImageGallery = () => {
 						cover="true"
 						height={500}
 						alt="Image"
-						className="object-cover cursor-pointer border-2 bg-slate-700 p-4 border-yellow-200  rounded-xl"
+						className="object-cover cursor-pointer border-2 bg-sky-950 p-4 border-yellow-300  rounded-xl"
 						onClick={() => handleClick(imagePath)}
 					/>
 				))}

@@ -56,14 +56,14 @@ export default function Message() {
 					</div>
 				) : (
 					<form
-						className="flex xsmall:w-fit flex-col w-auto xsmall:mx-5 gap-3 text-center text-slate-400"
+						className="flex xsmall:w-fit flex-col w-auto xsmall:mx-5 gap-3 text-center text-neutral-300"
 						onSubmit={handleSubmit}
 					>
 						<p className="text-blue-400 font-extrabold underline xsmall:text-sm text-2xl">
 							Subject:
 						</p>
 						<input
-							className="p-2 rounded-md border-2 border-slate-400 xsmall:text-sm text-slate-400 bg-neutral-950 mb-4"
+							className="p-2 rounded-md border-2 border-neutral-300 xsmall:text-sm text-neutral-300 bg-neutral-950 mb-4"
 							type="text"
 							name="subject"
 							placeholder="Subject"
@@ -73,7 +73,7 @@ export default function Message() {
 							Message:
 						</p>
 						<textarea
-							className="p-2 rounded-md border-2 border-slate-400 text-slate-400 bg-neutral-950"
+							className="p-2 rounded-md border-2 border-neutral-300 text-neutral-300 bg-neutral-950"
 							name="message"
 							rows="5"
 							cols="30"

@@ -68,7 +68,7 @@ const Page = () => {
 
   return (
     <>
-      <div id="hero" name="hero" className="flex xsmall:text-md mx-3 font-bold select-none flex-col items-center justify-center bg-slate-700 rounded-xl">
+      <div id="hero" name="hero" className="flex xsmall:text-md mx-3 font-bold select-none flex-col items-center justify-center bg-sky-950 rounded-xl">
         <div id="navbar" className="flex justify-center">
           <Nav
             activeGroup={activeGroup}
@@ -83,7 +83,7 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-slate-700 rounded-xl`}>
+          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-sky-950 rounded-xl`}>
             <div className="w-full justify-evenly gap-5 flex flex-col items-center max-w-3xl">
               <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -91,21 +91,21 @@ const Page = () => {
                   width={400}
                   height={400}
                   cover="true"
-                  className="w-auto my-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-slate-400"
+                  className="w-auto my-auto mx-auto justify-center items-center h-auto object-cover rounded-xl border-t-2 border-b-2 border-neutral-300"
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl xsmall:text-xl h-full align-bottom sm:text-5xl font-bold text-center text-slate-400
+              <h1 className="text-4xl xsmall:text-xl h-full align-bottom sm:text-5xl font-bold text-center text-neutral-300
               ">
                 Jared R Hooker
               </h1>
 
               <div>
-                <p className="text-center font-medium pb-1 text-slate-400 xsmall:text-sm sm:text-xl text-lg  mx-5 
+                <p className="text-center font-medium pb-1 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 
                ">
                   I specialize in JavaScript for software development; my current stack is Firebase, React, and Next.js. My experience includes building full stack web and mobile applications that have been used by 100+ users in 6 different countries, publishing 4 apps to Google Play, and launching 1 Unity game to itch.io.
                 </p>
-                <p className="text-center font-medium pt-1 text-slate-400 xsmall:text-sm sm:text-xl text-lg  mx-5 border-t border-slate-400 
+                <p className="text-center font-medium pt-1 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 border-t border-neutral-300 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -114,7 +114,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-slate-700 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
             <div
               ref={buttonRowRef}
               className={`flex justify-center sm:justify-between gap-1 sm:gap-5 xsmall:px-0 rounded-xl px-2 text-md w-auto mt-4 sm:text-3xl xsmall:mx-5 my-2 flex-row items-center  place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
@@ -182,12 +182,12 @@ const Page = () => {
                     <Image
                       height={1080}
                       width={1920}
-                      className="w-full h-auto object-cover border-2 rounded-xl border-slate-400"
+                      className="w-full h-auto object-cover border-2 rounded-xl border-neutral-300"
                       src={project.image}
                       alt={project.title}
                     />
                   </div>
-                  <p className="text-slate-400 text-center">
+                  <p className="text-neutral-300 text-center">
                     {`${project.description.split('. ')[0]}. ${project.description.split('. ')[1]}...`}
                   </p>
                 </div>
@@ -206,7 +206,7 @@ const Page = () => {
         </>
         }
         {!activeGroup && !certs &&
-          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] mx-auto xsmall:w-fit flex   justify-center items-center max-w-[770px] w-full xsmall:text-sm mb-14 rounded-xl border-slate-700 border-2">
+          <div id="contact" name="contact" className="bg-neutral-950 h-[88vh] mx-auto xsmall:w-fit flex   justify-center items-center max-w-[770px] w-full xsmall:text-sm mb-14 rounded-xl border-sky-950 border-2">
             <Message />
           </div>
         }
@@ -229,7 +229,7 @@ const Page = () => {
                   <Image
                     height={1080}
                     width={1920}
-                    className="sm:w-1/2 h-auto object-cover shadow-md hover:opacity-75 shadow-slate-400/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-slate-400/70 cursor-pointer"
+                    className="sm:w-1/2 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
                     src={activeProject.images[activeImageIndex].path}
                     alt={activeProject.images[activeImageIndex].alt}
                     onClick={() =>
@@ -283,7 +283,7 @@ const Page = () => {
                   <i className="fa-solid fa-caret-right text-3xl"></i>
                 </button>
               </div>
-              <p className="text-slate-400 text-center mb-4 text-xl">{activeProject.description}</p>
+              <p className="text-neutral-300 text-center mb-4 text-xl">{activeProject.description}</p>
               <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
                 <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
