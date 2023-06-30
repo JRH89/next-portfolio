@@ -245,10 +245,38 @@ const Page = () => {
                     <Image
                       height={1080}
                       width={1920}
-                      src={clickedImage}
+                      src={activeProject.images[activeImageIndex].path}
                       alt="Clicked Image"
                       className="w-full border border-white  h-auto"
                     />
+                    <div className="flex flex-row mt-4 w-full justify-evenly">
+                      <button
+                        className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
+                        onClick={() => {
+                          setISLoading(true)
+                          setActiveImageIndex((prevIndex) =>
+                            (prevIndex - 1 + totalImages) % totalImages,
+                          )
+                          setISLoading(false)
+                        }
+                        }
+                      >
+                        <i className="fa-solid fa-caret-left text-6xl"></i>
+                      </button>
+                      <button
+                        className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
+                        onClick={() => {
+                          setISLoading(true)
+                          setActiveImageIndex((prevIndex) =>
+                            (prevIndex + 1) % totalImages
+                          )
+                          setISLoading(false)
+                        }
+                        }
+                      >
+                        <i className="fa-solid fa-caret-right text-6xl"></i>
+                      </button></div>
+
                   </div>
                 )}
               </div>

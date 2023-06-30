@@ -286,7 +286,30 @@ const projects = [
 				id: 3,
 				path: "/images/activeProjectImgs/proj7/img2.png",
 				alt: "Image 3"
-			},]
+			},
+			{
+				id: 4,
+				path: "/images/activeProjectImgs/proj7/img3.png",
+				alt: "Image 4"
+			},
+			{
+				id: 5,
+				path: "/images/activeProjectImgs/proj7/img4.png",
+				alt: "Image 5"
+			},
+			{
+				id: 6,
+				path: "/images/activeProjectImgs/proj7/img5.png",
+				alt: "Image 6"
+			},
+			{
+				id: 7,
+				path: "/images/activeProjectImgs/proj7/img6.png",
+				alt: "Image 7"
+			},
+
+
+		]
 	},
 	{
 		id: 8,
