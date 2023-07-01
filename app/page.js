@@ -2,7 +2,8 @@
 
 import React, {
   useState,
-  useRef
+  useRef,
+  useEffect
 } from "react"
 import Image from "next/image"
 import MyImageGallery from "./certificates/imageGallery"
@@ -23,6 +24,17 @@ const Page = () => {
   const [isLoading, setISLoading] = useState(false)
   const [clickedImage, setClickedImage] = useState(null)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [featuredProject, setFeaturedProject] = useState(null)
+  const [featuredImageIndex, setFeaturedImageIndex] = useState(0)
+
+
+  useEffect(() => {
+    // Set the featured project when the component mounts
+    const featuredProject = projects.find((project) => project.id === 1)
+    setFeaturedProject(featuredProject)
+
+  }, [])
+
 
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0
 
@@ -64,6 +76,26 @@ const Page = () => {
   const handleMenuClick = (group) => {
     setActiveGroup(group)
     setShowMenu(!showMenu)
+  }
+
+  const handlePrevImage = () => {
+    setFeaturedImageIndex((prevIndex) => {
+      const newIndex = prevIndex - 1
+      if (newIndex < 0) {
+        return featuredProject.images.length - 1
+      }
+      return newIndex
+    })
+  }
+
+  const handleNextImage = () => {
+    setFeaturedImageIndex((prevIndex) => {
+      const newIndex = prevIndex + 1
+      if (newIndex >= featuredProject.images.length) {
+        return 0
+      }
+      return newIndex
+    })
   }
 
   return (
@@ -113,8 +145,76 @@ const Page = () => {
             </div>
           </section>
         }
+        {!activeGroup &&
+          <section className="featured-project bg-neutral-950 py-5 rounded-xl border-2 flex-col justify-center items-center w-full border-sky-950 text-neutral-300 min-h-[88vh]">
+            <h2 className="text-2xl font-bold text-center ">
+              Featured Project:
+            </h2>
+            {featuredProject && featuredProject.images && featuredProject.images.length > 0 && (
+              <div className="max-w-[760px] p-2 flex flex-col gap-5 justify-evenly">
+                <h2
+                  className={`text-2xl sm:text-3xl underline mt-2 mb-2  text-center font-bold ${featuredProject.group === "software"
+                    ? "text-red-400"
+                    : featuredProject.group === "games"
+                      ? "text-blue-400"
+                      : "text-green-400"
+                    }`}
+                >
+                  {featuredProject.title}
+                </h2>
+                {isLoading && <Loading />}
+                <div className="flex justify-center">
+                  {!isLoading && featuredProject.images[featuredImageIndex] && (
+                    <div className="flex flex-row items-center justify-center">
+                      <button
+                        className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
+                        onClick={handlePrevImage}
+                      >
+                        <i className="fa-solid fa-caret-left text-5xl sm:text-6xl"></i>
+                      </button>
+                      <Image
+                        height={1080}
+                        width={1920}
+                        className="w-2/3 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
+                        src={featuredProject.images[featuredImageIndex].path}
+                        alt={featuredProject.images[featuredImageIndex].alt}
+                        onClick={() =>
+                          handleImageClick(featuredProject.images[featuredImageIndex].path)
+                        }
+                      /> <button
+                        className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
+                        onClick={handleNextImage}
+                      >
+                        <i className="fa-solid fa-caret-right sm:text-6xl text-5xl"></i>
+                      </button></div>
+                  )}
+                </div>
+                <p className="text-neutral-300 text-center font-medium text-base sm:text-xl">{featuredProject.description}</p>
+                <div className="flex justify-center">
+                  <a href="https://skillicons.dev">
+                    <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5" />
+                  </a>
+                </div>
+                <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
+                  <Link className="flex text-xl sm:text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={featuredProject.url}>
+                    {featuredProject.urlLabel}
+                  </Link>
+                </div>
+
+              </div>
+
+
+            )}
+          </section>
+        }
+
         {!certs &&
-          <div className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div id="buttons" className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
+            {!activeGroup &&
+              <p className="text-neutral-300 flex justify-center mt-2">
+                Projects (click to expand):
+              </p>
+            }
             <div
               ref={buttonRowRef}
               className={`flex justify-center sm:justify-between gap-1 sm:gap-5 xsmall:px-0 rounded-xl px-2 text-md w-auto mt-4 sm:text-3xl xsmall:mx-5 my-2 flex-row items-center  place-items-center content-center ${activeGroup ? "rounded-none mt-8 top-11 bg-neutral-950 z-10 p-2 sticky flex " : ""
