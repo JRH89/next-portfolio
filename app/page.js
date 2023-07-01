@@ -312,10 +312,10 @@ const Page = () => {
           </div>
         }
         {activeProject && (
-          <div className="fixed top-0  z-10 flex items-center justify-center w-full max-w-[760px] h-screen bg-neutral-950">
-            <div className="max-w-[760px] p-8">
+          <div className="fixed top-0 z-10 flex items-center justify-center flex-col w-full max-w-[760px] h-screen bg-neutral-950">
+            <div className="max-w-[760px] p-4 flex flex-col sm:gap-2 gap-0 justify-center">
               <h2
-                className={`text-3xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
+                className={`text-2xl  underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
@@ -330,7 +330,7 @@ const Page = () => {
                   <Image
                     height={1080}
                     width={1920}
-                    className="sm:w-1/2 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
+                    className="w-2/3 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
                     src={activeProject.images[activeImageIndex].path}
                     alt={activeProject.images[activeImageIndex].alt}
                     onClick={() =>
@@ -412,9 +412,14 @@ const Page = () => {
                   <i className="fa-solid fa-caret-right text-3xl"></i>
                 </button>
               </div>
-              <p className="text-neutral-300 text-center mb-4 text-xl">{activeProject.description}</p>
-              <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
-                <Link className="flex text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={activeProject.url}>
+              <p className="text-neutral-300 font-medium text-center mb-2 text-base">{activeProject.description}</p>
+
+              <a className="mb-3 flex justify-center" href="https://skillicons.dev">
+                <img className="w-50" src={activeProject.stack} />
+              </a>
+
+              <div className="flex align-middle place-items-center w-full justify-center">
+                <Link className="flex text-base sm:text-xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-1 px-2 rounded-lg hover:scale-90 hover:opacity-60 duration-300" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
                 <i

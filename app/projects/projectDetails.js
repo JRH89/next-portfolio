@@ -7,6 +7,7 @@ const projects = [
 		image: "/ProjectImgs/project1.png",
 		url: "https://have-mycard.vercel.app",
 		urlLabel: "View Live",
+		stack: "https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5",
 		images: [
 			{
 				id: 1,
@@ -74,6 +75,7 @@ const projects = [
 		image: "/ProjectImgs/project2.png",
 		url: "https://next-jewelry.vercel.app",
 		urlLabel: "View Live",
+		stack: "https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5",
 		images: [
 			{
 				id: 1,
@@ -125,6 +127,7 @@ const projects = [
 		image: "/ProjectImgs/project4.png",
 		url: "https://fall-hollow.vercel.app",
 		urlLabel: "About",
+		stack: "https://skillicons.dev/icons?i=unreal&perline=1",
 		images: [
 			{
 				id: 1,
@@ -156,6 +159,7 @@ const projects = [
 		image: "/ProjectImgs/project3.png",
 		url: "https://jrh89.itch.io/the-knight-life",
 		urlLabel: "Play on itch.io",
+		stack: "https://skillicons.dev/icons?i=unity,cs&perline=2",
 		images: [
 			{
 				id: 1,
@@ -197,6 +201,7 @@ const projects = [
 		image: "/ProjectImgs/project5.png",
 		url: "https://play.google.com/store/apps/details?id=runner.starrunner",
 		urlLabel: "Google Play",
+		stack: "https://skillicons.dev/icons?i=androidstudio,html,js,css&perline=4",
 		images: [
 			{
 				id: 1,
@@ -228,6 +233,7 @@ const projects = [
 		image: "/ProjectImgs/project7.png",
 		url: "https://play.google.com/store/apps/details?id=weatherreport.suite",
 		urlLabel: "Google Play",
+		stack: "https://skillicons.dev/icons?i=androidstudio,html,js,css&perline=4",
 		images: [
 			{
 				id: 1,
@@ -259,6 +265,7 @@ const projects = [
 		image: "/ProjectImgs/project1.png",
 		url: "https://play.google.com/store/apps/details?id=card.digitalbusinesscard",
 		urlLabel: "Google Play",
+		stack: "https://skillicons.dev/icons?i=androidstudio&perline=1",
 		images: [
 			{
 				id: 1,
@@ -295,6 +302,7 @@ const projects = [
 		image: "/ProjectImgs/project7.png",
 		url: "https://weather-pal.vercel.app",
 		urlLabel: "View Live",
+		stack: "https://skillicons.dev/icons?i=react,nextjs,tailwind,vercel&perline=4",
 		images: [
 			{
 				id: 1,
@@ -344,6 +352,7 @@ const projects = [
 		image: "/ProjectImgs/project8.png",
 		url: "https://github.com/jrh89/Sorting-Hat",
 		urlLabel: "Source Code",
+		stack: "https://skillicons.dev/icons?i=py&perline=1",
 		images: [
 			{
 				id: 1,
@@ -375,6 +384,7 @@ const projects = [
 		image: "/ProjectImgs/project9.png",
 		url: "https://github.com/JRH89/FM_v2.0_youtube-dl_GUI",
 		urlLabel: "Source Code",
+		stack: "https://skillicons.dev/icons?i=py&perline=1",
 		images: [
 			{
 				id: 1,
@@ -401,6 +411,7 @@ const projects = [
 		image: "/ProjectImgs/project10.png",
 		url: "https://github.com/JRH89/UE-WeatherSystem",
 		urlLabel: "Github Release",
+		stack: "https://skillicons.dev/icons?i=unreal&perline=1",
 		images: [
 			{
 				id: 1,
