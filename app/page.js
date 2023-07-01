@@ -146,14 +146,15 @@ const Page = () => {
           </section>
         }
         {!activeGroup &&
-          <section className="featured-project bg-neutral-950 py-5 rounded-xl border-2 flex-col justify-center items-center w-full border-sky-950 text-neutral-300 min-h-[88vh]">
+          <section className=" bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
+           w-full border-sky-950 text-neutral-300 min-h-[88vh]">
             <h2 className="text-2xl font-bold text-center ">
               Featured Project:
             </h2>
             {featuredProject && featuredProject.images && featuredProject.images.length > 0 && (
-              <div className="max-w-[760px] p-2 flex flex-col gap-5 justify-evenly">
+              <div className="max-w-[760px] p-2 flex flex-col  justify-center gap-5">
                 <h2
-                  className={`text-2xl sm:text-3xl underline mt-2 mb-2  text-center font-bold ${featuredProject.group === "software"
+                  className={`text-2xl sm:text-3xl underline text-center font-bold ${featuredProject.group === "software"
                     ? "text-red-400"
                     : featuredProject.group === "games"
                       ? "text-blue-400"
@@ -195,7 +196,7 @@ const Page = () => {
                     <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5" />
                   </a>
                 </div>
-                <div className="flex align-middle place-items-center w-full flex-row justify-center gap-10">
+                <div className="flex align-middle place-items-center w-full mt-1 flex-row justify-center gap-10">
                   <Link className="flex text-xl sm:text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={featuredProject.url}>
                     {featuredProject.urlLabel}
                   </Link>
