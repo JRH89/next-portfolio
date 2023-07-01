@@ -145,7 +145,7 @@ const Page = () => {
             </div>
           </section>
         }
-        {!activeGroup &&
+        {!activeGroup && !certs &&
           <section className=" bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
            w-full border-sky-950 text-neutral-300 min-h-[88vh]">
             <h2 className="text-2xl font-bold text-center ">
