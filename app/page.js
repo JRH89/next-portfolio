@@ -313,9 +313,9 @@ const Page = () => {
         }
         {activeProject && (
           <div className="fixed top-0 z-10 flex items-center justify-center flex-col w-full max-w-[760px] h-screen bg-neutral-950">
-            <div className="max-w-[760px] p-4 flex flex-col sm:gap-2 gap-0 justify-center">
+            <div className="max-w-[760px] p-2 flex flex-col gap-2 justify-center">
               <h2
-                className={`text-2xl  underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
+                className={`text-2xl underline mt-2 mb-2 sm:text-4xl text-center font-bold ${activeProject.group === "software"
                   ? "text-red-400"
                   : activeProject.group === "games"
                     ? "text-blue-400"
