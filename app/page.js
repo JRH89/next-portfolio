@@ -127,7 +127,7 @@ const Page = () => {
                   src={"/images/profilepic.png"}
                 ></Image>
               </div>
-              <h1 className="text-4xl xsmall:text-xl h-full align-bottom sm:text-5xl font-bold text-center text-neutral-300
+              <h1 className="text-4xl xsmall:text-xl  align-bottom flex items-center justify-center sm:text-5xl font-bold text-center text-neutral-300
               ">
                 Jared R Hooker
               </h1>
