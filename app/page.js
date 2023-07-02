@@ -148,7 +148,7 @@ const Page = () => {
         {!activeGroup && !certs &&
           <section className=" bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
            w-full border-sky-950 text-neutral-300 min-h-[88vh]">
-            <h2 className="text-2xl font-bold text-center ">
+            <h2 className="text-2xl font-bold text-center underline">
               Featured Project:
             </h2>
             {featuredProject && featuredProject.images && featuredProject.images.length > 0 && (
@@ -201,18 +201,14 @@ const Page = () => {
                     {featuredProject.urlLabel}
                   </Link>
                 </div>
-
               </div>
-
-
             )}
           </section>
         }
-
         {!certs &&
-          <div id="buttons" className="text-xl xsmall:w-fit  xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div id="buttons"className="text-xl xsmall:w-fit xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
             {!activeGroup &&
-              <p className="text-neutral-300 flex justify-center mt-2">
+              <p className="text-neutral-300 flex justify-center mt-2 underline">
                 Projects (click to expand):
               </p>
             }
@@ -419,7 +415,7 @@ const Page = () => {
               </a>
 
               <div className="flex align-middle place-items-center w-full justify-center">
-                <Link className="flex text-base sm:text-xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-1 px-2 rounded-lg hover:scale-90 hover:opacity-60 duration-300" target="_blank" href={activeProject.url}>
+                <Link className="flex text-xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-1 mt-1 px-2 rounded-lg hover:scale-90 hover:opacity-60 duration-300" target="_blank" href={activeProject.url}>
                   {activeProject.urlLabel}
                 </Link>
                 <i
