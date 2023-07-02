@@ -2,7 +2,7 @@ const projects = [
 	{
 		id: 1,
 		title: "My Card",
-		description: "Productivity app featuring personalized digital cards with QR code and URL, Weather Page, and ToDo List. Fetches weather data using the OpenWeather API. Reduces waste and eliminates waiting on processing and shipping. Uses SendGrid for in-app support. Created with React, Next, Tailwind, Firebase, and Vercel.",
+		description: "App for creating personalized digital business cards with QR code and URL for easy sharing. Also includes a Weather widget/page and ToDo list. Fetches weather data using the OpenWeather API. Aims to reduce waste and eliminate waiting on the processing and shipping of physical cards.",
 		group: "software",
 		image: "/ProjectImgs/project1.png",
 		url: "https://have-mycard.vercel.app",
@@ -13,7 +13,6 @@ const projects = [
 				id: 1,
 				path: "/ProjectImgs/project1.png",
 				alt: "Image 1"
-
 			},
 			{
 				id: 2,
