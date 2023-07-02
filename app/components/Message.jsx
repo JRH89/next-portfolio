@@ -80,7 +80,7 @@ export default function Message() {
 							placeholder="Your Message"
 						></textarea>
 						<input
-							className="xsmall:text-sm cursor-pointer py-1 self-center duration-300 shadow-lg w-1/3 shadow-red-400/50 font-extrabold hover:opacity-50 hover:scale-95 text-2xl text-red-400 mt-4 border-2 border-solid border-red-400 rounded-md"
+							className="xsmall:text-sm cursor-pointer py-1 self-center duration-300 shadow-lg w-1/3 shadow-red-400/50 font-extrabold hover:opacity-50 hover:scale-95 text-2xl text-red-400 mt-8 border-2 border-solid border-red-400 rounded-md"
 							type="submit"
 							value="SEND"
 						/>
