@@ -5,7 +5,7 @@ import Image from 'next/image'
 const MyImageGallery = () => {
 
 	const imagePaths = [
-		'/images/cert10.jp'
+		'/images/cert10.jpg',
 		'/images/certificates/cert8.jpg',
 		'/images/certificates/react_certificate.jpg',
 		'/images/certificates/cert1.png',
