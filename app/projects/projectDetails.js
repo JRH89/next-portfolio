@@ -2,9 +2,10 @@ const projects = [
 	{
 		id: 1,
 		title: "My Card",
-		description: "App for creating personalized digital business cards with QR code and URL for easy sharing. Also includes a Weather widget/page and ToDo list. Fetches weather data using the OpenWeather API. Aims to reduce waste and eliminate waiting on the processing and shipping of physical cards.",
+		description: "Designed to create personalized digital business cards for easy sharing. Implemented QR code and URL functionalities to simplify networking and facilitate quick access to contact information. Incorporated a Weather widget/page and ToDo list to enhance productivity and convenience. Utilized the OpenWeather API to fetch real-time weather data. Aimed to reduce waste and eliminate the waiting time associated with processing and shipping physical business cards.",
 		group: "software",
 		image: "/ProjectImgs/project1.png",
+		video: "/videos/MyCard_Demo_07-09.mp4",
 		url: "https://have-mycard.vercel.app",
 		urlLabel: "View Live",
 		stack: "https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5",

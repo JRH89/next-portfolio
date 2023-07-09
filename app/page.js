@@ -26,7 +26,8 @@ const Page = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [featuredProject, setFeaturedProject] = useState(null)
   const [featuredImageIndex, setFeaturedImageIndex] = useState(0)
-
+  const [showImages, setShowImages] = useState(false)
+  const [showVideo, setShowVideo] = useState(true)
 
   useEffect(() => {
     // Set the featured project when the component mounts
@@ -100,7 +101,7 @@ const Page = () => {
 
   return (
     <>
-      <div id="hero" name="hero" className="flex xsmall:text-md mx-3 font-bold select-none flex-col items-center justify-center bg-sky-950 rounded-xl">
+      <div id="hero" name="hero" className="flex xsmall:text-md mx-auto font-bold select-none flex-col items-center justify-center bg-sky-950 rounded-xl">
         <div id="navbar" className="flex justify-center">
           <Nav
             activeGroup={activeGroup}
@@ -115,8 +116,8 @@ const Page = () => {
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center items-center pb-3 justify-evenly flex align-middle border-2 mt-11 m-0 xsmall:mx-5 bg-neutral-950 border-sky-950 rounded-xl`}>
-            <div className="w-full justify-evenly gap-5 flex flex-col items-center max-w-3xl">
+          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center mx-auto items-center py-5 justify-evenly flex align-middle border-2 mt-11 bg-neutral-950 border-sky-950 rounded-xl`}>
+            <div className="w-full my-auto justify-evenly gap-3 flex flex-col items-center max-w-3xl">
               <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
                   alt="profile picture"
@@ -133,11 +134,11 @@ const Page = () => {
               </h1>
 
               <div>
-                <p className="text-center font-medium pb-1 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 
+                <p className="text-center font-normal leading-tight pb-2 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 
                ">
                   I specialize in JavaScript for software development; my current stack is Firebase, React, and Next.js. My experience includes building full stack web and mobile applications that have been used by 100+ users in 6 different countries, publishing 4 apps to Google Play, and launching 1 Unity game to itch.io.
                 </p>
-                <p className="text-center font-medium pt-1 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 border-t border-neutral-300 
+                <p className="text-center font-normal leading-tight pt-1 text-neutral-300 xsmall:text-sm sm:text-xl text-lg  mx-5 border-t border-neutral-300 
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
@@ -146,15 +147,15 @@ const Page = () => {
           </section>
         }
         {!activeGroup && !certs &&
-          <section className=" bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
+          <section className="py-3 bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
            w-full border-sky-950 text-neutral-300 min-h-[88vh]">
             <h2 className="text-2xl font-bold text-center underline">
               Featured Project:
             </h2>
             {featuredProject && featuredProject.images && featuredProject.images.length > 0 && (
-              <div className="max-w-[760px] p-2 flex flex-col  justify-center gap-5">
+              <div className="max-w-[760px] p-4 flex flex-col  justify-center gap-2">
                 <h2
-                  className={`text-2xl sm:text-3xl underline text-center font-bold ${featuredProject.group === "software"
+                  className={`text-2xl sm:text-3xl  text-center font-bold ${featuredProject.group === "software"
                     ? "text-red-400"
                     : featuredProject.group === "games"
                       ? "text-blue-400"
@@ -164,40 +165,72 @@ const Page = () => {
                   {featuredProject.title}
                 </h2>
                 {isLoading && <Loading />}
-                <div className="flex justify-center">
-                  {!isLoading && featuredProject.images[featuredImageIndex] && (
-                    <div className="flex flex-row items-center justify-center">
-                      <button
-                        className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
-                        onClick={handlePrevImage}
-                      >
-                        <i className="fa-solid fa-caret-left text-5xl sm:text-6xl"></i>
-                      </button>
-                      <Image
-                        height={1080}
-                        width={1920}
-                        className="w-2/3 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
-                        src={featuredProject.images[featuredImageIndex].path}
-                        alt={featuredProject.images[featuredImageIndex].alt}
-                        onClick={() =>
-                          handleImageClick(featuredProject.images[featuredImageIndex].path)
-                        }
-                      /> <button
-                        className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
-                        onClick={handleNextImage}
-                      >
-                        <i className="fa-solid fa-caret-right sm:text-6xl text-5xl"></i>
-                      </button></div>
-                  )}
-                </div>
-                <p className="text-neutral-300 text-center font-medium text-base sm:text-xl">{featuredProject.description}</p>
-                <div className="flex justify-center">
+                {showImages &&
+                  <><div className="flex justify-center">
+                    {!isLoading && featuredProject.images[featuredImageIndex] && (
+                      <div className="flex flex-row items-center justify-center">
+                        <button
+                          className="text-blue-400 mr-4 hover:text-green-400 focus:outline-none"
+                          onClick={handlePrevImage}
+                        >
+                          <i className="fa-solid fa-caret-left text-5xl sm:text-6xl"></i>
+                        </button>
+                        <Image
+                          height={1080}
+                          width={1920}
+                          className="w-2/3 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
+                          src={featuredProject.images[featuredImageIndex].path}
+                          alt={featuredProject.images[featuredImageIndex].alt}
+                          onClick={() =>
+                            handleImageClick(featuredProject.images[featuredImageIndex].path)
+                          }
+                        />
+
+                        <button
+                          className="text-blue-400 ml-4 hover:text-green-400 focus:outline-none"
+                          onClick={handleNextImage}
+                        >
+                          <i className="fa-solid fa-caret-right sm:text-6xl text-5xl"></i>
+                        </button>
+
+                      </div>
+
+                    )}
+
+                  </div>
+                    <button
+                      className="text-blue-400 underline font-light"
+                      onClick={() => {
+                        setShowImages(false)
+                        setShowVideo(true)
+                      }}>View Demo Video</button></>
+                }
+                {showVideo && featuredProject.video && (
+                  <><div className="flex flex-row items-center justify-center">
+                    <video
+                      controls
+                      className="w-2/3 h-auto object-cover shadow-md hover:opacity-75 shadow-neutral-300/50 rounded-xl hover:shadow-lg hover:shadow-slate-600 border-2 border-neutral-300/70 cursor-pointer"
+                    >
+                      <source src={featuredProject.video} type="video/mp4" />
+                    </video>
+
+                  </div>
+                    <button
+                      className="text-blue-400 underline font-light"
+                      onClick={() => {
+                        setShowImages(true)
+                        setShowVideo(false)
+                      }}>View Image Gallery</button>
+                  </>
+                )}
+                <p className="text-neutral-300 text-center  leading-tight font-normal text-base sm:text-xl">{featuredProject.description}</p>
+                <div className="flex mt-2 justify-center">
                   <a href="https://skillicons.dev">
                     <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5" />
                   </a>
                 </div>
-                <div className="flex align-middle place-items-center w-full mt-1 flex-row justify-center gap-10">
-                  <Link className="flex text-xl sm:text-2xl justify-center text-green-400 font-bold border-2 border-green-400 shadow-lg shadow-green-400/50 p-2 rounded-xl hover:scale-90 hover:opacity-60 duration-300 py-2" target="_blank" href={featuredProject.url}>
+                <div className="flex align-middle place-items-center w-full justify-center">
+                  <Link className="flex text-xl sm:text-2xl justify-center text-green-400 underline hover:scale-90 hover:opacity-60 duration-300 " target="_blank" href={featuredProject.url}>
                     {featuredProject.urlLabel}
                   </Link>
                 </div>
@@ -206,7 +239,7 @@ const Page = () => {
           </section>
         }
         {!certs &&
-          <div id="buttons"className="text-xl xsmall:w-fit xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
+          <div id="buttons" className="text-xl xsmall:w-fit xsmall:text-sm rounded-xl items-center place-items-center bg-neutral-950 content-center align-middle  border-sky-950 border-2 p-2 justify-center w-full max-w-[770px]" >
             {!activeGroup &&
               <p className="text-neutral-300 flex justify-center mt-2 underline">
                 Projects (click to expand):
