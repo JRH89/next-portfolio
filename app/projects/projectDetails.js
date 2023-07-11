@@ -2,7 +2,7 @@ const projects = [
 	{
 		id: 1,
 		title: "My Card",
-		description: "Designed to create personalized digital business cards for easy sharing. Implemented QR code and URL functionalities to simplify networking and facilitate quick access to contact information. Incorporated a Weather widget/page and ToDo list to enhance productivity and convenience. Utilized the OpenWeather API to fetch real-time weather data. Aimed to reduce waste and eliminate the waiting time associated with processing and shipping physical business cards.",
+		description: "Digital Business Card creator for easy contact info sharing. Aims to reduce waste and eliminate the waiting time associated with the processing and shipping of physical business cards. Each user gets a qr code and url for their card. The app also features a qr code generator, Weather widget/page, and ToDo list to enhance productivity and convenience. Utilizes the OpenWeather API to fetch real-time weather data. ",
 		group: "software",
 		image: "/ProjectImgs/project1.png",
 		video: "/videos/MyCard_Demo_07-09.mp4",

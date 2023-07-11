@@ -13,7 +13,7 @@ import Footer from "./components/Footer"
 import Message from "./components/Message"
 import Loading from "@/utils/Loading"
 import Link from "next/link"
-import { Link as ScrollLink } from "react-scroll"
+import { Link as ScrollLink, scroller } from "react-scroll"
 
 const Page = () => {
   const [activeGroup, setActiveGroup] = useState(null)
@@ -35,6 +35,14 @@ const Page = () => {
     setFeaturedProject(featuredProject)
 
   }, [])
+
+  const scrollToSection = (section) => {
+    scroller.scrollTo(section, {
+      duration: 800,
+      smooth: true,
+      offset: -60,
+    })
+  }
 
 
   const totalImages = activeProject && activeProject.images ? activeProject.images.length : 0
@@ -112,11 +120,12 @@ const Page = () => {
             setActiveProject={setActiveProject}
           />
         </div>
+
         {isLoading &&
           <Loading />
         }
         {!activeGroup && !certs &&
-          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start place-items-center mx-auto items-center py-5 justify-evenly flex align-middle border-2 mt-11 bg-neutral-950 border-sky-950 rounded-xl`}>
+          <section className={`xsmall:text-sm min-h-[88vh] content-center place-content-center flex-start max-w-[760px] flex-col place-items-center mx-auto items-center py-5 justify-evenly flex align-middle border-2 mt-11 bg-neutral-950 border-sky-950 rounded-xl`}>
             <div className="w-full my-auto justify-evenly gap-3 flex flex-col items-center max-w-3xl">
               <div className="w-1/3 max-w-[200px] flex flex-col justify-center place-content-center align-middle items-center">
                 <Image
@@ -142,18 +151,21 @@ const Page = () => {
                ">
                   I understand the importance of effective communication with clients and team members to ensure that projects are completed on time and within budget. When faced with challenges, I approach them with a positive and proactive attitude, seeking creative solutions to overcome obstacles.
                 </p>
+
+
               </div>
+
+
             </div>
+
           </section>
         }
         {!activeGroup && !certs &&
-          <section className="py-3 bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
+          <section id="featured" className="py-3 bg-neutral-950 rounded-xl border-2 flex-col justify-center flex my-auto items-center place-items-center content-center
            w-full border-sky-950 text-neutral-300 min-h-[88vh]">
-            <h2 className="text-2xl font-bold text-center underline">
-              Featured Project:
-            </h2>
+
             {featuredProject && featuredProject.images && featuredProject.images.length > 0 && (
-              <div className="max-w-[760px] p-4 flex flex-col  justify-center gap-2">
+              <div className="max-w-[760px] p-4 flex flex-col  justify-center gap-3">
                 <h2
                   className={`text-2xl sm:text-3xl  text-center font-bold ${featuredProject.group === "software"
                     ? "text-red-400"
@@ -224,7 +236,7 @@ const Page = () => {
                   </>
                 )}
                 <p className="text-neutral-300 text-center  leading-tight font-normal text-base sm:text-xl">{featuredProject.description}</p>
-                <div className="flex mt-2 justify-center">
+                <div className="flex w-60 self-center mt-2 justify-center">
                   <a href="https://skillicons.dev">
                     <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,firebase,vercel&perline=5" />
                   </a>
@@ -457,9 +469,15 @@ const Page = () => {
                 >
                 </i>
               </div>
+
             </div>
+
+
           </div>
+
+
         )}
+
         <div className="flex justify-center" id="footer">
           <Footer /></div>
       </div>
